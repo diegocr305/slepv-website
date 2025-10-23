@@ -1,0 +1,14 @@
+:root {
+  /* puedes ajustar colores si necesitas */
+  --brand-primary: #006fb3;
+}
+
+body {
+  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+}
+
+h1, h2, h3, .font-level-1, .font-level-2 {
+  font-family: "Roboto Slab", Georgia, serif;
+}
+
+.link-primary { color: var(--brand-primary); }

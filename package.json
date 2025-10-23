@@ -1,0 +1,17 @@
+{
+  "name": "pagina-web-gobcl",
+  "version": "1.0.0",
+  "description": "Sitio institucional base con Framework Kit Gobierno (Chile) sobre Node.js + Express",
+  "main": "server.js",
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js --ext js,html,css"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
