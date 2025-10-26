@@ -1,14 +1,25 @@
 :root {
-  /* puedes ajustar colores si necesitas */
-  --brand-primary: #006fb3;
+  --color-primario: #0054a6;
 }
 
 body {
-  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
 }
 
-h1, h2, h3, .font-level-1, .font-level-2 {
-  font-family: "Roboto Slab", Georgia, serif;
+.hero {
+  background: linear-gradient(rgba(0, 84, 166, 0.85), rgba(0, 84, 166, 0.85)), url('../img/banner-valpo.jpg') center/cover no-repeat;
 }
 
-.link-primary { color: var(--brand-primary); }
+.navbar .nav-link {
+  font-weight: 500;
+  color: #004080;
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-primario);
+}
+
+footer {
+  font-size: 0.9rem;
+}
