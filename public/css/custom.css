@@ -1,25 +1,94 @@
-:root {
-  --color-primario: #0054a6;
-}
-
+/* Tipografías base (importadas desde Google Fonts en el HTML) */
 body {
-  scroll-behavior: smooth;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #212529;
+  /* Añadamos un padding-top para evitar que el contenido quede oculto detrás del navbar fijo */
+  padding-top: 70px;
+  scroll-behavior: smooth; /* desplazamiento suave al navegar por anclas */
+}
+h1, h2, h3, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+}
+h4 {
+  font-family: 'Roboto', sans-serif;
 }
 
-.hero {
-  background: linear-gradient(rgba(0, 84, 166, 0.85), rgba(0, 84, 166, 0.85)), url('../img/banner-valpo.jpg') center/cover no-repeat;
+/* Colores personalizados (inspirados en Kit Digital) */
+:root {
+  --bs-primary: #006FB3;    /* Azul primario SLEP/Gobierno */
+  --bs-secondary: #FE6565;  /* Color secundario (ejemplo rojizo) */
 }
 
-.navbar .nav-link {
+/* Navbar personalizado */
+.navbar-dark.bg-primary {
+  background-color: #006FB3 !important;
+}
+.navbar-dark .navbar-nav .nav-link {
   font-weight: 500;
-  color: #004080;
+  /* Suavizar color activo/hover */
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #FFF !important;
 }
 
-.navbar .nav-link:hover {
-  color: var(--color-primario);
+/* Hero/Banner section */
+.hero {
+  background: url("public/img/banner.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* capa semitransparente oscura sobre la imagen */
+  min-height: 50vh;
+  padding: 100px 0; /* espacio vertical para centrar contenido */
+}
+.hero h1, .hero p {
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
+/* Secciones */
+section {
+  /* Podríamos añadir estilos generales a las secciones si es necesario */
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+section p {
+  line-height: 1.6;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Tarjetas de noticias: aseguramos que los títulos se destaquen */
+.card-title {
+  font-size: 1.1rem;
+  font-family: 'Roboto Slab', serif;
+}
+.card-text {
+  font-size: 0.95rem;
+}
+
+/* Footer estilos */
 footer {
-  font-size: 0.9rem;
+  /* padding-top ya definido en clase pt-4 del HTML */
+  padding-bottom: 1rem;
+}
+footer h6 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+footer p, footer li, footer small {
+  font-size: 0.875rem;
+}
+footer ul li {
+  margin-bottom: 0.3rem;
+}
+footer ul li a:hover {
+  text-decoration: underline;
 }
