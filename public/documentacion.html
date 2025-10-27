@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de Documentación - SLEP Valparaíso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<!-- HEADER ESTÁTICO CON LOGO -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP" style="height: 120px; width: auto;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="conocenos.html">Conócenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="participacion.html">Participación</a></li>
+          <li class="nav-item"><a class="nav-link" href="establecimientos.html">Establecimientos</a></li>
+          <li class="nav-item"><a class="nav-link" href="documentacion.html">Documentación</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <main class="py-5">
+    <div class="container">
+      <h1 class="mb-4">Centro de Documentación</h1>
+      
+      <!-- Filtros -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <select class="form-select" id="filtroTipo">
+            <option value="">Todos los tipos</option>
+            <option value="plan">Planes Estratégicos</option>
+            <option value="reglamento">Reglamentos</option>
+            <option value="acta">Actas</option>
+            <option value="informe">Informes</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="filtroAno">
+            <option value="">Todos los años</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Documentos -->
+      <div class="row" id="documentos">
+        <div class="col-md-6 mb-3 documento" data-tipo="plan" data-ano="2023">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Plan Estratégico Local 2023-2027</h5>
+              <p class="card-text">Documento que establece los lineamientos estratégicos del SLEP para el período 2023-2027.</p>
+              <small class="text-muted">Tipo: Plan Estratégico | Año: 2023</small>
+              <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm" download>Descargar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3 documento" data-tipo="reglamento" data-ano="2024">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Reglamento Interno SLEP Valparaíso</h5>
+              <p class="card-text">Normativa interna que regula el funcionamiento del Servicio Local de Educación Pública.</p>
+              <small class="text-muted">Tipo: Reglamento | Año: 2024</small>
+              <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm" download>Descargar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3 documento" data-tipo="acta" data-ano="2024">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Acta Consejo Local N°1 - 2024</h5>
+              <p class="card-text">Primera sesión del Consejo Local de Educación Pública del año 2024.</p>
+              <small class="text-muted">Tipo: Acta | Año: 2024</small>
+              <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm" download>Descargar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3 documento" data-tipo="informe" data-ano="2023">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Informe de Gestión 2023</h5>
+              <p class="card-text">Resumen de las principales actividades y logros del SLEP durante el año 2023.</p>
+              <small class="text-muted">Tipo: Informe | Año: 2023</small>
+              <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm" download>Descargar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3 documento" data-tipo="acta" data-ano="2024">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Acta COSOC N°2 - 2024</h5>
+              <p class="card-text">Segunda sesión del Consejo de la Sociedad Civil del año 2024.</p>
+              <small class="text-muted">Tipo: Acta | Año: 2024</small>
+              <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm" download>Descargar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3 documento" data-tipo="plan" data-ano="2024">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Plan de Mejoramiento Educativo 2024</h5>
+              <p class="card-text">Estrategias y acciones para el mejoramiento de la calidad educativa en los establecimientos.</p>
+              <small class="text-muted">Tipo: Plan | Año: 2024</small>
+              <div class="mt-2">
+                <a href="#" class="btn btn-primary btn-sm" download>Descargar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<!-- FOOTER ESTÁTICO -->
+<footer class="bg-dark text-white py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP" width="200">
+        <p class="mb-1"><strong>Dirección:</strong> Blanco 937, Segundo piso, Valparaíso</p>
+        <p class="mb-1"><strong>Teléfono:</strong> (2) 2384 6917</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-2">Horarios de Atención</h5>
+        <p class="mb-1"><strong>Lunes a Jueves :</strong> 9 a.m.–2 p.m., 3–5 p.m.</p>
+        <p class="mb-1"><strong>Viernes:</strong> 9 a.m.–2 p.m.</p>
+        <p class="mb-1"><strong>Email:</strong> contacto@slepvalparaiso.cl</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-2">Enlaces Útiles</h5>
+        <ul class="list-unstyled mb-0">
+          <li class="mb-1"><a href="https://www.mineduc.cl" target="_blank" class="text-white">Ministerio de Educación</a></li>
+          <li class="mb-1"><a href="https://valparaiso.caschile.cl/" target="_blank" class="text-white">Intranet RRHH</a></li>
+          <li class="mb-1"><a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=AJ029" target="_blank" class="text-white">Transparencia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <small>© 2025 SLEP Valparaíso. Todos los derechos reservados.</small>
+    </div>
+  </div>
+</footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
