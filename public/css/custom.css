@@ -128,7 +128,7 @@ footer ul li a:hover {
 /* Mobile Responsive */
 @media (max-width: 991.98px) {
   .navbar-custom .navbar-brand img {
-    height: 60px;
+    height: 80px;
   }
   
   .navbar-custom .navbar-collapse {
@@ -336,7 +336,8 @@ footer ul li a:hover {
 
 .banner-img {
   width: 100%;
-  height: auto;
+  height: 150px;
+  object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
   border-radius: 8px;
