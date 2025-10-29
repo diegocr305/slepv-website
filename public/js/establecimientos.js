@@ -8,36 +8,32 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Función para obtener tipo de establecimiento basado en nivel educativo
 function getTipoEstablecimiento(nivelEducativo) {
-    if (!nivelEducativo) return { tipo: 'escuela', badge: 'secondary', icon: '🏫', nivel: 'Educación Básica' };
+    if (!nivelEducativo) return { tipo: 'escuela', badge: 'secondary', icon: '🏫' };
     
-    const nivel = nivelEducativo.toLowerCase();
-    if (nivel.includes('parvularia') || nivel.includes('jardín') || nivel.includes('jardin')) {
-        return { tipo: 'jardin', badge: 'warning', icon: '🌼', nivel: 'Educación Parvularia' };
-    } else if (nivel.includes('media') || nivel.includes('liceo')) {
-        return { tipo: 'liceo', badge: 'info', icon: '🏭', nivel: 'Educación Media' };
+    if (nivelEducativo.includes('parvularia') || nivelEducativo.includes('jardín') || nivelEducativo.includes('jardin')) {
+        return { tipo: 'jardin', badge: 'warning', icon: '🌼' };
+    } else if (nivelEducativo.includes('media') || nivelEducativo.includes('liceo')) {
+        return { tipo: 'liceo', badge: 'info', icon: '🏭' };
     } else {
-        return { tipo: 'escuela', badge: 'secondary', icon: '🏫', nivel: 'Educación Básica' };
+        return { tipo: 'escuela', badge: 'secondary', icon: '🏫' };
     }
 }
 
 // Función para crear HTML de un establecimiento
 function crearEstablecimientoHTML(establecimiento) {
     const tipoInfo = getTipoEstablecimiento(establecimiento.nivel_educativo);
+    const direccionMaps = encodeURIComponent(establecimiento.direccion + ', Valparaíso, Chile');
     
     return `
-        <div class="col-lg-4 col-md-6 mb-4 establecimiento ${tipoInfo.tipo}">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 establecimiento ${tipoInfo.tipo}">
             <div class="card h-100 feature-card">
-                <div class="card-body">
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="badge bg-primary me-2">${tipoInfo.icon}</div>
-                        <span class="badge bg-${tipoInfo.badge}">${tipoInfo.tipo.charAt(0).toUpperCase() + tipoInfo.tipo.slice(1)}</span>
-                    </div>
-                    <h5 class="card-title">${establecimiento.nombre_establecimiento}</h5>
-                    <p class="card-text text-muted mb-2">📍 ${establecimiento.direccion}</p>
-                    <p class="card-text"><small class="text-success">${tipoInfo.nivel}</small></p>
-                    ${establecimiento.nombre_director ? `<p class="card-text"><small class="text-info">Director/a: ${establecimiento.nombre_director}</small></p>` : ''}
+                <div class="card-body p-3">
+                    <h6 class="card-title mb-2">${establecimiento.nombre_establecimiento}</h6>
+                    <p class="card-text text-muted mb-1 small">📍 ${establecimiento.direccion}</p>
+                    ${establecimiento.nombre_director ? `<p class="card-text mb-1"><small class="text-info">Director/a: ${establecimiento.nombre_director}</small></p>` : ''}
+                    ${establecimiento.correo_director ? `<p class="card-text mb-2"><small class="text-secondary">📧 ${establecimiento.correo_director}</small></p>` : ''}
                     <div class="mt-auto">
-                        <a href="#" class="btn-kit-secondary btn-kit-small" onclick="mostrarDetalles('${establecimiento.id}')">Ver detalles</a>
+                        <a href="https://maps.google.com/?q=${direccionMaps}" target="_blank" class="btn-kit-secondary btn-kit-small">📍 Ver ubicación</a>
                     </div>
                 </div>
             </div>
@@ -58,8 +54,7 @@ async function cargarEstablecimientos() {
         const container = document.getElementById('todosEstablecimientos');
         container.innerHTML = establecimientos.map(est => crearEstablecimientoHTML(est)).join('');
         
-        // Actualizar contadores por tipo
-        actualizarFiltros(establecimientos);
+
         
     } catch (error) {
         console.error('Error cargando establecimientos:', error);
@@ -68,46 +63,10 @@ async function cargarEstablecimientos() {
     }
 }
 
-// Función para actualizar filtros por tipo
-function actualizarFiltros(establecimientos) {
-    const tipos = { escuela: 0, liceo: 0, jardin: 0 };
-    
-    establecimientos.forEach(est => {
-        const tipoInfo = getTipoEstablecimiento(est.nivel_educativo);
-        tipos[tipoInfo.tipo]++;
-    });
-    
-    // Actualizar pestañas con contadores
-    document.getElementById('escuelas-tab').textContent = `Escuelas (${tipos.escuela})`;
-    document.getElementById('liceos-tab').textContent = `Liceos (${tipos.liceo})`;
-    document.getElementById('jardines-tab').textContent = `Jardines (${tipos.jardin})`;
-}
 
-// Función para filtrar por tipo
-function filtrarPorTipo(tipo) {
-    const establecimientos = document.querySelectorAll('.establecimiento');
-    establecimientos.forEach(est => {
-        if (tipo === 'todos' || est.classList.contains(tipo)) {
-            est.style.display = 'block';
-        } else {
-            est.style.display = 'none';
-        }
-    });
-}
 
-// Función para mostrar detalles (modal o página)
-function mostrarDetalles(id) {
-    // Implementar según necesidades
-    console.log('Mostrar detalles del establecimiento:', id);
-}
+
 
 // Cargar establecimientos al cargar la página
 document.addEventListener('DOMContentLoaded', cargarEstablecimientos);
 
-// Event listeners para filtros
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('todos-tab').addEventListener('click', () => filtrarPorTipo('todos'));
-    document.getElementById('escuelas-tab').addEventListener('click', () => filtrarPorTipo('escuela'));
-    document.getElementById('liceos-tab').addEventListener('click', () => filtrarPorTipo('liceo'));
-    document.getElementById('jardines-tab').addEventListener('click', () => filtrarPorTipo('jardin'));
-});
