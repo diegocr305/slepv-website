@@ -381,6 +381,13 @@ footer ul li a:hover {
   }
 }
 
+/* Noticias Cards - Imágenes uniformes */
+.feature-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Kit Digital Button Styles */
 .btn-kit-primary {
   background-color: #0066CC;

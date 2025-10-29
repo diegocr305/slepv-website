@@ -33,9 +33,21 @@
   </nav>
 </header>
 
-  <main class="py-5">
-    <div class="container">
-      <h1 class="mb-4">Centro de Documentación</h1>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero text-white">
+      <img src="img/Banner prueba centrado.png" alt="Fondo" class="hero-img">
+      <div class="overlay-content">
+        <div class="container">
+          <h1 class="display-5 fw-bold">Centro de Documentación</h1>
+          <p class="lead">Accede a documentos oficiales, planes estratégicos y normativas del SLEP Valparaíso.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentación -->
+    <section class="py-5">
+      <div class="container">
       
       <!-- Filtros -->
       <div class="row mb-4">
@@ -61,7 +73,7 @@
       <!-- Documentos -->
       <div class="row" id="documentos">
         <div class="col-md-6 mb-3 documento" data-tipo="plan" data-ano="2023">
-          <div class="card">
+          <div class="card h-100 feature-card">
             <div class="card-body">
               <h5 class="card-title">Plan Estratégico Local 2023-2027</h5>
               <p class="card-text">Documento que establece los lineamientos estratégicos del SLEP para el período 2023-2027.</p>
@@ -74,7 +86,7 @@
         </div>
         
         <div class="col-md-6 mb-3 documento" data-tipo="reglamento" data-ano="2024">
-          <div class="card">
+          <div class="card h-100 feature-card">
             <div class="card-body">
               <h5 class="card-title">Reglamento Interno SLEP Valparaíso</h5>
               <p class="card-text">Normativa interna que regula el funcionamiento del Servicio Local de Educación Pública.</p>
@@ -87,7 +99,7 @@
         </div>
         
         <div class="col-md-6 mb-3 documento" data-tipo="acta" data-ano="2024">
-          <div class="card">
+          <div class="card h-100 feature-card">
             <div class="card-body">
               <h5 class="card-title">Acta Consejo Local N°1 - 2024</h5>
               <p class="card-text">Primera sesión del Consejo Local de Educación Pública del año 2024.</p>
@@ -100,7 +112,7 @@
         </div>
         
         <div class="col-md-6 mb-3 documento" data-tipo="informe" data-ano="2023">
-          <div class="card">
+          <div class="card h-100 feature-card">
             <div class="card-body">
               <h5 class="card-title">Informe de Gestión 2023</h5>
               <p class="card-text">Resumen de las principales actividades y logros del SLEP durante el año 2023.</p>
@@ -113,7 +125,7 @@
         </div>
         
         <div class="col-md-6 mb-3 documento" data-tipo="acta" data-ano="2024">
-          <div class="card">
+          <div class="card h-100 feature-card">
             <div class="card-body">
               <h5 class="card-title">Acta COSOC N°2 - 2024</h5>
               <p class="card-text">Segunda sesión del Consejo de la Sociedad Civil del año 2024.</p>
@@ -126,7 +138,7 @@
         </div>
         
         <div class="col-md-6 mb-3 documento" data-tipo="plan" data-ano="2024">
-          <div class="card">
+          <div class="card h-100 feature-card">
             <div class="card-body">
               <h5 class="card-title">Plan de Mejoramiento Educativo 2024</h5>
               <p class="card-text">Estrategias y acciones para el mejoramiento de la calidad educativa en los establecimientos.</p>
@@ -138,7 +150,8 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   </main>
 
 <!-- FOOTER ESTÁTICO -->
