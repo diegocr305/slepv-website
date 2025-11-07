@@ -1,6 +1,24 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 5,
+        titulo: "Escuela Intercultural de Laguna Verde contará con nuevas salas modulares",
+        resumen: "El SLEP Valparaíso incorporará nuevas salas modulares para mejorar las condiciones de aprendizaje y asegurar espacios adecuados para toda la comunidad educativa del establecimiento de Laguna Verde.",
+        fecha: "2025-11-06",
+        fechaTexto: "6 de Noviembre, 2025",
+        imagen: "img_news/laguna_verde_sala_modulares/Laguna Verde contará con nuevas salas modulares.jpeg",
+        enlace: "noticias/noticia5.html"
+    },
+    {
+        id: 4,
+        titulo: "Doce integrantes asumen como representantes del nuevo Consejo Local 2025-2027",
+        resumen: "Con nuevos bríos y las ganas de fortalecer la educación pública de Valparaíso, mediante la participación ciudadana y democrática, asumieron los representantes del nuevo Consejo Local de Educación Pública para nuestro territorio.",
+        fecha: "2025-11-05",
+        fechaTexto: "5 de Noviembre, 2025",
+        imagen: "img_news/consejo_local/Consejo en pleno.jpg",
+        enlace: "noticias/noticia4.html"
+    },
+    {
         id: 1,
         titulo: "Educación pública piensa en Valparaíso para volver a poner la mirada en el francés",
         resumen: "Talleres que se realizarán en 2026, en dos escuelas porteñas, servirán como evaluación para un posible retorno de esta lengua al currículum nacional.",
