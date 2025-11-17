@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conócenos - SLEP Valparaíso</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -45,23 +47,57 @@
       </div>
     </section>
 
-    <!-- Misión y Visión -->
-    <section class="py-5">
+    <!-- Ideario Institucional -->
+    <section class="py-5 ideario-section">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body">
-                <h3 class="card-title">🎯 Nuestra Misión</h3>
-                <p class="card-text">Gestionar y fortalecer la educación pública en Valparaíso y Juan Fernández, promoviendo una educación inclusiva, de calidad y centrada en el desarrollo integral de cada estudiante.</p>
+        <h2 class="text-center mb-5" data-aos="fade-down">Nuestro Ideario</h2>
+        
+        <!-- Misión -->
+        <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-12">
+            <div class="card feature-card border-0 shadow-sm mision">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="icon-circle bg-primary text-white me-3">
+                    <i class="fas fa-bullseye"></i>
+                  </div>
+                  <h3 class="card-title mb-0 text-primary">Misión</h3>
+                </div>
+                <p class="card-text lead">Proveer un servicio educativo, centrado en el aprendizaje de calidad, equidad y pertinencia para todas y todos los estudiantes del territorio de Valparaíso y Juan Fernández, favoreciendo un desarrollo integral con énfasis en las competencias para el Siglo XXI, mediante el desarrollo profesional docente y directivo, el trabajo colaborativo, la participación ciudadana, la valoración de la identidad local y vinculación con el medio, el protagonismo de la comunidad escolar y la incorporación de las familias en los procesos formativos.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body">
-                <h3 class="card-title">🔭 Nuestra Visión</h3>
-                <p class="card-text">Ser reconocidos como un referente en la gestión educacional pública, construyendo comunidades educativas sólidas que preparen ciudadanos críticos, creativos y comprometidos con su entorno.</p>
+        </div>
+
+        <!-- Visión -->
+        <div class="row mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-12">
+            <div class="card feature-card border-0 shadow-sm vision">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="icon-circle bg-success text-white me-3">
+                    <i class="fas fa-eye"></i>
+                  </div>
+                  <h3 class="card-title mb-0 text-success">Visión</h3>
+                </div>
+                <p class="card-text lead">Implementar un modelo de gestión educacional en el territorio que sea pertinente a las necesidades educacionales de las/os estudiantes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sellos Institucionales -->
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-12">
+            <div class="card feature-card border-0 shadow-sm sellos">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="icon-circle bg-warning text-white me-3">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="card-title mb-0 text-warning">Sellos Institucionales</h3>
+                </div>
+                <p class="card-text lead">Orientado a la calidad, con participación de las familias y territorios en la construcción de los proyectos educativos, donde todos los estudiantes puedan desarrollarse integralmente. Con un currículo y experiencias educativas pertinentes, con ambientes de aprendizaje propicios que cuenten con todos los medios materiales y humanos, con fomento del respeto y la inclusión, la vida democrática y el desarrollo emocional positivo.</p>
               </div>
             </div>
           </div>
@@ -72,7 +108,7 @@
     <!-- Valores Institucionales -->
     <section class="py-5 bg-light">
       <div class="container">
-        <h2 class="text-center mb-5">Valores Institucionales</h2>
+        <h2 class="text-center mb-5" data-aos="fade-down">Valores Institucionales</h2>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 feature-card">
@@ -192,6 +228,15 @@
 </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+  </script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

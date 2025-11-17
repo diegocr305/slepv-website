@@ -14,6 +14,7 @@
   <title>SLEP Valparaíso - Educación Pública</title>
   <link rel="icon" type="image/png" href="img/Logotipo Valparaíso_bco.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -23,6 +24,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container">
       <a class="navbar-brand" href="index.html">
+        <div class="gov-stripe-footer"></div>
         <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso - Servicio Local de Educación Pública">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -59,8 +61,8 @@
   <!-- Enlaces de Interés -->
   <section class="py-4 bg-light">
     <div class="container">
-      <h2 class="text-center mb-4">Enlaces de Interés</h2>
-      <div class="row justify-content-center">
+      <h2 class="text-center mb-4" data-aos="fade-down">Enlaces de Interés</h2>
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
           <a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=AJ029" target="_blank" class="banner-link">
             <img src="img/TRANSPARENCIA ACTIVA.png" alt="Portal de Transparencia Activa" class="banner-img">
@@ -90,13 +92,88 @@
     </div>
   </section>
 
+  <!-- Información Destacada -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-down">Información Destacada</h2>
+      <div id="informacionCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-aos="fade-up" data-aos-delay="100">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="documentos/planificacion/banners/COSOC.pdf" target="_blank" class="banner-link">
+                  <img src="img/Banner WEB - COSOC.jpeg" alt="COSOC" class="info-banner-img">
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="documentos/planificacion/banners/Cuenta Pública SLEPV 2025.pdf" target="_blank" class="banner-link">
+                  <img src="img/Banner cuenta publica 2025.jpg" alt="Cuenta Pública 2025" class="info-banner-img">
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="documentos/planificacion/banners/10106_FormularioA1_2025 .pdf" target="_blank" class="banner-link">
+                  <img src="img/definiciones estrategicas 25.png" alt="Definiciones Estratégicas 2025" class="info-banner-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="documentos/planificacion/banners/Formulario de denuncia.docx" target="_blank" class="banner-link">
+                  <img src="img/baner trato laboral.png" alt="Trato Laboral" class="info-banner-img">
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="https://sites.google.com/slepvalparaiso.cl/revistaslep/inicio" target="_blank" class="banner-link">
+                  <img src="img/del plan al cerro.jpg" alt="Del Plan al Cerro" class="info-banner-img">
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="https://forms.gle/2is1WK5TZ1aE1MTF6" target="_blank" class="banner-link">
+                  <img src="img/BANNER OPERACIÓN SOSPECHOSA.png" alt="Operación Sospechosa" class="info-banner-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-4 col-md-6 mb-3">
+                <a href="documentos/planificacion/banners/Procedimiento MALS.pdf" target="_blank" class="banner-link">
+                  <img src="img/baner mals.png" alt="MALS - Procedimiento" class="info-banner-img">
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#informacionCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#informacionCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Educación Pública -->
   <section class="py-5">
     <div class="container">
-      <h2 class="mb-4">¿Qué es un Servicio Local de Educación Pública?</h2>
-      <p>Es un órgano estatal, especializado, descentralizado y con identidad territorial, que tiene como foco principal el fortalecimiento de la Educación Pública. Su objetivo es proveer a través de los establecimientos educacionales de su dependencia, el servicio educacional, velando por la calidad, la mejora continua, la equidad y el desarrollo de los aprendizajes de los niños, niñas y jóvenes en Chile, atendiendo a las características de los estudiantes y las particularidades del territorio en que se emplaza.</p>
+      <h2 class="mb-4" data-aos="fade-down">¿Qué es un Servicio Local de Educación Pública?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Es un órgano estatal, especializado, descentralizado y con identidad territorial, que tiene como foco principal el fortalecimiento de la Educación Pública. Su objetivo es proveer a través de los establecimientos educacionales de su dependencia, el servicio educacional, velando por la calidad, la mejora continua, la equidad y el desarrollo de los aprendizajes de los niños, niñas y jóvenes en Chile, atendiendo a las características de los estudiantes y las particularidades del territorio en que se emplaza.</p>
       <div class="row mt-4">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="200">
           <div class="card h-100 feature-card">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">🏆 Calidad en la Educación Pública</h5>
@@ -105,7 +182,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="300">
           <div class="card h-100 feature-card">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">⚖️ Nueva Institucionalidad</h5>
@@ -114,7 +191,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="400">
           <div class="card h-100 feature-card">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">🤝 Fortalecimiento de las comunidades educativa</h5>
@@ -131,8 +208,8 @@
   <!-- Noticias Destacadas -->
   <section class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Noticias Destacadas</h2>
-      <div class="row" id="noticias-destacadas">
+      <h2 class="mb-4" data-aos="fade-down">Noticias Destacadas</h2>
+      <div class="row" id="noticias-destacadas" data-aos="fade-up" data-aos-delay="100">
         <!-- Las noticias se cargan dinámicamente -->
       </div>
       <div class="text-center">
@@ -143,8 +220,8 @@
     <!-- Trámites -->
   <section class="py-3 bg-white">
     <div class="container">
-      <h3 class="text-center mb-3">Trámites Ciudadanos</h3>
-      <div class="row justify-content-center">
+      <h3 class="text-center mb-3" data-aos="fade-down">Trámites Ciudadanos</h3>
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
         <div class="col-md-4">
           <a href="https://tramites.dep.gob.cl/tramites/iniciar/173" target="_blank" class="banner-link">
             <img src="img/banner-ley-de-transparencia-final.jpg" alt="Transparencia" class="banner-img">
@@ -213,6 +290,15 @@
 }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+</script>
 <script src="js/noticias.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

@@ -153,7 +153,7 @@ footer ul li a:hover {
   background: none;
   position: relative;
   overflow: hidden;
-  min-height: 70vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -296,18 +296,36 @@ footer ul li a:hover {
 }
 
 .gov-stripe-footer {
+  height: 10px;
+  width: 140px;
+  background: linear-gradient(to right, #0055A4 50%, #FF4B3E 50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* Franja en navbar */
+.navbar-brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-brand .gov-stripe-footer {
+  position: relative;
+  margin-bottom: 5px;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Franja en footer */
+footer .gov-stripe-footer {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 10px;
-  width: 140px;
-  background: linear-gradient(to right, #0055A4 33%, #FF4B3E 33%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.15);
-  border-radius: 0 0px 0 0;
-  z-index: 2;
+  border-radius: 4px 4px 0 0;
 }
 
 @media (max-width: 768px) {
@@ -491,3 +509,124 @@ footer ul li a:hover {
   color: #555555;
   line-height: 1.6;
 }
+
+/* Iconos circulares para el ideario */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.icon-circle i {
+  font-size: 24px;
+}
+
+/* Estilos específicos para las secciones del ideario */
+.ideario-section .card {
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.ideario-section .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.ideario-section .card.mision {
+  border-left-color: #0d6efd;
+}
+
+.ideario-section .card.vision {
+  border-left-color: #198754;
+}
+
+.ideario-section .card.sellos {
+  border-left-color: #ffc107;
+}
+
+/* Responsive para iconos */
+@media (max-width: 768px) {
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .icon-circle i {
+    font-size: 20px;
+  }
+}
+
+/* Carrusel Información Destacada */
+#informacionCarousel {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#informacionCarousel:hover {
+  animation-play-state: paused;
+}
+
+.info-banner-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.banner-link:hover .info-banner-img {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(27, 54, 93, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-indicators {
+  margin-bottom: -30px;
+}
+
+.carousel-indicators button {
+  background-color: #1B365D;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+  background-color: #0066CC;
+}
+
+/* Responsive para carrusel */
+@media (max-width: 768px) {
+  .info-banner-img {
+    height: 150px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
