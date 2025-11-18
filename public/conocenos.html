@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
 <!-- HEADER ESTÁTICO CON LOGO -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
@@ -43,14 +46,33 @@
         <div class="container">
           <h1 class="display-5 fw-bold">Conócenos</h1>
           <p class="lead">Conoce más sobre el SLEP Valparaíso y nuestro compromiso con la educación pública.</p>
+          <div class="mt-4">
+            <a href="#ideario" class="btn-kit-primary btn-kit-small me-2">Nuestro Ideario</a>
+            <a href="#valores" class="btn-kit-secondary btn-kit-small me-2">Valores</a>
+            <a href="#institucionalidad" class="btn-kit-secondary btn-kit-small">Institucionalidad</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Ideario Institucional -->
-    <section class="py-5 ideario-section">
+    <!-- Navegación Interna -->
+    <section class="py-3 bg-light border-bottom">
       <div class="container">
-        <h2 class="text-center mb-5" data-aos="fade-down">Nuestro Ideario</h2>
+        <nav class="nav nav-pills nav-fill" data-aos="fade-up">
+          <a class="nav-link active" href="#ideario">📋 Ideario</a>
+          <a class="nav-link" href="#valores">⭐ Valores</a>
+          <a class="nav-link" href="#institucionalidad">🏛️ Institucionalidad</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Ideario Institucional -->
+    <section id="ideario" class="py-5 ideario-section">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-down">
+          <h2 class="display-6 fw-bold text-primary">Nuestro Ideario</h2>
+          <p class="lead text-muted">Los pilares fundamentales que guían nuestra gestión educativa</p>
+        </div>
         
         <!-- Misión -->
         <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
@@ -106,54 +128,75 @@
     </section>
 
     <!-- Valores Institucionales -->
-    <section class="py-5 bg-light">
+    <section id="valores" class="py-5 bg-light">
       <div class="container">
-        <h2 class="text-center mb-5" data-aos="fade-down">Valores Institucionales</h2>
+        <div class="text-center mb-5" data-aos="fade-down">
+          <h2 class="display-6 fw-bold text-primary">Valores Institucionales</h2>
+          <p class="lead text-muted">Los principios que orientan nuestro actuar diario</p>
+        </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <h5 class="card-title">⚖️ Equidad</h5>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-balance-scale fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Equidad</h5>
                 <p class="card-text">Garantizamos oportunidades educativas para todos los estudiantes, sin distinción.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <h5 class="card-title">🏆 Calidad</h5>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-trophy fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Calidad</h5>
                 <p class="card-text">Promovemos la excelencia en todos nuestros procesos educativos.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <h5 class="card-title">🤝 Inclusión</h5>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-handshake fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Inclusión</h5>
                 <p class="card-text">Valoramos la diversidad en nuestras comunidades educativas.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <h5 class="card-title">🔍 Transparencia</h5>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-eye fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Transparencia</h5>
                 <p class="card-text">Actuamos con honestidad y apertura en todas nuestras acciones.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <h5 class="card-title">💬 Participación</h5>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-comments fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Participación</h5>
                 <p class="card-text">Fomentamos el diálogo y la colaboración en la comunidad educativa.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body text-center">
-                <h5 class="card-title">💡 Innovación</h5>
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-lightbulb fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Innovación</h5>
                 <p class="card-text">Impulsamos prácticas educativas transformadoras y creativas.</p>
               </div>
             </div>
@@ -163,22 +206,46 @@
     </section>
 
     <!-- Educación Pública e Institucionalidad -->
-    <section class="py-5">
+    <section id="institucionalidad" class="py-5">
       <div class="container">
+        <div class="text-center mb-5" data-aos="fade-down">
+          <h2 class="display-6 fw-bold text-primary">Institucionalidad</h2>
+          <p class="lead text-muted">Nuestro marco legal y organizacional</p>
+        </div>
         <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body">
-                <h3 class="card-title">📚 ¿Qué es la Educación Pública?</h3>
+          <div class="col-md-6 mb-4" data-aos="fade-right">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="icon-circle bg-primary text-white me-3">
+                    <i class="fas fa-book-open"></i>
+                  </div>
+                  <h3 class="card-title mb-0 text-primary">¿Qué es la Educación Pública?</h3>
+                </div>
                 <p class="card-text">La educación pública es un derecho fundamental que garantiza el acceso equitativo a una formación de calidad para todos los estudiantes, sin distinción de origen socioeconómico, cultural o territorial.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="fas fa-check text-success me-2"></i>Acceso universal</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Calidad educativa</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Equidad territorial</li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
-            <div class="card h-100 feature-card">
-              <div class="card-body">
-                <h3 class="card-title">🏛️ Institucionalidad</h3>
+          <div class="col-md-6 mb-4" data-aos="fade-left">
+            <div class="card h-100 feature-card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="icon-circle bg-primary text-white me-3">
+                    <i class="fas fa-university"></i>
+                  </div>
+                  <h3 class="card-title mb-0 text-primary">Sistema de Educación Pública</h3>
+                </div>
                 <p class="card-text">El SLEP Valparaíso forma parte del Sistema de Educación Pública, creado por la Ley 21.040, que busca fortalecer la educación pública a través de una gestión descentralizada y participativa.</p>
+                <ul class="list-unstyled mt-3">
+                  <li><i class="fas fa-check text-success me-2"></i>Gestión descentralizada</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Participación ciudadana</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Identidad territorial</li>
+                </ul>
               </div>
             </div>
           </div>

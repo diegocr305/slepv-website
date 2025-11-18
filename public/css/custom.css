@@ -305,18 +305,11 @@ footer ul li a:hover {
   z-index: 2;
 }
 
-/* Franja en navbar */
-.navbar-brand {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.navbar-brand .gov-stripe-footer {
-  position: relative;
-  margin-bottom: 5px;
-  border-radius: 4px 4px 0 0;
+.gov-stripe-header {
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(to right, #0055A4 50%, #FF4B3E 50%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Franja en footer */
@@ -627,6 +620,59 @@ footer .gov-stripe-footer {
   .carousel-control-next-icon {
     width: 35px;
     height: 35px;
+  }
+}
+
+/* Navegación interna de conocenos */
+.nav-pills .nav-link {
+  color: #6c757d;
+  background-color: transparent;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  padding: 12px 20px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #f8f9fa;
+  border-color: #0066CC;
+  color: #0066CC;
+  transform: translateY(-2px);
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0066CC;
+  border-color: #0066CC;
+  color: white;
+}
+
+/* Scroll suave para anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset para navegación con header fijo */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Mejoras visuales para valores */
+.feature-card .fa-3x {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .fa-3x {
+  transform: scale(1.1);
+}
+
+/* Responsive para navegación */
+@media (max-width: 768px) {
+  .nav-pills .nav-link {
+    margin: 5px 0;
+    padding: 10px 15px;
+    font-size: 0.9rem;
   }
 }
 

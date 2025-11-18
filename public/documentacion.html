@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro de Documentación - SLEP Valparaíso</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
 <!-- HEADER ESTÁTICO CON LOGO -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
@@ -101,6 +105,81 @@
       </div>
       </div>
     </section>
+
+    <!-- Actas COSOC -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Actas COSOC</h2>
+        <p class="text-center text-muted mb-4">Consejo Local de Educación Pública - Actas de Sesiones</p>
+        
+        <div class="row">
+          <!-- Lista de Actas -->
+          <div class="col-md-4">
+            <div class="list-group" id="lista-actas">
+              <button type="button" class="list-group-item list-group-item-action active" data-acta="acta1">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">Acta N° 01</h6>
+                  <small>2025</small>
+                </div>
+                <p class="mb-1">Consejo Local</p>
+                <small>Sesión Ordinaria</small>
+              </button>
+              <button type="button" class="list-group-item list-group-item-action" data-acta="acta2">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">Acta N° 02</h6>
+                  <small>2025</small>
+                </div>
+                <p class="mb-1">Consejo Local</p>
+                <small>Sesión Ordinaria</small>
+              </button>
+              <button type="button" class="list-group-item list-group-item-action" data-acta="acta3">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">Acta N° 03</h6>
+                  <small>2025</small>
+                </div>
+                <p class="mb-1">Consejo Local</p>
+                <small>Sesión Ordinaria</small>
+              </button>
+              <button type="button" class="list-group-item list-group-item-action" data-acta="acta4">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">Acta N° 04</h6>
+                  <small>2025</small>
+                </div>
+                <p class="mb-1">Consejo Local</p>
+                <small>Sesión Ordinaria</small>
+              </button>
+              <button type="button" class="list-group-item list-group-item-action" data-acta="acta5">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">Acta N° 05</h6>
+                  <small>2025</small>
+                </div>
+                <p class="mb-1">Consejo Local</p>
+                <small>Sesión Ordinaria</small>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Previsualización -->
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0" id="titulo-acta">Acta Sesión N° 1 - Enero 2025</h5>
+                <a href="#" class="btn-kit-secondary btn-kit-small" id="descargar-acta" target="_blank">Descargar PDF</a>
+              </div>
+              <div class="card-body">
+                <iframe id="pdf-viewer" src="" width="100%" height="600px" style="border: none; display: none;"></iframe>
+                <div id="contenido-acta">
+                  <div class="text-center py-5">
+                    <i class="fas fa-file-pdf fa-3x text-primary mb-3"></i>
+                    <p>Selecciona un acta para previsualizar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
 <!-- FOOTER ESTÁTICO -->
@@ -144,6 +223,64 @@
 </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Datos de las actas
+    const actas = {
+      acta1: {
+        titulo: 'Acta N° 01 - 2025 Consejo Local',
+        pdf: 'documentos/COSOC ACTAS/ACTA N° 01 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
+      },
+      acta2: {
+        titulo: 'Acta N° 02 - 2025 Consejo Local',
+        pdf: 'documentos/COSOC ACTAS/ACTA N° 02 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
+      },
+      acta3: {
+        titulo: 'Acta N° 03 - 2025 Consejo Local',
+        pdf: 'documentos/COSOC ACTAS/ACTA N° 03 -2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
+      },
+      acta4: {
+        titulo: 'Acta N° 04 - 2025 Consejo Local',
+        pdf: 'documentos/COSOC ACTAS/ACTA N° 04 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
+      },
+      acta5: {
+        titulo: 'Acta N° 05 - 2025 Consejo Local',
+        pdf: 'documentos/COSOC ACTAS/ACTA N° 05 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
+      }
+    };
+
+    // Manejar clics en la lista de actas
+    document.addEventListener('DOMContentLoaded', function() {
+      const listaActas = document.getElementById('lista-actas');
+      const tituloActa = document.getElementById('titulo-acta');
+      const descargarActa = document.getElementById('descargar-acta');
+      const pdfViewer = document.getElementById('pdf-viewer');
+      const contenidoActa = document.getElementById('contenido-acta');
+
+      listaActas.addEventListener('click', function(e) {
+        if (e.target.closest('.list-group-item')) {
+          const button = e.target.closest('.list-group-item');
+          const actaId = button.dataset.acta;
+          
+          // Remover clase active de todos los botones
+          document.querySelectorAll('.list-group-item').forEach(item => {
+            item.classList.remove('active');
+          });
+          
+          // Agregar clase active al botón seleccionado
+          button.classList.add('active');
+          
+          // Actualizar contenido
+          if (actas[actaId]) {
+            tituloActa.textContent = actas[actaId].titulo;
+            descargarActa.href = actas[actaId].pdf;
+            pdfViewer.src = actas[actaId].pdf;
+            pdfViewer.style.display = 'block';
+            contenidoActa.style.display = 'none';
+          }
+        }
+      });
+    });
+  </script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
