@@ -667,12 +667,53 @@ section[id] {
   transform: scale(1.1);
 }
 
-/* Responsive para navegación */
+/* Modal Horarios de Verano */
+.modal-content {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: relative;
+  z-index: 10;
+}
+
+.modal-header .btn-close {
+  background-color: rgba(255,255,255,0.95);
+  border: 2px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.modal-header .btn-close:hover {
+  background-color: rgba(255,255,255,1);
+  transform: scale(1.1);
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 768px) {
-  .nav-pills .nav-link {
-    margin: 5px 0;
-    padding: 10px 15px;
-    font-size: 0.9rem;
+  .modal-dialog {
+    margin: 1rem;
   }
 }
 

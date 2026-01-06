@@ -243,6 +243,20 @@
   </section>
 </main>
 
+<!-- Modal Horarios de Verano -->
+<div class="modal fade" id="modalHorariosVerano" tabindex="-1" aria-labelledby="modalHorariosVeranoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center p-0">
+        <img src="img/Horario de atención Verano.jpeg" alt="Horarios de Atención Verano" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER ESTÁTICO -->
 <footer class="footer-gov py-4">
   <div class="container">
@@ -308,6 +322,24 @@
     easing: 'ease-in-out',
     once: true,
     offset: 100
+  });
+  
+  // Modal Horarios de Verano
+  document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si el modal ya fue mostrado hoy
+    const today = new Date().toDateString();
+    const lastShown = localStorage.getItem('modalHorariosVeranoShown');
+    
+    if (lastShown !== today) {
+      // Mostrar modal después de 1 segundo
+      setTimeout(function() {
+        const modal = new bootstrap.Modal(document.getElementById('modalHorariosVerano'));
+        modal.show();
+        
+        // Guardar que se mostró hoy
+        localStorage.setItem('modalHorariosVeranoShown', today);
+      }, 1000);
+    }
   });
 </script>
 <script src="js/noticias.js"></script>
