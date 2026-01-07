@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 6,
+        titulo: "Satisfactoria presentación de SLEP Valparaíso y la Asociación de Madres, Padres y Apoderados en comisión tripartita de Educación, Seguridad y Familia en el Gobierno Regional",
+        resumen: "En la búsqueda de mejorar las condiciones en pro de las y los estudiantes de Valparaíso y sus familias, el director ejecutivo de SLEP Valparaíso, Pablo Mecklenburg y la Asociación de Madres, Padres y Apoderados expusieron sobre la necesidad de mayor seguridad para los establecimientos educacionales.",
+        fecha: "2026-01-07",
+        fechaTexto: "7 de Enero, 2026",
+        imagen: "img_news/comision_tripartita/SLEP Valparaíso y la Asociación de Madres, Padres y Apoderados en comisión tripartita de Educación, Seguridad y Familia en el Gobierno Regional.jpeg",
+        enlace: "noticias/noticia6.html"
+    },
+    {
         id: 5,
         titulo: "Escuela Intercultural de Laguna Verde contará con nuevas salas modulares",
         resumen: "El SLEP Valparaíso incorporará nuevas salas modulares para mejorar las condiciones de aprendizaje y asegurar espacios adecuados para toda la comunidad educativa del establecimiento de Laguna Verde.",
