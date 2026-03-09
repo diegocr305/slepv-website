@@ -78,187 +78,278 @@
   <section class="py-5 bg-blue-gov text-white">
     <div class="container">
       <h1 class="display-5 fw-bold mb-3" data-aos="fade-down">Recursos Internos</h1>
-      <p class="lead" data-aos="fade-up">Capacitaciones, manuales e instructivos para funcionarios SLEP Valparaíso</p>
+      <p class="lead" data-aos="fade-up">Capacitaciones e instructivos del Sistema CeroPapel para funcionarios SLEP Valparaíso</p>
     </div>
   </section>
 
-  <!-- Gestor Documental -->
+  <!-- Sistema CeroPapel - Capacitaciones -->
   <section class="py-5">
     <div class="container">
       <h2 class="mb-4" data-aos="fade-down">
-        <i class="fas fa-folder-open text-primary me-2"></i>Gestor Documental Institucional
+        <i class="fas fa-video text-primary me-2"></i>Sistema CeroPapel - Capacitaciones
       </h2>
       
-      <!-- Videos -->
-      <div class="row g-4 mb-5">
-        <div class="col-lg-4 col-md-6" data-aos="fade-up">
-          <div class="card h-100">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Video Tutorial 1" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Introducción al Gestor Documental</h5>
-              <p class="card-text">Conoce las funcionalidades básicas del sistema.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="card h-100">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Video Tutorial 2" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Cómo Subir Documentos</h5>
-              <p class="card-text">Aprende a cargar y clasificar documentos correctamente.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="card h-100">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Video Tutorial 3" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Búsqueda y Filtros</h5>
-              <p class="card-text">Encuentra documentos de forma rápida y eficiente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Manuales -->
-      <div class="row">
-        <div class="col-12" data-aos="fade-up">
-          <div class="card bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-file-pdf text-danger me-2"></i>Manuales Descargables</h5>
-              <div class="d-flex flex-wrap gap-3 mt-3">
-                <a href="documentos/manuales/manual-gestor-documental.pdf" target="_blank" class="btn btn-outline-primary">
-                  <i class="fas fa-download me-2"></i>Manual Completo
-                </a>
-                <a href="documentos/manuales/guia-rapida.pdf" target="_blank" class="btn btn-outline-primary">
-                  <i class="fas fa-download me-2"></i>Guía Rápida
-                </a>
+      <!-- Accordion -->
+      <div class="accordion" id="capacitacionesAccordion">
+        
+        <!-- Para Funcionarios -->
+        <div class="accordion-item" data-aos="fade-up">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFuncionarios" aria-expanded="true">
+              <i class="fas fa-users me-2"></i>Para Funcionarios
+            </button>
+          </h2>
+          <div id="collapseFuncionarios" class="accordion-collapse collapse show" data-bs-parent="#capacitacionesAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-4">
+                  <div class="card h-100">
+                    <div class="ratio ratio-16x9">
+                      <iframe src="https://www.youtube.com/embed/YwUkVxm4i-A" title="Capacitación Funcionarios 1" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Capacitación Funcionarios 1</h5>
+                      <p class="card-text">Introducción al sistema CeroPapel.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card h-100 bg-light">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                      <i class="fas fa-video fa-4x text-secondary mb-3"></i>
+                      <h5 class="card-title text-center">Capacitación Funcionarios 2 - Express</h5>
+                      <p class="card-text text-center text-muted">Próximamente</p>
+                      <span class="badge bg-secondary mt-2">En preparación</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card h-100 bg-light">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                      <i class="fas fa-file-pdf text-danger fa-4x mb-3"></i>
+                      <h5 class="card-title text-center">Manual Oficial de Partes</h5>
+                      <p class="card-text text-center">Guía para funcionarios</p>
+                      <a href="documentos/Gestor_dcumental/MANUAL-OFICIAL-DE-PARTES.pdf" target="_blank" class="btn btn-primary mt-3">
+                        <i class="fas fa-download me-2"></i>Descargar Manual
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Para Jefaturas -->
+        <div class="accordion-item" data-aos="fade-up">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJefaturas">
+              <i class="fas fa-user-tie me-2"></i>Para Jefaturas
+            </button>
+          </h2>
+          <div id="collapseJefaturas" class="accordion-collapse collapse" data-bs-parent="#capacitacionesAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="card h-100">
+                    <div class="ratio ratio-16x9">
+                      <iframe src="https://www.youtube.com/embed/o7fk0RCSq9A" title="Capacitación Jefaturas" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Capacitación Jefaturas</h5>
+                      <p class="card-text">Herramientas y funciones para jefaturas en CeroPapel.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card h-100 bg-light">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                      <i class="fas fa-file-pdf text-danger fa-4x mb-3"></i>
+                      <h5 class="card-title text-center">Manual Jefatura</h5>
+                      <p class="card-text text-center">Guía completa para jefaturas</p>
+                      <a href="documentos/Gestor_dcumental/MANUAL-JEFATURA.pdf" target="_blank" class="btn btn-primary mt-3">
+                        <i class="fas fa-download me-2"></i>Descargar Manual
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Para Secretarias -->
+        <div class="accordion-item" data-aos="fade-up">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecretarias">
+              <i class="fas fa-user-edit me-2"></i>Para Secretarias
+            </button>
+          </h2>
+          <div id="collapseSecretarias" class="accordion-collapse collapse" data-bs-parent="#capacitacionesAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="card h-100">
+                    <div class="ratio ratio-16x9">
+                      <iframe src="https://www.youtube.com/embed/ux-o0nVZdF8" title="Capacitación Secretarias" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Capacitación Secretarias</h5>
+                      <p class="card-text">Gestión documental y flujos de trabajo para secretarias.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card h-100 bg-light">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                      <i class="fas fa-file-pdf text-danger fa-4x mb-3"></i>
+                      <h5 class="card-title text-center">Manual Secretaria</h5>
+                      <p class="card-text text-center">Guía completa para secretarias</p>
+                      <a href="documentos/Gestor_dcumental/843_MANUAL-SECRETARIA.pdf" target="_blank" class="btn btn-primary mt-3">
+                        <i class="fas fa-download me-2"></i>Descargar Manual
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Para Administradores -->
+        <div class="accordion-item" data-aos="fade-up">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdministradores">
+              <i class="fas fa-user-shield me-2"></i>Para Administradores
+            </button>
+          </h2>
+          <div id="collapseAdministradores" class="accordion-collapse collapse" data-bs-parent="#capacitacionesAccordion">
+            <div class="accordion-body">
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="card h-100">
+                    <div class="ratio ratio-16x9">
+                      <iframe src="https://www.youtube.com/embed/2QwvZCn7MYc" title="Capacitación Administradores" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Capacitación Administradores</h5>
+                      <p class="card-text">Gestión completa del sistema CeroPapel para administradores.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card h-100">
+                    <div class="ratio ratio-16x9">
+                      <iframe src="https://www.youtube.com/embed/AfjGlBLDN94" title="DocDigital + ZeAtiende" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">DocDigital + ZeAtiende</h5>
+                      <p class="card-text">Integración y uso de plataformas DocDigital y ZeAtiende.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <div class="gov-stripe-header"></div>
 
-  <!-- Instructivos y Procedimientos -->
+  <!-- Instructivos CeroPapel -->
   <section class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4" data-aos="fade-down">
-        <i class="fas fa-book text-primary me-2"></i>Instructivos y Procedimientos
+        <i class="fas fa-book text-primary me-2"></i>Instructivos CeroPapel
       </h2>
+      <p class="lead mb-4">Guías rápidas de funcionalidades específicas del sistema</p>
       
-      <div class="row g-4 mb-5">
-        <div class="col-lg-4 col-md-6" data-aos="fade-up">
-          <div class="card h-100">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Instructivo 1" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Procedimientos Administrativos</h5>
-              <p class="card-text">Guía paso a paso de procesos internos.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="card h-100">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" title="Instructivo 2" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Uso de Plataformas Internas</h5>
-              <p class="card-text">Aprende a utilizar las herramientas digitales.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="card h-100">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="Instructivo 3" allowfullscreen></iframe>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Solicitudes y Formularios</h5>
-              <p class="card-text">Cómo completar y enviar formularios internos.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Documentos -->
-      <div class="row">
-        <div class="col-12" data-aos="fade-up">
-          <div class="card bg-white">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-file-pdf text-danger me-2"></i>Documentos de Apoyo</h5>
-              <div class="d-flex flex-wrap gap-3 mt-3">
-                <a href="documentos/instructivos/instructivo-1.pdf" target="_blank" class="btn btn-outline-primary">
-                  <i class="fas fa-download me-2"></i>Instructivo General
-                </a>
-                <a href="documentos/instructivos/formularios.pdf" target="_blank" class="btn btn-outline-primary">
-                  <i class="fas fa-download me-2"></i>Formularios
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="gov-stripe-header"></div>
-
-  <!-- Enlaces Útiles -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="mb-4" data-aos="fade-down">
-        <i class="fas fa-link text-primary me-2"></i>Enlaces Útiles
-      </h2>
       <div class="row g-4">
         <div class="col-lg-4 col-md-6" data-aos="fade-up">
-          <a href="https://valparaiso.caschile.cl/" target="_blank" class="card h-100 text-decoration-none">
+          <div class="card h-100">
             <div class="card-body text-center">
-              <i class="fas fa-users fa-3x text-primary mb-3"></i>
-              <h5 class="card-title">Intranet RRHH</h5>
-              <p class="card-text">Acceso al portal CAS Chile</p>
+              <i class="fas fa-file-alt fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Creación de Documentos y Plantillas</h5>
+              <p class="card-text">Aprende a crear y gestionar plantillas de documentos.</p>
+              <a href="documentos/Gestor_dcumental/CREACION-DE-DOCUMENTOS-Y-PLANTILLAS.pdf" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-download me-2"></i>Descargar
+              </a>
             </div>
-          </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-signature fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Diagramador Firma de PDF</h5>
+              <p class="card-text">Configura y utiliza el diagramador de firmas.</p>
+              <a href="documentos/Gestor_dcumental/DIAGRAMADOR-PDF.pdf" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-download me-2"></i>Descargar
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://www.mineduc.cl" target="_blank" class="card h-100 text-decoration-none">
+          <div class="card h-100">
             <div class="card-body text-center">
-              <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
-              <h5 class="card-title">Ministerio de Educación</h5>
-              <p class="card-text">Portal oficial MINEDUC</p>
+              <i class="fas fa-envelope-open-text fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Documentos por Leer y Leídos</h5>
+              <p class="card-text">Gestiona tu bandeja de documentos pendientes.</p>
+              <a href="documentos/Gestor_dcumental/DOCUMENTOS-POR-LEER-Y-LEIDOS.pdf" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-download me-2"></i>Descargar
+              </a>
             </div>
-          </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-pen-fancy fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Firma de Documentos</h5>
+              <p class="card-text">Proceso completo de firma digital de documentos.</p>
+              <a href="documentos/Gestor_dcumental/FIRMA-DE-DOCUMENTOS.pdf" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-download me-2"></i>Descargar
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="card h-100 text-decoration-none">
+          <div class="card h-100">
             <div class="card-body text-center">
-              <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
-              <h5 class="card-title">Soporte Técnico</h5>
-              <p class="card-text">Contacta con el equipo de TI</p>
+              <i class="fas fa-keyboard fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Guía CKEditor</h5>
+              <p class="card-text">Guía completa del editor de texto del sistema.</p>
+              <a href="documentos/Gestor_dcumental/GUIA-CKEDITOR.pdf" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-download me-2"></i>Descargar
+              </a>
             </div>
-          </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-list-ul fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Listas Personalizadas</h5>
+              <p class="card-text">Crea y administra listas personalizadas.</p>
+              <a href="documentos/Gestor_dcumental/LISTAS-PERSONALIZADAS.pdf" target="_blank" class="btn btn-outline-primary">
+                <i class="fas fa-download me-2"></i>Descargar
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-</main>
+
+
 
 <div class="gov-stripe-header"></div>
 
