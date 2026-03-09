@@ -56,16 +56,41 @@ const noticias = [
     }
 ];
 
+// Función para normalizar texto (quitar acentos)
+function normalizarTexto(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+// Función para obtener parámetro de búsqueda de la URL
+function obtenerParametroBusqueda() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('q');
+}
+
+// Función para filtrar noticias por término de búsqueda
+function filtrarNoticias(termino) {
+    if (!termino) return noticias;
+    
+    const terminoNormalizado = normalizarTexto(termino);
+    
+    return noticias.filter(noticia => {
+        const tituloNormalizado = normalizarTexto(noticia.titulo);
+        const resumenNormalizado = normalizarTexto(noticia.resumen);
+        
+        return tituloNormalizado.includes(terminoNormalizado) || 
+               resumenNormalizado.includes(terminoNormalizado);
+    });
+}
+
 // Función para crear HTML de una noticia
 function crearNoticiaHTML(noticia) {
     return `
-        <div class="col-md-4 mb-4">
+        <div class="col-md-3 mb-4">
             <div class="card h-100 feature-card">
                 <img src="${noticia.imagen}" class="card-img-top" alt="${noticia.titulo}">
                 <div class="card-body d-flex flex-column">
                     <small class="text-muted">${noticia.fechaTexto}</small>
                     <h5 class="card-title">${noticia.titulo}</h5>
-                    <p class="card-text">${noticia.resumen}</p>
                     <a href="${noticia.enlace}" class="mt-auto btn-kit-primary btn-kit-small">Leer más</a>
                 </div>
             </div>
@@ -73,15 +98,15 @@ function crearNoticiaHTML(noticia) {
     `;
 }
 
-// Función para cargar noticias destacadas (las 3 más recientes)
+// Función para cargar noticias destacadas (las 4 más recientes)
 function cargarNoticiasDestacadas() {
     const container = document.getElementById('noticias-destacadas');
     if (!container) return;
     
-    // Ordenar por fecha (más reciente primero) y tomar las 3 primeras
+    // Ordenar por fecha (más reciente primero) y tomar las 4 primeras
     const noticiasRecientes = noticias
         .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
-        .slice(0, 3);
+        .slice(0, 4);
     
     container.innerHTML = noticiasRecientes.map(noticia => crearNoticiaHTML(noticia)).join('');
 }
@@ -91,11 +116,42 @@ function cargarTodasLasNoticias() {
     const container = document.getElementById('todas-noticias');
     if (!container) return;
     
-    // Ordenar por fecha (más reciente primero)
-    const noticiasOrdenadas = noticias
-        .sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+    // Obtener término de búsqueda
+    const terminoBusqueda = obtenerParametroBusqueda();
     
-    container.innerHTML = noticiasOrdenadas.map(noticia => crearNoticiaHTML(noticia)).join('');
+    // Filtrar noticias si hay búsqueda
+    let noticiasAMostrar = terminoBusqueda ? filtrarNoticias(terminoBusqueda) : noticias;
+    
+    // Ordenar por fecha (más reciente primero)
+    noticiasAMostrar = noticiasAMostrar.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+    
+    // Mostrar barra de búsqueda si hay término
+    if (terminoBusqueda) {
+        const searchBar = document.getElementById('searchBar');
+        const searchTerm = document.getElementById('searchTerm');
+        const resultCount = document.getElementById('resultCount');
+        
+        if (searchBar && searchTerm && resultCount) {
+            searchBar.style.display = 'block';
+            searchTerm.textContent = `"${terminoBusqueda}"`;
+            resultCount.textContent = `${noticiasAMostrar.length} resultado${noticiasAMostrar.length !== 1 ? 's' : ''}`;
+        }
+    }
+    
+    // Mostrar mensaje si no hay resultados
+    if (noticiasAMostrar.length === 0 && terminoBusqueda) {
+        const noResults = document.getElementById('noResults');
+        const noResultsTerm = document.getElementById('noResultsTerm');
+        
+        if (noResults && noResultsTerm) {
+            noResults.style.display = 'block';
+            noResultsTerm.textContent = terminoBusqueda;
+        }
+        container.innerHTML = '';
+        return;
+    }
+    
+    container.innerHTML = noticiasAMostrar.map(noticia => crearNoticiaHTML(noticia)).join('');
 }
 
 // Cargar noticias al cargar la página

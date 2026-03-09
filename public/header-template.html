@@ -1,0 +1,77 @@
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="top-bar-left">
+        <a href="https://tramites.dep.gob.cl/tramites/iniciar/173" target="_blank" class="top-bar-link">
+          <i class="fas fa-file-alt"></i> Trámites Online
+        </a>
+        <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="top-bar-link">
+          <i class="fas fa-envelope"></i> Contacto
+        </a>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="social-icon" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="social-icon" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="social-icon" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER ESTÁTICO CON LOGO -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso - Servicio Local de Educación Pública">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="conocenos.html">Conócenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="participacion.html">Participación</a></li>
+          <li class="nav-item"><a class="nav-link" href="establecimientos.html">Establecimientos</a></li>
+          <li class="nav-item"><a class="nav-link" href="documentacion.html">Documentación</a></li>
+          <li class="nav-item"><a class="nav-link" href="recursos-internos.html">Recursos Internos</a></li>
+        </ul>
+        <form class="d-flex ms-3" id="searchForm" role="search">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="form-control search-input-visible" id="searchInput" placeholder="Buscar...">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- SCRIPT DE BÚSQUEDA -->
+<script>
+  // Search Form Submit
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
+  
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `noticias.html?q=${encodeURIComponent(query)}`;
+      }
+    });
+  }
+</script>
