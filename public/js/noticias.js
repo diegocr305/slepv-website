@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 7,
+        titulo: "Comunicado de Prensa: SLEP Valparaíso designa nuevo Director Ejecutivo Subrogante",
+        resumen: "SLEP Valparaíso comunica que a partir del lunes 23 de marzo, Claudio Sepúlveda Cabrera asume como Director Ejecutivo Subrogante del Servicio Local de Educación Pública Valparaíso.",
+        fecha: "2026-03-17",
+        fechaTexto: "17 de marzo, 2026",
+        imagen: "img_news/comunicado_prensa/Comunicado de prensa.png",
+        enlace: "noticias/noticia7.html"
+    },
+    {
         id: 6,
         titulo: "Satisfactoria presentación de SLEP Valparaíso y la Asociación de Madres, Padres y Apoderados en comisión tripartita de Educación, Seguridad y Familia en el Gobierno Regional",
         resumen: "En la búsqueda de mejorar las condiciones en pro de las y los estudiantes de Valparaíso y sus familias, el director ejecutivo de SLEP Valparaíso, Pablo Mecklenburg y la Asociación de Madres, Padres y Apoderados expusieron sobre la necesidad de mayor seguridad para los establecimientos educacionales.",
