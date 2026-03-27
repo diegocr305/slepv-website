@@ -82,18 +82,26 @@
 
 <main>
   <!-- Hero Section -->
-<section class="hero text-white">
-  <a href="https://megustamiescuela.mineduc.gob.cl/slep-valparaiso.html" target="_blank" class="hero-link">
-    <img src="img\Me Gusta mi Escuela_SLEP.jpg" alt="Me Gusta mi Escuela" class="hero-img">
-  </a>
-  <div class="overlay-content">
-    <div class="container">
-      <h1 class="display-5 fw-bold">Servicio Local de Educación Pública Valparaíso</h1>
-      <p class="lead">Comprometidos con el fortalecimiento de la educación pública en la región.</p>
-      <a href="/conocenos" class="btn-kit-primary btn-kit-large mt-3">Conócenos</a>
+  <section class="hero-banner">
+    <img src="img/Banner web.png" alt="SLEP Valparaíso" class="hero-banner-img" 
+         data-bs-toggle="modal" data-bs-target="#modalComunicado" style="cursor:pointer;">
+  </section>
+
+  <!-- Modal Comunicado -->
+  <div class="modal fade" id="modalComunicado" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img src="img/SLEP VALPARAÍSO APODERADOS COMITE DIRECTIVO.png" 
+               alt="Comunicado SLEP Valparaíso" 
+               class="img-fluid w-100 rounded">
+        </div>
+      </div>
     </div>
   </div>
-</section>
 <!-- FRANJA GUBERNAMENTAL -->
 <div class="gov-stripe-header"></div>
 
@@ -356,24 +364,6 @@
       }
     });
   }
-  
-  // Modal Horarios de Verano
-  document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si el modal ya fue mostrado hoy
-    const today = new Date().toDateString();
-    const lastShown = localStorage.getItem('modalHorariosVeranoShown');
-    
-    if (lastShown !== today) {
-      // Mostrar modal después de 1 segundo
-      setTimeout(function() {
-        const modal = new bootstrap.Modal(document.getElementById('modalHorariosVerano'));
-        modal.show();
-        
-        // Guardar que se mostró hoy
-        localStorage.setItem('modalHorariosVeranoShown', today);
-      }, 1000);
-    }
-  });
 </script>
 <script src="js/noticias.js"></script>
 <script src="assets/js/main.js"></script>
