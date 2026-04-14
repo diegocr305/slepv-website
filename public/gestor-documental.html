@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gestor Documental CeroPapel - SLEP Valparaíso</title>
+  <link rel="icon" type="image/png" href="img/vector v slep.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f6f9;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .card-title, .accordion-button,
+    .section-title, .hero-title {
+      font-family: 'Roboto Slab', serif !important;
+    }
+
+    /* Header interno */
+    .internal-header {
+      background-color: #1B365D;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .internal-header img {
+      height: 60px;
+      width: auto;
+    }
+
+    .btn-back {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .btn-back:hover {
+      color: #ffd700;
+    }
+
+    /* Hero interno */
+    .internal-hero {
+      background: linear-gradient(135deg, #1B365D 0%, #0066CC 100%);
+      color: white;
+      padding: 3rem 0;
+    }
+
+    .internal-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .internal-hero p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+    }
+
+    .badge-sistema {
+      background-color: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Sección títulos */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1B365D;
+      border-left: 4px solid #0066CC;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Accordion */
+    .accordion-item {
+      border: none;
+      margin-bottom: 10px;
+      border-radius: 8px !important;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .accordion-button {
+      background-color: #1B365D;
+      color: white;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #0066CC;
+      color: white;
+      box-shadow: none;
+    }
+
+    .accordion-button:hover {
+      background-color: #0052A3;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    .accordion-button::after {
+      filter: brightness(0) invert(1);
+    }
+
+    .accordion-body {
+      background-color: #ffffff;
+      padding: 1.5rem;
+    }
+
+    .role-badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+
+    /* Cards video */
+    .video-card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .video-card .card-body {
+      padding: 1rem;
+      background-color: #fff;
+    }
+
+    .video-card .card-title {
+      font-size: 1rem;
+      color: #1B365D;
+      margin-bottom: 0.25rem;
+    }
+
+    .video-card .card-text {
+      font-size: 0.875rem;
+      color: #666;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Card manual descarga */
+    .manual-card {
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .manual-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .manual-card h5 {
+      color: #1B365D;
+      margin-bottom: 0.5rem;
+    }
+
+    .manual-card p {
+      font-size: 0.875rem;
+      color: #666;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Instructivos cards */
+    .instructivo-card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      background: white;
+    }
+
+    .instructivo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .instructivo-card .card-body {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .instructivo-card .icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+    }
+
+    .instructivo-card .card-title {
+      font-size: 0.95rem;
+      color: #1B365D;
+      margin-bottom: 0.5rem;
+    }
+
+    .instructivo-card .card-text {
+      font-size: 0.825rem;
+      color: #666;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    /* Sección instructivos */
+    .instructivos-section {
+      background-color: #ffffff;
+      padding: 3rem 0;
+    }
+
+    /* Footer interno */
+    .internal-footer {
+      background-color: #1B365D;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      font-family: 'Roboto', sans-serif;
+      margin-top: 3rem;
+    }
+
+    .gov-stripe {
+      height: 8px;
+      background: linear-gradient(to right, #0055A4 50%, #FF4B3E 50%);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Franja gubernamental -->
+<div class="gov-stripe"></div>
+
+<!-- Header interno -->
+<div class="internal-header">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="/">
+      <img src="img/Logotipo Valparaíso_bco.png" alt="SLEP Valparaíso">
+    </a>
+    <a href="/" class="btn-back">
+      <i class="fas fa-arrow-left me-2"></i>Volver al sitio
+    </a>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="internal-hero">
+  <div class="container" data-aos="fade-up">
+    <div class="d-flex align-items-center gap-3 mb-3">
+      <span class="badge-sistema"><i class="fas fa-file-alt me-1"></i>Sistema CeroPapel</span>
+      <span class="badge-sistema"><i class="fas fa-lock me-1"></i>Uso Interno</span>
+    </div>
+    <h1>Gestor Documental Institucional</h1>
+    <p>Capacitaciones, manuales e instructivos para funcionarios SLEP Valparaíso</p>
+  </div>
+</div>
+
+<main class="py-5">
+  <div class="container">
+
+    <!-- Capacitaciones -->
+    <h2 class="section-title" data-aos="fade-right">
+      <i class="fas fa-video me-2"></i>Capacitaciones por Rol
+    </h2>
+
+    <div class="accordion mb-5" id="capacitacionesAccordion">
+
+      <!-- Funcionarios -->
+      <div class="accordion-item" data-aos="fade-up">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFuncionarios" aria-expanded="true">
+            <i class="fas fa-users me-2"></i>Para Funcionarios
+            <span class="role-badge bg-success">Recomendado para comenzar</span>
+          </button>
+        </h2>
+        <div id="collapseFuncionarios" class="accordion-collapse collapse show" data-bs-parent="#capacitacionesAccordion">
+          <div class="accordion-body">
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6">
+                <div class="card video-card h-100">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/YwUkVxm4i-A" title="Capacitación Funcionarios 1" allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Capacitación Funcionarios 1</h5>
+                    <p class="card-text">Introducción completa al sistema CeroPapel.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="card video-card h-100">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/fMxOc-EyGjw" title="Capacitación Funcionarios 2 Express" allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Capacitación Funcionarios 2 - Express</h5>
+                    <p class="card-text">Resumen express de las principales funcionalidades.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="manual-card">
+                  <i class="fas fa-file-pdf text-danger fa-3x mb-3"></i>
+                  <h5>Manual Oficial de Partes</h5>
+                  <p>Guía completa para funcionarios</p>
+                  <a href="documentos/Gestor_dcumental/MANUAL-OFICIAL-DE-PARTES.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download me-2"></i>Descargar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jefaturas -->
+      <div class="accordion-item" data-aos="fade-up">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJefaturas">
+            <i class="fas fa-user-tie me-2"></i>Para Jefaturas
+          </button>
+        </h2>
+        <div id="collapseJefaturas" class="accordion-collapse collapse" data-bs-parent="#capacitacionesAccordion">
+          <div class="accordion-body">
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="card video-card h-100">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/o7fk0RCSq9A" title="Capacitación Jefaturas" allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Capacitación Jefaturas</h5>
+                    <p class="card-text">Herramientas y funciones para jefaturas en CeroPapel.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="manual-card">
+                  <i class="fas fa-file-pdf text-danger fa-3x mb-3"></i>
+                  <h5>Manual Jefatura</h5>
+                  <p>Guía completa para jefaturas</p>
+                  <a href="documentos/Gestor_dcumental/MANUAL-JEFATURA.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download me-2"></i>Descargar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secretarias -->
+      <div class="accordion-item" data-aos="fade-up">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecretarias">
+            <i class="fas fa-user-edit me-2"></i>Para Secretarias
+          </button>
+        </h2>
+        <div id="collapseSecretarias" class="accordion-collapse collapse" data-bs-parent="#capacitacionesAccordion">
+          <div class="accordion-body">
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="card video-card h-100">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/ux-o0nVZdF8" title="Capacitación Secretarias" allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Capacitación Secretarias</h5>
+                    <p class="card-text">Gestión documental y flujos de trabajo para secretarias.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="manual-card">
+                  <i class="fas fa-file-pdf text-danger fa-3x mb-3"></i>
+                  <h5>Manual Secretaria</h5>
+                  <p>Guía completa para secretarias</p>
+                  <a href="documentos/Gestor_dcumental/843_MANUAL-SECRETARIA.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download me-2"></i>Descargar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Administradores -->
+      <div class="accordion-item" data-aos="fade-up">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdministradores">
+            <i class="fas fa-user-shield me-2"></i>Para Administradores
+          </button>
+        </h2>
+        <div id="collapseAdministradores" class="accordion-collapse collapse" data-bs-parent="#capacitacionesAccordion">
+          <div class="accordion-body">
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="card video-card h-100">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/2QwvZCn7MYc" title="Capacitación Administradores" allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Capacitación Administradores</h5>
+                    <p class="card-text">Gestión completa del sistema CeroPapel para administradores.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card video-card h-100">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/AfjGlBLDN94" title="DocDigital + ZeAtiende" allowfullscreen></iframe>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">DocDigital + ZeAtiende</h5>
+                    <p class="card-text">Integración y uso de plataformas DocDigital y ZeAtiende.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Instructivos -->
+    <h2 class="section-title" data-aos="fade-right">
+      <i class="fas fa-book me-2"></i>Instructivos CeroPapel
+    </h2>
+    <p class="text-muted mb-4" style="font-family:'Roboto',sans-serif;">Guías rápidas de funcionalidades específicas del sistema</p>
+
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <div class="instructivo-card">
+          <div class="card-body">
+            <div class="icon-wrap bg-primary bg-opacity-10">
+              <i class="fas fa-file-alt text-primary"></i>
+            </div>
+            <h5 class="card-title">Creación de Documentos y Plantillas</h5>
+            <p class="card-text">Aprende a crear y gestionar plantillas de documentos.</p>
+            <a href="documentos/Gestor_dcumental/CREACION-DE-DOCUMENTOS-Y-PLANTILLAS.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-download me-1"></i>Descargar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="instructivo-card">
+          <div class="card-body">
+            <div class="icon-wrap bg-success bg-opacity-10">
+              <i class="fas fa-signature text-success"></i>
+            </div>
+            <h5 class="card-title">Diagramador Firma de PDF</h5>
+            <p class="card-text">Configura y utiliza el diagramador de firmas.</p>
+            <a href="documentos/Gestor_dcumental/DIAGRAMADOR-PDF.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-download me-1"></i>Descargar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="instructivo-card">
+          <div class="card-body">
+            <div class="icon-wrap bg-warning bg-opacity-10">
+              <i class="fas fa-envelope-open-text text-warning"></i>
+            </div>
+            <h5 class="card-title">Documentos por Leer y Leídos</h5>
+            <p class="card-text">Gestiona tu bandeja de documentos pendientes.</p>
+            <a href="documentos/Gestor_dcumental/DOCUMENTOS-POR-LEER-Y-LEIDOS.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-download me-1"></i>Descargar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="instructivo-card">
+          <div class="card-body">
+            <div class="icon-wrap bg-danger bg-opacity-10">
+              <i class="fas fa-pen-fancy text-danger"></i>
+            </div>
+            <h5 class="card-title">Firma de Documentos</h5>
+            <p class="card-text">Proceso completo de firma digital de documentos.</p>
+            <a href="documentos/Gestor_dcumental/FIRMA-DE-DOCUMENTOS.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-download me-1"></i>Descargar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="instructivo-card">
+          <div class="card-body">
+            <div class="icon-wrap bg-info bg-opacity-10">
+              <i class="fas fa-keyboard text-info"></i>
+            </div>
+            <h5 class="card-title">Guía CKEditor</h5>
+            <p class="card-text">Guía completa del editor de texto del sistema.</p>
+            <a href="documentos/Gestor_dcumental/GUIA-CKEDITOR.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-download me-1"></i>Descargar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="instructivo-card">
+          <div class="card-body">
+            <div class="icon-wrap bg-secondary bg-opacity-10">
+              <i class="fas fa-list-ul text-secondary"></i>
+            </div>
+            <h5 class="card-title">Listas Personalizadas</h5>
+            <p class="card-text">Crea y administra listas personalizadas.</p>
+            <a href="documentos/Gestor_dcumental/LISTAS-PERSONALIZADAS.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-download me-1"></i>Descargar
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Footer interno -->
+<div class="gov-stripe"></div>
+<div class="internal-footer">
+  <div class="container">
+    <p class="mb-0">© 2025 SLEP Valparaíso — Uso exclusivo para funcionarios</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, easing: 'ease-in-out', once: true, offset: 80 });
+</script>
+</body>
+</html>

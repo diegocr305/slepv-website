@@ -1,0 +1,1436 @@
+/* Tipografías base - Kit Digital */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: justify;
+  scroll-behavior: smooth;
+}
+
+/* Headings - Kit Digital */
+h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 0.875rem;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+/* Body text variants */
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.lead {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 21px;
+  }
+  
+  h4 {
+    font-size: 19px;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+  
+  .lead {
+    font-size: 16px;
+  }
+}
+
+/* Colores personalizados (inspirados en Kit Digital) */
+:root {
+  --bs-primary: #006FB3;    /* Azul primario SLEP/Gobierno */
+  --bs-secondary: #FE6565;  /* Color secundario (ejemplo rojizo) */
+}
+
+/* Navbar personalizado */
+.navbar-dark.bg-primary {
+  background-color: #006FB3 !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  font-weight: 500;
+  /* Suavizar color activo/hover */
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #FFF !important;
+}
+
+/* Hero/Banner section */
+.hero {
+  background: url("public/img/banner.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* capa semitransparente oscura sobre la imagen */
+  min-height: 50vh;
+  padding: 100px 0; /* espacio vertical para centrar contenido */
+}
+.hero h1, .hero p {
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Secciones */
+section h2 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+section h3 {
+  font-size: 31px;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Tarjetas de noticias */
+.card-title {
+  font-size: 19px;
+  font-weight: 500;
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.4;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Footer estilos */
+footer {
+  padding-bottom: 1rem;
+}
+
+footer h6 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+footer p, footer li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+footer small {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+footer ul li {
+  margin-bottom: 0.3rem;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+/* Navbar Custom Styles - Kit Digital */
+.navbar-custom {
+  background-color: #1B365D;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+}
+
+.navbar-custom .navbar-brand img {
+  height: 100px;
+  width: auto;
+}
+
+.navbar-custom .nav-link {
+  color: white !important;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #E6F3FF !important;
+  background-color: rgba(255,255,255,0.1);
+}
+
+.navbar-custom .navbar-toggler {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Search Toggle Button */
+.search-toggle {
+  background: transparent;
+  border: none;
+  color: white !important;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+}
+
+.search-toggle:hover {
+  color: #E6F3FF !important;
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Search Box */
+.search-box {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: none;
+  min-width: 300px;
+  z-index: 1000;
+}
+
+.search-box.active {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  border: 2px solid #1B365D;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #0066CC;
+}
+
+.search-close {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.search-close:hover {
+  color: #FF4B3E;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991.98px) {
+  .navbar-custom .navbar-brand img {
+    height: 80px;
+  }
+  
+  .navbar-custom .navbar-collapse {
+    background-color: #1B365D;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navbar-custom .nav-link {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navbar-custom .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  .search-box {
+    position: relative;
+    min-width: 100%;
+    margin-top: 10px;
+  }
+}
+/* Hero Section Background */
+.hero {
+  background: none;
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero-link:hover .hero-img {
+  transform: scale(1.02);
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  display: none;
+}
+/* Feature Cards Styles - Kit Digital */
+.feature-card {
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.feature-card .card-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+.feature-card .card-title {
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #1B365D;
+  line-height: 1.4;
+}
+
+.feature-card .card-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.feature-card .btn-kit-secondary {
+  margin-top: auto;
+}
+
+/* Footer Gubernamental */
+.footer-gov {
+  position: relative; /* Para que la franja se posicione dentro del footer */
+  background-color: #1e3c72;
+  color: white;
+  overflow: hidden;
+}
+
+.footer-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.footer-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.footer-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: #e8e9ea;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+  color: #e8e9ea;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+.footer-divider {
+  border-color: #4a5568;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.footer-copyright {
+  color: #a0aec0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.gov-stripe-footer {
+  height: 10px;
+  width: 140px;
+  background: linear-gradient(to right, #0055A4 50%, #FF4B3E 50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.gov-stripe-header {
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(to right, #0055A4 50%, #FF4B3E 50%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Top Bar Styles */
+.top-bar {
+  background-color: #0d1f3d;
+  padding: 8px 0;
+  font-size: 0.875rem;
+}
+
+.top-bar-left {
+  display: flex;
+  gap: 20px;
+}
+
+.top-bar-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-bar-link:hover {
+  color: #ffd700;
+}
+
+.top-bar-link i {
+  font-size: 16px !important;
+  margin-right: 6px;
+  display: inline-block !important;
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900 !important;
+}
+
+.top-bar-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.social-icon i {
+  font-family: 'Font Awesome 6 Brands' !important;
+  font-weight: 400 !important;
+  display: inline-block !important;
+}
+
+.social-icon:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .top-bar-left,
+  .top-bar-right {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .top-bar .container > div {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Franja en footer */
+footer .gov-stripe-footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px 4px 0 0;
+}
+
+@media (max-width: 768px) {
+  .gov-stripe-footer {
+    width: 100px;
+    height: 8px;
+  }
+}
+
+/* Banner Links Styles */
+.banner-link {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.banner-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+.banner-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.banner-link:hover .banner-img {
+  transform: scale(1.05);
+}
+
+/* Banner Container for special cases */
+.banner-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.banner-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner-link {
+    margin-bottom: 1rem;
+  }
+  
+  .banner-link:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Noticias Cards - Imágenes uniformes */
+.feature-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Kit Digital Button Styles */
+.btn-kit-primary {
+  background-color: #0066CC;
+  border: 2px solid #0066CC;
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.btn-kit-primary:hover {
+  background-color: #0052A3;
+  border-color: #0052A3;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,102,204,0.3);
+}
+
+.btn-kit-secondary {
+  background-color: transparent;
+  border: 2px solid #0066CC;
+  color: #0066CC;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.btn-kit-secondary:hover {
+  background-color: #0066CC;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,102,204,0.3);
+}
+
+.btn-kit-large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+.btn-kit-small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* Kit Digital Expansion Panel Styles */
+.expansion-panel {
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: #FFFFFF;
+}
+
+.expansion-panel-header {
+  background-color: #F5F5F5;
+  border: none;
+  padding: 16px 20px;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.expansion-panel-header:hover {
+  background-color: #EEEEEE;
+}
+
+.expansion-panel-header::after {
+  content: '▼';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 12px;
+  color: #666666;
+}
+
+.expansion-panel-header[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.expansion-panel-content {
+  padding: 20px;
+  border-top: 1px solid #E5E5E5;
+  background-color: #FFFFFF;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* Iconos circulares para el ideario */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.icon-circle i {
+  font-size: 24px;
+}
+
+/* Estilos específicos para las secciones del ideario */
+.ideario-section .card {
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.ideario-section .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.ideario-section .card.mision {
+  border-left-color: #0d6efd;
+}
+
+.ideario-section .card.vision {
+  border-left-color: #198754;
+}
+
+.ideario-section .card.sellos {
+  border-left-color: #ffc107;
+}
+
+/* Responsive para iconos */
+@media (max-width: 768px) {
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .icon-circle i {
+    font-size: 20px;
+  }
+}
+
+/* Carrusel Información Destacada */
+#informacionCarousel {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#informacionCarousel:hover {
+  animation-play-state: paused;
+}
+
+.info-banner-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.banner-link:hover .info-banner-img {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(27, 54, 93, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-indicators {
+  margin-bottom: -30px;
+}
+
+.carousel-indicators button {
+  background-color: #1B365D;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+  background-color: #0066CC;
+}
+
+/* Responsive para carrusel */
+@media (max-width: 768px) {
+  .info-banner-img {
+    height: 150px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Navegación interna de conocenos */
+.nav-pills .nav-link {
+  color: #6c757d;
+  background-color: transparent;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  padding: 12px 20px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #f8f9fa;
+  border-color: #0066CC;
+  color: #0066CC;
+  transform: translateY(-2px);
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0066CC;
+  border-color: #0066CC;
+  color: white;
+}
+
+/* Scroll suave para anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset para navegación con header fijo */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Mejoras visuales para valores */
+.feature-card .fa-3x {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .fa-3x {
+  transform: scale(1.1);
+}
+
+/* Modal Horarios de Verano */
+.modal-content {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: relative;
+  z-index: 10;
+}
+
+.modal-header .btn-close {
+  background-color: rgba(255,255,255,0.95);
+  border: 2px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.modal-header .btn-close:hover {
+  background-color: rgba(255,255,255,1);
+  transform: scale(1.1);
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+}
+
+
+
+/* Noticias Recientes - Estilo Marga Marga */
+#noticias-destacadas .feature-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#noticias-destacadas .feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#noticias-destacadas .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+#noticias-destacadas .card-body {
+  padding: 1.25rem;
+}
+
+#noticias-destacadas .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1B365D;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  min-height: 60px;
+}
+
+#noticias-destacadas small {
+  color: #666;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Info Cards - Carrusel */
+.info-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.info-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Sección Trámites y Transparencia - Fondo Azul */
+.bg-blue-gov {
+  background: linear-gradient(135deg, #0055A4 0%, #003d7a 100%);
+  color: white;
+}
+
+.tramite-card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 2rem 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.tramite-card:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-5px);
+  color: white;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.tramite-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 36px;
+}
+
+.tramite-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.tramite-text {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  color: rgba(255,255,255,0.9);
+}
+
+@media (max-width: 768px) {
+  .info-card-img {
+    height: 150px;
+  }
+  
+  .tramite-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+}
+
+
+/* Ajustes para Info Cards - Carrusel 3 columnas */
+.info-card-img {
+  width: 100%;
+  height: 200px !important;
+  object-fit: contain !important;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+/* Banner en fondo azul */
+.banner-img-white {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  background-color: white;
+  padding: 15px;
+}
+
+.banner-link:hover .banner-img-white {
+  transform: scale(1.05);
+}
+
+
+/* Banners Horizontales Apilados */
+.banner-link-horizontal {
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.banner-link-horizontal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.banner-img-horizontal {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.banner-link-horizontal:hover .banner-img-horizontal {
+  transform: scale(1.02);
+}
+
+
+/* Search Box Siempre Visible - Estilo Kit Digital */
+.search-container {
+  position: relative;
+  width: 250px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-input-visible {
+  width: 100%;
+  padding: 8px 12px 8px 35px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-input-visible::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.search-input-visible:focus {
+  outline: none;
+  background-color: white;
+  color: #1B365D;
+  border-color: white;
+}
+
+.search-input-visible:focus::placeholder {
+  color: #999;
+}
+
+.search-input-visible:focus + .search-icon,
+.search-container:focus-within .search-icon {
+  color: #1B365D;
+}
+
+@media (max-width: 991.98px) {
+  .search-container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+
+/* Accordion Recursos Internos */
+.accordion-item {
+  border: 1px solid #dee2e6;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background-color: #1B365D;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem 1.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #0066CC;
+  color: white;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: #0066CC;
+}
+
+.accordion-button:hover {
+  background-color: #0052A3;
+}
+
+.accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+
+.accordion-body {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+}
+
+/* Hero Banner */
+.hero-banner {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Comunicado Destacado */
+.comunicado-destacado {
+  background-color: #1B365D;
+  padding: 2rem 0;
+}
+
+.comunicado-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.comunicado-badge {
+  display: inline-block;
+  background-color: #dc3545;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comunicado-titulo {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.comunicado-texto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero-banner-img {
+    max-height: 220px;
+  }
+
+  .comunicado-img {
+    height: 160px;
+  }
+
+  .comunicado-titulo {
+    font-size: 1.15rem;
+  }
+}
+
+/* Hero Banner Opción 3 - Overlay */
+.hero-banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.comunicado-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, rgba(27,54,93,0.95) 60%, rgba(0,102,204,0.9) 100%);
+  padding: 1rem 0;
+  backdrop-filter: blur(2px);
+}
+
+.comunicado-overlay-texto {
+  color: rgba(255,255,255,0.92);
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .comunicado-overlay {
+    position: relative;
+    padding: 1rem 0;
+  }
+
+  .comunicado-overlay-texto {
+    font-size: 0.85rem;
+  }
+
+  .comunicado-overlay .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+/* Modal Comunicado */
+#modalComunicado .modal-dialog {
+  max-width: 90vw;
+}
+
+#modalComunicado .btn-close {
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+#modalComunicado .btn-close:hover {
+  background-color: white;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  #modalComunicado .modal-dialog {
+    max-width: 98vw;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Modal Comunicado - Imagen ajustada a pantalla */
+#modalComunicado .modal-dialog {
+  max-width: 95vw !important;
+  width: 95vw;
+  margin: 1rem auto;
+}
+
+#modalComunicado .modal-body img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Modal Comunicado - Imagen cuadrada ajustada */
+#modalComunicado .modal-dialog {
+  max-width: 600px !important;
+  width: 95vw;
+  margin: 1rem auto;
+}
+
+#modalComunicado .modal-content {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#modalComunicado .modal-header {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  padding: 0;
+}
+
+#modalComunicado .modal-body {
+  padding: 0;
+}
+
+#modalComunicado .modal-body img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+}

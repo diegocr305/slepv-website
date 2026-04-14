@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicio Local de Educación Pública Valparaíso - Fortalecimiento de la educación pública en la región con calidad, equidad y desarrollo integral de estudiantes.">
+  <meta name="keywords" content="SLEP Valparaíso, educación pública, servicio local educación, establecimientos educacionales, Valparaíso, Chile">
+  <meta name="author" content="SLEP Valparaíso">
+  <meta property="og:title" content="SLEP Valparaíso - Educación Pública">
+  <meta property="og:description" content="Servicio Local de Educación Pública Valparaíso - Fortalecimiento de la educación pública en la región.">
+  <meta property="og:image" content="img/Logotipo Valparaíso_bco.png">
+  <meta property="og:url" content="https://slepvalparaiso.cl">
+  <meta property="og:type" content="website">
+  <title>SLEP Valparaíso - Educación Pública</title>
+  <link rel="icon" type="image/png" href="img/vector v slep.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="top-bar-left">
+        <a href="https://tramites.dep.gob.cl/tramites/iniciar/173" target="_blank" class="top-bar-link">
+          <i class="fas fa-file-alt"></i> Trámites Online
+        </a>
+        <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="top-bar-link">
+          <i class="fas fa-envelope"></i> Contacto
+        </a>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="social-icon" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="social-icon" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="social-icon" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER ESTÁTICO CON LOGO -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index">
+        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso - Servicio Local de Educación Pública">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/conocenos">Conócenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="/participacion">Participación</a></li>
+          <li class="nav-item"><a class="nav-link" href="/establecimientos">Establecimientos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/documentacion">Documentación</a></li>
+        </ul>
+        <form class="d-flex ms-3" id="searchForm" role="search">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="form-control search-input-visible" id="searchInput" placeholder="Buscar...">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero-banner">
+    <img src="img/Banner web.png" alt="SLEP Valparaíso" class="hero-banner-img" 
+         data-bs-toggle="modal" data-bs-target="#modalComunicado" style="cursor:pointer;">
+  </section>
+
+  <!-- Modal Comunicado -->
+  <div class="modal fade" id="modalComunicado" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img src="img/SLEP VALPARAÍSO APODERADOS COMITE DIRECTIVO.png" 
+               alt="Comunicado SLEP Valparaíso" 
+               class="img-fluid w-100 rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+  <!-- Noticias Destacadas -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-4" data-aos="fade-down">Noticias Recientes</h2>
+      <div class="row" id="noticias-destacadas" data-aos="fade-up" data-aos-delay="100">
+        <!-- Las noticias se cargan dinámicamente -->
+      </div>
+      <div class="text-center mt-4">
+        <a href="noticias" class="btn btn-danger px-4 py-2">Conoce más ></a>
+      </div>
+    </div>
+  </section>
+
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+  <!-- Educación Pública -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="img/portada SLEP.jpg" alt="SLEP Valparaíso" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="mb-3">¿Qué es un Servicio Local de Educación?</h2>
+          <p class="mb-4">Los Servicios Locales de Educación Pública deben velar por la calidad, la mejora continua y la equidad del servicio educacional, considerando las necesidades de cada comunidad educativa.</p>
+          <a href="conocenos.html" class="btn btn-danger px-4 py-2">Conoce más ></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+  <!-- Banners Destacados -->
+  <section class="py-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 mb-3">
+          <a href="https://formularioenlinea.typeform.com/to/ycl1lDwq" target="_blank" class="banner-link-horizontal">
+            <img src="img/Banner propuesto para web.png" alt="OIRS - Oficina de Información, Reclamos y Sugerencias" class="banner-img-horizontal">
+          </a>
+        </div>
+        <div class="col-lg-6 mb-3">
+          <a href="https://valparaiso.caschile.cl/" target="_blank" class="banner-link-horizontal">
+            <img src="img/BANNER INTRANET.png" alt="Intranet Funcionarios" class="banner-img-horizontal">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Información Destacada -->
+  <section class="py-5 bg-blue-gov">
+    <div class="container">
+      <h2 class="text-center mb-4 text-white" data-aos="fade-down">Información Destacada</h2>
+      <div id="informacionCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-aos="fade-up" data-aos-delay="100">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center g-3">
+              <div class="col-lg-6 col-md-6">
+                <a href="https://drive.google.com/drive/u/0/folders/1IXESC5Y3hcmfziA6KfonFHe7YazMlCAF" target="_blank" class="info-card">
+                  <img src="img/VALS SLEP.png"VALS - Procedimiento" class="info-card-img">
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <a href="documentos/planificacion/banners/Formulario de denuncia.docx" target="_blank" class="info-card">
+                  <img src="img/baner trato laboral.png" alt="Trato Laboral" class="info-card-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center g-3">
+              <div class="col-lg-6 col-md-6">
+                <a href="documentos/planificacion/banners/Cuenta Pública SLEPV 2025.pdf" target="_blank" class="info-card">
+                  <img src="img/Banner cuenta publica 2025.jpg" alt="Cuenta Pública 2025" class="info-card-img">
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <a href="https://forms.gle/2is1WK5TZ1aE1MTF6" target="_blank" class="info-card">
+                  <img src="img/BANNER OPERACIÓN SOSPECHOSA.png" alt="Operación Sospechosa" class="info-card-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center g-3">
+              <div class="col-lg-6 col-md-6">
+                <a href="documentos/planificacion/banners/COSOC.pdf" target="_blank" class="info-card">
+                  <img src="img/Banner WEB - COSOC.jpeg" alt="COSOC" class="info-card-img">
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <a href="https://sites.google.com/slepvalparaiso.cl/revistaslep/inicio" target="_blank" class="info-card">
+                  <img src="img/del plan al cerro.jpg" alt="Del Plan al Cerro" class="info-card-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center g-3">
+              <div class="col-lg-6 col-md-6">
+                <a href="#" target="_blank" class="info-card">
+                  <img src="img/el poder de aprender.jpg" alt="El Poder de Aprender" class="info-card-img">
+                </a>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <a href="documentos/planificacion/banners/10106_FormularioA1_2025 .pdf" target="_blank" class="info-card">
+                  <img src="img/definiciones estrategicas 25.png" alt="Definiciones Estratégicas 2025" class="info-card-img">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#informacionCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#informacionCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+    <!-- Trámites -->
+  <section class="py-5 bg-blue-gov">
+    <div class="container">
+      <div class="row justify-content-center" data-aos="fade-up">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <a href="https://www.leylobby.gob.cl/instituciones/AJ029" target="_blank" class="banner-link">
+            <img src="img/LEY DE LOBBY.png" alt="Plataforma Ley del Lobby" class="banner-img-white">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=AJ029" target="_blank" class="banner-link">
+            <img src="img/TRANSPARENCIA ACTIVA.png" alt="Portal de Transparencia" class="banner-img-white">
+          </a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <a href="https://www.portaltransparencia.cl/PortalPdT/web/guest/directorio-de-organismos-regulados?p_p_id=pdtorganismos_WAR_pdtorganismosportlet&amp;orgcode=ccf3d7755a9a13285b11d9ab3edbf59c" target="_blank" class="banner-link">
+            <img src="img/TRANSPARENCIA PASIVA.png" alt="Solicitud de Información Ley de Transparencia" class="banner-img-white">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+<!-- Modal Horarios de Verano
+<div class="modal fade" id="modalHorariosVerano" tabindex="-1" aria-labelledby="modalHorariosVeranoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center p-0">
+        <img src="img/Horario de atención Verano.jpeg" alt="Horarios de Atención Verano" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- FOOTER ESTÁTICO -->
+<footer class="footer-gov py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <img src="img/monocromo blanco_MinEducacion.png" alt="Logo SLEP" class="footer-logo mb-3">
+
+      </div>
+      <div class="col-md-3">
+        <h6 class="footer-title"><strong>Horarios de Atención</strong></h6>
+        <p class="footer-text mb-1">Lunes a Jueves: 9:00 - 14:00, 15:00 - 17:00</p>
+        <p class="footer-text mb-1">Viernes: 9:00 - 14:00</p>
+        <p class="footer-text mb-1"><strong>Dirección:</strong> Blanco 937, Segundo piso, Valparaíso</p>
+      </div>
+      <div class="col-md-3">
+        <h6 class="footer-title"><strong>Enlaces Útiles</strong></h6>
+        <ul class="footer-links">
+          <li><a href="https://www.mineduc.cl" target="_blank">Ministerio de Educación</a></li>
+          <li><a href="https://valparaiso.caschile.cl/" target="_blank">Intranet RRHH</a></li>
+          <li><a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=AJ029" target="_blank">Transparencia</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="footer-title"><strong>Información de Contacto</strong></h6>
+        <p class="footer-text">Atención ciudadana</p>
+        <p class="footer-text">Lunes a Jueves 9:00 a 14:00, </p>
+        <p class="footer-text">15:00 a 17:00 hrs</p>
+        <p class="footer-text">Viernes 9:00 - 14:00 hrs</p>
+        
+
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="text-center">
+      <small class="footer-copyright">© 2026 SLEP Valparaíso ©.</small>
+    </div>
+  </div>
+  <div class="gov-stripe-footer"></div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "name": "SLEP Valparaíso",
+  "description": "Servicio Local de Educación Pública Valparaíso",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Blanco 937, Segundo piso",
+    "addressLocality": "Valparaíso",
+    "addressCountry": "Chile"
+  },
+  "telephone": "+56",
+  "url": "https://slepvalparaiso.gob.cl",
+  "logo": "img/Logotipo Valparaíso_bco.png"
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
+  });
+  
+  // Search Form Submit
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
+  
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `noticias.html?q=${encodeURIComponent(query)}`;
+      }
+    });
+  }
+</script>
+<script src="js/noticias.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
