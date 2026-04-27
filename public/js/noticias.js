@@ -3,7 +3,7 @@ const noticias = [
     {
         id: 8,
         titulo: "SLEP Valparaíso marca avances en la educación y proyecta nuevos desafíos en su cuenta pública",
-        resumen: "El SLEP Valparaíso realizó su Cuenta Pública 2025, presentando avances en resultados SIMCE, más de 600 asesorías pedagógicas, inversiones en infraestructura y un emotivo reconocimiento al director de la Orquesta Pública Estudiantil.",
+        resumen: "El SLEP Valparaíso realizó su Cuenta Pública 2026, presentando avances en resultados SIMCE, más de 600 asesorías pedagógicas, inversiones en infraestructura y un emotivo reconocimiento al director de la Orquesta Pública Estudiantil.",
         fecha: "2026-04-24",
         fechaTexto: "24 de abril, 2026",
         imagen: "img_news/cuenta_publica_2026/Cuenta Pública SLEP 2025 (35).jpg",
