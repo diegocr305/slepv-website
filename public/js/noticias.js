@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 8,
+        titulo: "SLEP Valparaíso marca avances en la educación y proyecta nuevos desafíos en su cuenta pública",
+        resumen: "El SLEP Valparaíso realizó su Cuenta Pública 2025, presentando avances en resultados SIMCE, más de 600 asesorías pedagógicas, inversiones en infraestructura y un emotivo reconocimiento al director de la Orquesta Pública Estudiantil.",
+        fecha: "2026-04-24",
+        fechaTexto: "24 de abril, 2026",
+        imagen: "img_news/cuenta_publica_2026/Cuenta Pública SLEP 2025 (35).jpg",
+        enlace: "noticias/cuenta-publica-2025.html"
+    },
+    {
         id: 7,
         titulo: "Comunicado de Prensa: SLEP Valparaíso designa nuevo Director Ejecutivo Subrogante",
         resumen: "SLEP Valparaíso comunica que a partir del lunes 23 de marzo, Claudio Sepúlveda Cabrera asume como Director Ejecutivo Subrogante del Servicio Local de Educación Pública Valparaíso.",
