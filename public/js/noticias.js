@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 9,
+        titulo: "Autoridades de educación fueron parte de celebración del Día del Estudiante en escuela pública",
+        resumen: "Compartiendo un desayuno especial y jugando bingo, los estudiantes de la Escuela Juan José Latorre celebraron el Día del Estudiante junto al Seremi de Educación y el director ejecutivo (s) de SLEP Valparaíso.",
+        fecha: "2026-04-28",
+        fechaTexto: "28 de abril, 2026",
+        imagen: "img_news/dia_del_estudiante/Día del Estudiante 1.JPG",
+        enlace: "noticias/dia-del-estudiante.html"
+    },
+    {
         id: 8,
         titulo: "SLEP Valparaíso marca avances en la educación y proyecta nuevos desafíos en su cuenta pública",
         resumen: "El SLEP Valparaíso realizó su Cuenta Pública 2026, presentando avances en resultados SIMCE, más de 600 asesorías pedagógicas, inversiones en infraestructura y un emotivo reconocimiento al director de la Orquesta Pública Estudiantil.",
