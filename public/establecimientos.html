@@ -7,10 +7,150 @@
   <link rel="icon" type="image/png" href="img/vector v slep.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="css/custom.css">
+  <style>
+    /* ── Tabla Kit Digital ── */
+    .kit-table thead tr {
+      background-color: #0055A4;
+      color: #fff;
+    }
+    .kit-table thead th {
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 16px;
+      border: none;
+      white-space: nowrap;
+    }
+    .kit-table tbody tr {
+      border-bottom: 1px solid #e5e5e5;
+      transition: background 0.15s;
+    }
+    .kit-table tbody tr:hover {
+      background-color: #f0f6ff;
+    }
+    .kit-table tbody td {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    /* ── Chips / Badges ── */
+    .chip {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      border: 1.5px solid;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: transparent;
+    }
+    .chip-escuela  { border-color: #0055A4; color: #0055A4; }
+    .chip-liceo    { border-color: #198754; color: #198754; }
+    .chip-jardin   { border-color: #e67e00; color: #e67e00; }
+    .chip-all      { border-color: #6c757d; color: #6c757d; }
+
+    .chip.active, .chip-escuela.active  { background: #0055A4; color: #fff; }
+    .chip-liceo.active                  { background: #198754; color: #fff; }
+    .chip-jardin.active                 { background: #e67e00; color: #fff; }
+    .chip-all.active                    { background: #6c757d; color: #fff; }
+
+    /* Badge inline en tabla */
+    .badge-escuela { background-color: #dce8f8; color: #0055A4; }
+    .badge-liceo   { background-color: #d4edda; color: #155724; }
+    .badge-jardin  { background-color: #fde8cc; color: #7a4000; }
+    .nivel-badge {
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* ── Paginación Kit Digital ── */
+    .kit-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+    .kit-pagination .page-info { color: #333; }
+    .kit-pagination .page-info strong { color: #0055A4; }
+    .kit-pagination button {
+      border: 1.5px solid #dee2e6;
+      background: #fff;
+      color: #0055A4;
+      width: 34px;
+      height: 34px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .kit-pagination button:hover:not(:disabled) { background: #0055A4; color: #fff; border-color: #0055A4; }
+    .kit-pagination button.active { background: #0055A4; color: #fff; border-color: #0055A4; }
+    .kit-pagination button:disabled { opacity: 0.4; cursor: default; }
+    .kit-pagination select {
+      border: 1.5px solid #dee2e6;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      color: #333;
+    }
+
+    /* ── Cards móvil ── */
+    .est-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s;
+    }
+    .est-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+    .est-card-title { font-size: 1rem; font-weight: 700; color: #1B365D; margin-bottom: 4px; }
+    .est-card-meta  { font-size: 0.82rem; color: #666; margin-bottom: 8px; }
+
+    /* ── Buscador ── */
+    .search-kit {
+      position: relative;
+      max-width: 320px;
+    }
+    .search-kit input {
+      padding-left: 36px;
+      border: 2px solid #dee2e6;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      height: 38px;
+    }
+    .search-kit input:focus { border-color: #0055A4; box-shadow: none; outline: none; }
+    .search-kit i { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #999; font-size: 13px; }
+
+    /* ── Acción ver mapa ── */
+    .btn-mapa {
+      background: none;
+      border: none;
+      color: #0055A4;
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .btn-mapa:hover { background: #e8f0fe; }
+
+    /* Ocultar tabla en móvil y cards en desktop */
+    @media (max-width: 767px) { .vista-tabla { display: none !important; } }
+    @media (min-width: 768px) { .vista-cards { display: none !important; } }
+
+    .contador-resultados { font-size: 0.85rem; color: #666; }
+  </style>
 </head>
 <body>
+
 <!-- FRANJA GUBERNAMENTAL -->
 <div class="gov-stripe-header"></div>
 
@@ -27,26 +167,20 @@
         </a>
       </div>
       <div class="top-bar-right">
-        <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="social-icon" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="social-icon" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="social-icon" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
+        <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- HEADER ESTÁTICO CON LOGO -->
+<!-- HEADER -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso - Servicio Local de Educación Pública">
+        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -57,7 +191,7 @@
           <li class="nav-item"><a class="nav-link" href="/conocenos">Conócenos</a></li>
           <li class="nav-item"><a class="nav-link" href="/noticias">Noticias</a></li>
           <li class="nav-item"><a class="nav-link" href="/participacion">Participación</a></li>
-          <li class="nav-item"><a class="nav-link" href="/establecimientos">Establecimientos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/establecimientos">Establecimientos</a></li>
           <li class="nav-item"><a class="nav-link" href="/documentacion">Documentación</a></li>
         </ul>
         <form class="d-flex ms-3" id="searchForm" role="search">
@@ -71,111 +205,91 @@
   </nav>
 </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero text-white">
-      <img src="img/Banner prueba centrado.png" alt="Fondo" class="hero-img">
-      <div class="overlay-content">
-        <div class="container">
-          <h1 class="display-5 fw-bold">Establecimientos</h1>
-          <p class="lead">Conoce los establecimientos educacionales que forman parte de nuestra red educativa.</p>
+<main>
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="bg-light py-2">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+        <li class="breadcrumb-item active">Establecimientos</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Título + buscador -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3">
+        <div>
+          <h2 class="mb-1">Establecimientos Educacionales</h2>
+          <p class="text-muted mb-0" id="contadorResultados">Cargando...</p>
+        </div>
+        <div class="search-kit">
+          <i class="fas fa-search"></i>
+          <input type="text" id="buscadorEstablecimientos" class="form-control" placeholder="Buscar establecimiento...">
         </div>
       </div>
-    </section>
 
-    <!-- Establecimientos -->
-    <section class="py-5">
-      <div class="container">
-      
-        <div class="row" id="todosEstablecimientos">
-            
-            <!-- Ejemplo de Escuela -->
-            <div class="col-lg-4 col-md-6 mb-4 establecimiento escuela">
-              <div class="card h-100 feature-card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="badge bg-primary me-2">🏫</div>
-                    <span class="badge bg-secondary">Escuela</span>
-                  </div>
-                  <h5 class="card-title">Escuela Grecia</h5>
-                  <p class="card-text text-muted mb-2">📍 Av. Grecia 1234, Valparaíso</p>
-                  <p class="card-text"><small class="text-success">Educación Básica</small></p>
-                  <div class="mt-auto">
-                    <a href="#" class="btn-kit-secondary btn-kit-small">Ver detalles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Ejemplo de Liceo -->
-            <div class="col-lg-4 col-md-6 mb-4 establecimiento liceo">
-              <div class="card h-100 feature-card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="badge bg-primary me-2">🏭</div>
-                    <span class="badge bg-info">Liceo</span>
-                  </div>
-                  <h5 class="card-title">Liceo Eduardo de la Barra</h5>
-                  <p class="card-text text-muted mb-2">📍 Av. Colón 2156, Valparaíso</p>
-                  <p class="card-text"><small class="text-success">Educación Media</small></p>
-                  <div class="mt-auto">
-                    <a href="#" class="btn-kit-secondary btn-kit-small">Ver detalles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Ejemplo de Jardín -->
-            <div class="col-lg-4 col-md-6 mb-4 establecimiento jardin">
-              <div class="card h-100 feature-card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="badge bg-primary me-2">🌼</div>
-                    <span class="badge bg-warning">Jardín</span>
-                  </div>
-                  <h5 class="card-title">Jardín Infantil Los Peques</h5>
-                  <p class="card-text text-muted mb-2">📍 Calle Esperanza 567, Valparaíso</p>
-                  <p class="card-text"><small class="text-success">Educación Parvularia</small></p>
-                  <div class="mt-auto">
-                    <a href="#" class="btn-kit-secondary btn-kit-small">Ver detalles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- AQUI AGREGAR LOS 66 COLEGIOS SIGUIENDO ESTE FORMATO:
-            
-            <div class="col-lg-4 col-md-6 mb-4 establecimiento [escuela|liceo|jardin]">
-              <div class="card h-100 feature-card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="badge bg-primary me-2">[🏫|🏭|🌼]</div>
-                    <span class="badge bg-[secondary|info|warning]">[Escuela|Liceo|Jardín]</span>
-                  </div>
-                  <h5 class="card-title">[NOMBRE DEL COLEGIO]</h5>
-                  <p class="card-text text-muted mb-2">📍 [DIRECCION COMPLETA]</p>
-                  <p class="card-text"><small class="text-success">[Educación Básica|Educación Media|Educación Parvularia]</small></p>
-                  <div class="mt-auto">
-                    <a href="#" class="btn-kit-secondary btn-kit-small">Ver detalles</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            -->
-            
+      <!-- Filtros chips -->
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <button class="chip chip-all active" data-filtro="todos">Todos</button>
+        <button class="chip chip-escuela" data-filtro="escuela"><i class="fas fa-school me-1"></i>Escuelas</button>
+        <button class="chip chip-liceo"   data-filtro="liceo"><i class="fas fa-graduation-cap me-1"></i>Liceos</button>
+        <button class="chip chip-jardin"  data-filtro="jardin"><i class="fas fa-seedling me-1"></i>Jardines</button>
+      </div>
+
+      <!-- ── VISTA TABLA (desktop) ── -->
+      <div class="vista-tabla">
+        <div class="table-responsive rounded" style="border: 1px solid #dee2e6;">
+          <table class="table kit-table mb-0">
+            <thead>
+              <tr>
+                <th>Establecimiento</th>
+                <th>Nivel</th>
+                <th>Director/a</th>
+                <th>Dirección</th>
+                <th style="width:120px; text-align:center;">Ubicación</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBody">
+              <tr><td colspan="5" class="text-center py-4"><div class="spinner-border spinner-border-sm text-primary me-2"></div>Cargando establecimientos...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Paginación -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mt-3 gap-2">
+          <div class="d-flex align-items-center gap-2">
+            <span class="text-muted" style="font-size:0.85rem;">Mostrar</span>
+            <select id="porPagina" class="kit-pagination">
+              <option value="10">10</option>
+              <option value="20" selected>20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+          <div class="kit-pagination" id="paginacion"></div>
         </div>
       </div>
-    </section>
-  </main>
 
-<!-- FOOTER ESTÁTICO -->
+      <!-- ── VISTA CARDS (móvil) ── -->
+      <div class="vista-cards">
+        <div id="cardsContainer" class="d-flex flex-column gap-3">
+          <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-primary me-2"></div>Cargando...</div>
+        </div>
+        <div class="kit-pagination mt-3 justify-content-center" id="paginacionMobile"></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
 <footer class="footer-gov py-4">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
         <img src="img/monocromo blanco_MinEducacion.png" alt="Logo SLEP" class="footer-logo mb-3">
-
       </div>
       <div class="col-md-3">
         <h6 class="footer-title">Horarios de Atención</h6>
@@ -194,39 +308,32 @@
       <div class="col-md-3">
         <h6 class="footer-title">Información de Contacto</h6>
         <p class="footer-text">Atención ciudadana</p>
-        <p class="footer-text">Lunes a Jueves 9:00 a 14:00, </p>
+        <p class="footer-text">Lunes a Jueves 9:00 a 14:00,</p>
         <p class="footer-text">15:00 a 17:00 hrs</p>
         <p class="footer-text">Viernes 9:00 - 14:00 hrs</p>
-        
-
       </div>
     </div>
     <hr class="footer-divider">
     <div class="text-center">
-      <small class="footer-copyright">© 2025 SLEP Valparaíso. Todos los derechos reservados.</small>
+      <small class="footer-copyright">© 2026 SLEP Valparaíso. Todos los derechos reservados.</small>
     </div>
   </div>
   <div class="gov-stripe-footer"></div>
 </footer>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-  <script src="js/establecimientos.js"></script>
-  <script>
-    // Search Form Submit
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('searchInput');
-    
-    if (searchForm && searchInput) {
-      searchForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const query = searchInput.value.trim();
-        if (query) {
-          window.location.href = `noticias.html?q=${encodeURIComponent(query)}`;
-        }
-      });
-    }
-  </script>
-  <script src="../assets/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="js/establecimientos.js"></script>
+<script>
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) window.location.href = `noticias.html?q=${encodeURIComponent(query)}`;
+    });
+  }
+</script>
 </body>
 </html>
