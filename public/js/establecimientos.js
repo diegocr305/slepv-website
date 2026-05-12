@@ -4,7 +4,6 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Estado
 let todos = [];
 let filtrados = [];
 let paginaActual = 1;
@@ -12,7 +11,6 @@ let porPagina = 20;
 let filtroActivo = 'todos';
 let busqueda = '';
 
-// Determinar tipo
 function getTipo(nivel) {
     if (!nivel) return 'escuela';
     const n = nivel.toLowerCase();
@@ -27,7 +25,6 @@ function getNivelLabel(tipo) {
     return { label: 'Ed. Básica', cls: 'badge-escuela' };
 }
 
-// Filtrar y paginar
 function aplicarFiltros() {
     filtrados = todos.filter(e => {
         const tipo = getTipo(e.nivel_educativo);
@@ -62,19 +59,26 @@ function renderizar() {
 function renderTabla(pagina) {
     const tbody = document.getElementById('tablaBody');
     if (pagina.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4 text-muted">No se encontraron establecimientos</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6" class="text-center py-4 text-muted">No se encontraron establecimientos</td></tr>';
         return;
     }
     tbody.innerHTML = pagina.map(e => {
         const tipo = getTipo(e.nivel_educativo);
         const { label, cls } = getNivelLabel(tipo);
         const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent((e.direccion || '') + ', Valparaíso, Chile')}`;
+        const directorCell = e.nombre_director
+            ? `<span style="font-size:0.72rem;color:#888;display:block;margin-bottom:2px;">Director/a</span>${e.nombre_director}`
+            : '<span class="text-muted">—</span>';
+        const emailBtn = e.correo_director
+            ? `<a href="mailto:${e.correo_director}" class="btn-mapa" title="${e.correo_director}"><i class="fas fa-envelope"></i></a>`
+            : '<span class="text-muted" style="font-size:0.8rem;">—</span>';
         return `
         <tr>
             <td><strong>${e.nombre_establecimiento || '—'}</strong></td>
             <td><span class="nivel-badge ${cls}">${label}</span></td>
-            <td>${e.nombre_director || '<span class="text-muted">—</span>'}</td>
+            <td>${directorCell}</td>
             <td class="text-muted">${e.direccion || '—'}</td>
+            <td class="text-center">${emailBtn}</td>
             <td class="text-center">
                 <a href="${mapsUrl}" target="_blank" class="btn-mapa" title="Ver en mapa">
                     <i class="fas fa-map-marker-alt"></i>
@@ -94,17 +98,21 @@ function renderCards(pagina) {
         const tipo = getTipo(e.nivel_educativo);
         const { label, cls } = getNivelLabel(tipo);
         const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent((e.direccion || '') + ', Valparaíso, Chile')}`;
+        const emailBtn = e.correo_director
+            ? `<a href="mailto:${e.correo_director}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-envelope me-1"></i>Escribir</a>`
+            : '';
         return `
         <div class="est-card">
             <div class="d-flex justify-content-between align-items-start mb-2">
                 <p class="est-card-title mb-0">${e.nombre_establecimiento || '—'}</p>
                 <span class="nivel-badge ${cls} ms-2 flex-shrink-0">${label}</span>
             </div>
-            ${e.nombre_director ? `<p class="est-card-meta mb-1"><i class="fas fa-user me-1"></i>${e.nombre_director}</p>` : ''}
-            <p class="est-card-meta mb-2"><i class="fas fa-map-marker-alt me-1"></i>${e.direccion || '—'}</p>
-            <a href="${mapsUrl}" target="_blank" class="btn btn-sm btn-outline-primary">
-                <i class="fas fa-map-marker-alt me-1"></i>Ver en mapa
-            </a>
+            ${e.nombre_director ? `<p class="est-card-meta mb-1"><i class="fas fa-user me-1"></i><span style="font-size:0.75rem;color:#999;">Director/a:</span> ${e.nombre_director}</p>` : ''}
+            <p class="est-card-meta mb-3"><i class="fas fa-map-marker-alt me-1"></i>${e.direccion || '—'}</p>
+            <div class="d-flex gap-2">
+                ${emailBtn}
+                <a href="${mapsUrl}" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-map-marker-alt me-1"></i>Ver mapa</a>
+            </div>
         </div>`;
     }).join('');
 }
@@ -119,23 +127,20 @@ function renderPaginacion(total, totalPaginas, inicio, fin, contenedorId) {
     if (endPage - startPage < maxBotones - 1) startPage = Math.max(1, endPage - maxBotones + 1);
 
     let html = `<span class="page-info me-2">Mostrando <strong>${inicio + 1}–${fin}</strong> de <strong>${total}</strong></span>`;
-    html += `<button ${paginaActual === 1 ? 'disabled' : ''} onclick="irPagina(${paginaActual - 1}, '${contenedorId}')"><i class="fas fa-chevron-left"></i></button>`;
-
+    html += `<button ${paginaActual === 1 ? 'disabled' : ''} onclick="irPagina(${paginaActual - 1})"><i class="fas fa-chevron-left"></i></button>`;
     for (let i = startPage; i <= endPage; i++) {
-        html += `<button class="${i === paginaActual ? 'active' : ''}" onclick="irPagina(${i}, '${contenedorId}')">${i}</button>`;
+        html += `<button class="${i === paginaActual ? 'active' : ''}" onclick="irPagina(${i})">${i}</button>`;
     }
-
-    html += `<button ${paginaActual === totalPaginas ? 'disabled' : ''} onclick="irPagina(${paginaActual + 1}, '${contenedorId}')"><i class="fas fa-chevron-right"></i></button>`;
+    html += `<button ${paginaActual === totalPaginas ? 'disabled' : ''} onclick="irPagina(${paginaActual + 1})"><i class="fas fa-chevron-right"></i></button>`;
     container.innerHTML = html;
 }
 
-function irPagina(n, contenedorId) {
+function irPagina(n) {
     paginaActual = n;
     renderizar();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Cargar datos
 async function cargarEstablecimientos() {
     try {
         const { data, error } = await supabaseClient
@@ -150,17 +155,15 @@ async function cargarEstablecimientos() {
     } catch (err) {
         console.error('Error:', err);
         document.getElementById('tablaBody').innerHTML =
-            '<tr><td colspan="5" class="text-center py-4 text-danger">Error al cargar los establecimientos</td></tr>';
+            '<tr><td colspan="6" class="text-center py-4 text-danger">Error al cargar los establecimientos</td></tr>';
         document.getElementById('cardsContainer').innerHTML =
             '<p class="text-center text-danger">Error al cargar los establecimientos</p>';
     }
 }
 
-// Eventos
 document.addEventListener('DOMContentLoaded', () => {
     cargarEstablecimientos();
 
-    // Chips filtro
     document.querySelectorAll('.chip').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
@@ -170,13 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Buscador
     document.getElementById('buscadorEstablecimientos').addEventListener('input', e => {
         busqueda = e.target.value;
         aplicarFiltros();
     });
 
-    // Por página
     document.getElementById('porPagina').addEventListener('change', e => {
         porPagina = parseInt(e.target.value);
         paginaActual = 1;
