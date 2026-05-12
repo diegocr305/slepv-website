@@ -4,8 +4,8 @@ const noticias = [
         id: 9,
         titulo: "Autoridades de educación fueron parte de celebración del Día del Estudiante en escuela pública",
         resumen: "Compartiendo un desayuno especial y jugando bingo, los estudiantes de la Escuela Juan José Latorre celebraron el Día del Estudiante junto al Seremi de Educación y el director ejecutivo (s) de SLEP Valparaíso.",
-        fecha: "2026-04-28",
-        fechaTexto: "28 de abril, 2026",
+        fecha: "2026-05-11",
+        fechaTexto: "11 de mayo, 2026",
         imagen: "img_news/dia_del_estudiante/Día del Estudiante 1.JPG",
         enlace: "noticias/dia-del-estudiante.html"
     },
