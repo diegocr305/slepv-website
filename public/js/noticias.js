@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 10,
+        titulo: "SLEP Valparaíso y Ganamar presentan kit pedagógico con inspiración marítima",
+        resumen: "Lanzamiento fue realizado en la Playa San Mateo, oportunidad en que se destacaron las bondades de trabajar en alianza de instituciones públicas y privadas para acercar la cultura oceánica a los estudiantes.",
+        fecha: "2026-05-28",
+        fechaTexto: "28 de mayo, 2026",
+        imagen: "img_news/kit_pedagogico/kit_pedagogico.jpg",
+        enlace: "noticias/kit-pedagogico-ganamar.html"
+    },
+    {
         id: 9,
         titulo: "Autoridades de educación fueron parte de celebración del Día del Estudiante en escuela pública",
         resumen: "Compartiendo un desayuno especial y jugando bingo, los estudiantes de la Escuela Juan José Latorre celebraron el Día del Estudiante junto al Seremi de Educación y el director ejecutivo (s) de SLEP Valparaíso.",
