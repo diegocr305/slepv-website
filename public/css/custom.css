@@ -1442,3 +1442,149 @@ section[id] {
   object-fit: contain;
   display: block;
 }
+
+
+/* =============================================
+   Accesos Rápidos - Cards interactivas
+   ============================================= */
+.accesos-rapidos {
+  background-color: #f4f7fb;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.acceso-card {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 200px;
+  background-color: #1B365D;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.acceso-card:hover,
+.acceso-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+  text-decoration: none;
+}
+
+/* Frente - visible por defecto */
+.acceso-frente {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.acceso-card:hover .acceso-frente,
+.acceso-card:focus .acceso-frente {
+  opacity: 0;
+}
+
+.acceso-icono {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 30px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.acceso-titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+/* Overlay - visible al hover */
+.acceso-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #0055A4 0%, #003d7a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  text-align: center;
+}
+
+.acceso-card:hover .acceso-overlay,
+.acceso-card:focus .acceso-overlay {
+  opacity: 1;
+}
+
+.acceso-icono-sm {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.4rem;
+}
+
+.acceso-titulo-overlay {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.acceso-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+
+.acceso-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0055A4;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.acceso-card:hover .acceso-btn {
+  background-color: #ffd700;
+  color: #1B365D;
+}
+
+/* Móvil: mostrar overlay siempre (no hay hover en touch) */
+@media (max-width: 767.98px) {
+  .acceso-card {
+    height: auto;
+  }
+
+  .acceso-frente {
+    display: none;
+  }
+
+  .acceso-overlay {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
