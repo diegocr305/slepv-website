@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 11,
+        titulo: "Nuevos laboratorios de computación fortalecerán la educación digital en escuelas públicas de Valparaíso",
+        resumen: "La iniciativa \"Comunidades Digitales\" renovó espacios tecnológicos en el Colegio Pablo Neruda y la Escuela Joaquín Edwards Bello, gracias al trabajo conjunto entre Fundación Kodea, American Tower Chile y el SLEP Valparaíso.",
+        fecha: "2026-06-17",
+        fechaTexto: "17 de junio, 2026",
+        imagen: "img_news/laboratorios_computacion/Nuevos laboratorios de computación.jpeg",
+        enlace: "noticias/laboratorios-computacion.html"
+    },
+    {
         id: 10,
         titulo: "SLEP Valparaíso y Ganamar presentan kit pedagógico con inspiración marítima",
         resumen: "Lanzamiento fue realizado en la Playa San Mateo, oportunidad en que se destacaron las bondades de trabajar en alianza de instituciones públicas y privadas para acercar la cultura oceánica a los estudiantes.",

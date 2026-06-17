@@ -157,6 +157,30 @@
     </div>
   </section>
 
+  <!-- Modal Consulta Ciudadana -->
+  <div class="modal fade" id="modalConsulta" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width:460px;">
+      <div class="modal-content border-0 rounded-3 overflow-hidden">
+        <div class="modal-header border-0 pb-0" style="position:absolute;top:8px;right:8px;z-index:10;">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"
+            style="background-color:#1B365D;border-radius:50%;opacity:1;width:32px;height:32px;filter:invert(1);"></button>
+        </div>
+        <div class="modal-body p-0">
+          <a href="/consulta-ciudadana">
+            <img src="img/consulta_ciudadana/Consulta Ciudadana Apoderados.jpeg"
+                 alt="Consulta Ciudadana SLEP Valparaíso"
+                 class="img-fluid w-100" style="display:block;">
+          </a>
+        </div>
+        <div class="modal-footer justify-content-center border-0 pt-0 pb-3" style="background:#1B365D;">
+          <a href="/consulta-ciudadana" class="consulta-modal-btn">
+            <i class="fas fa-vote-yea me-2"></i>Participar en la Consulta
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal Comunicado -->
   <div class="modal fade" id="modalComunicado" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -378,7 +402,6 @@
         <p class="footer-text">15:00 a 17:00 hrs</p>
         <p class="footer-text">Viernes 9:00 - 14:00 hrs</p>
         
-
       </div>
     </div>
     <hr class="footer-divider">
@@ -429,8 +452,13 @@
       }
     });
   }
+  // Pop-up Consulta Ciudadana — una vez por sesión
+  if (!sessionStorage.getItem('consultaVisto')) {
+    const modalConsulta = new bootstrap.Modal(document.getElementById('modalConsulta'));
+    modalConsulta.show();
+    sessionStorage.setItem('consultaVisto', '1');
+  }
 </script>
-<script src="js/noticias.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

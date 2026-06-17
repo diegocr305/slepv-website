@@ -15,6 +15,18 @@ app.get('/', (_, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// rutas limpias
+[
+  'conocenos', 'noticias', 'participacion',
+  'establecimientos', 'documentacion',
+  'gestor-documental', 'recursos-internos',
+  'consulta-ciudadana'
+].forEach(ruta => {
+  app.get(`/${ruta}`, (_, res) => {
+    res.sendFile(path.join(__dirname, 'public', `${ruta}.html`));
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
