@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -15,6 +15,17 @@
 
 <!-- FRANJA GUBERNAMENTAL -->
 <div class="gov-stripe-header"></div>
+
+<!-- BARRA ACCESIBILIDAD -->
+<div class="accesibilidad-bar">
+  <div class="container">
+    <i class="fas fa-universal-access acc-icon"></i>
+    <span class="accesibilidad-label">Accesibilidad</span>
+    <button class="acc-btn" id="acc-contraste" title="Alto contraste"><i class="fas fa-adjust"></i></button>
+    <button class="acc-btn" id="acc-reducir" title="Reducir texto">A-</button>
+    <button class="acc-btn" id="acc-aumentar" title="Aumentar texto">A+</button>
+  </div>
+</div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -35,6 +46,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- HEADER -->
@@ -373,5 +385,6 @@
     });
   }
 </script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Tipografías base - Kit Digital */
+﻿/* Tipografías base - Kit Digital */
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -1727,4 +1727,160 @@ section[id] {
   color: #0055A4;
   text-decoration: none;
   transform: translateY(-2px);
+}
+
+
+/* =============================================
+   Barra de Accesibilidad
+   ============================================= */
+.accesibilidad-bar {
+  background-color: #1B365D;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 4px 0;
+  font-size: 0.78rem;
+}
+
+.accesibilidad-bar .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+}
+
+.acc-icon {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.accesibilidad-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.72rem;
+  margin-right: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.acc-btn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  border-radius: 4px;
+  width: 30px;
+  height: 26px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.acc-btn:hover {
+  background-color: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.6);
+}
+
+.acc-btn.active {
+  background-color: #ffd700;
+  border-color: #ffd700;
+  color: #1B365D;
+}
+
+/* Modo alto contraste */
+body.alto-contraste {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.alto-contraste .navbar-custom,
+body.alto-contraste .top-bar,
+body.alto-contraste .accesibilidad-bar,
+body.alto-contraste .footer-gov {
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+body.alto-contraste .bg-light,
+body.alto-contraste .bg-blue-gov,
+body.alto-contraste .accesos-rapidos {
+  background-color: #111111 !important;
+}
+
+body.alto-contraste .card,
+body.alto-contraste .feature-card,
+body.alto-contraste .acceso-card {
+  background-color: #111111 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste .nav-link,
+body.alto-contraste .footer-links a {
+  color: #ffd700 !important;
+}
+
+body.alto-contraste p,
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste h4,
+body.alto-contraste h5,
+body.alto-contraste h6,
+body.alto-contraste .card-title,
+body.alto-contraste .card-text,
+body.alto-contraste .text-muted {
+  color: #ffffff !important;
+}
+
+body.alto-contraste .btn-kit-primary {
+  background-color: #ffd700 !important;
+  border-color: #ffd700 !important;
+  color: #000000 !important;
+}
+
+/* Tamaños de fuente accesibles */
+body.texto-grande {
+  font-size: 19px !important;
+}
+
+body.texto-grande p,
+body.texto-grande .card-text,
+body.texto-grande .acceso-desc,
+body.texto-grande .footer-text {
+  font-size: 19px !important;
+}
+
+body.texto-grande h1 { font-size: 56px !important; }
+body.texto-grande h2 { font-size: 42px !important; }
+body.texto-grande h3 { font-size: 36px !important; }
+body.texto-grande h5 { font-size: 22px !important; }
+
+body.texto-pequeno {
+  font-size: 13px !important;
+}
+
+body.texto-pequeno p,
+body.texto-pequeno .card-text,
+body.texto-pequeno .acceso-desc,
+body.texto-pequeno .footer-text {
+  font-size: 13px !important;
+}
+
+body.texto-pequeno h1 { font-size: 38px !important; }
+body.texto-pequeno h2 { font-size: 28px !important; }
+body.texto-pequeno h3 { font-size: 24px !important; }
+body.texto-pequeno h5 { font-size: 16px !important; }
+
+@media (max-width: 768px) {
+  .acc-icon {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.accesibilidad-label { display: none; }
+  .accesibilidad-bar .container { justify-content: center; }
 }
