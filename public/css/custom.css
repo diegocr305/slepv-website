@@ -1736,26 +1736,26 @@ section[id] {
 .accesibilidad-bar {
   background-color: #1B365D;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding: 4px 0;
-  font-size: 0.78rem;
+  padding: 10px 0;
+  font-size: 1rem;
 }
 
 .accesibilidad-bar .container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
 }
 
 .acc-icon {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.85);
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.9);
 }
 
 .accesibilidad-label {
-  color: rgba(255,255,255,0.6);
-  font-size: 0.72rem;
-  margin-right: 4px;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+  margin-right: 6px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -1765,9 +1765,9 @@ section[id] {
   border: 1.5px solid rgba(255,255,255,0.3);
   color: #ffffff;
   border-radius: 4px;
-  width: 30px;
-  height: 26px;
-  font-size: 0.78rem;
+  width: 42px;
+  height: 38px;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -1877,8 +1877,8 @@ body.texto-pequeno h5 { font-size: 16px !important; }
 
 @media (max-width: 768px) {
   .acc-icon {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.85);
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.9);
 }
 
 .accesibilidad-label { display: none; }
