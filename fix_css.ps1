@@ -1,17 +1,26 @@
 $p = 'c:/github/pagina-web/public/css/custom.css'
 $b = [IO.File]::ReadAllBytes($p)
 $t = [Text.Encoding]::UTF8.GetString($b)
+$n = [char]10
 
-# Increase acc-icon size
 $t = $t.Replace(
-    '.acc-icon {' + [char]13 + [char]10 + '  font-size: 1rem;' + [char]13 + [char]10 + '  color: rgba(255,255,255,0.7);' + [char]13 + [char]10 + '}',
-    '.acc-icon {' + [char]13 + [char]10 + '  font-size: 1.2rem;' + [char]13 + [char]10 + '  color: rgba(255,255,255,0.85);' + [char]13 + [char]10 + '}'
+    '.accesibilidad-bar {' + $n + '  background-color: #1B365D;' + $n + '  border-bottom: 1px solid rgba(255,255,255,0.1);' + $n + '  padding: 4px 0;' + $n + '  font-size: 0.78rem;' + $n + '}',
+    '.accesibilidad-bar {' + $n + '  background-color: #1B365D;' + $n + '  border-bottom: 1px solid rgba(255,255,255,0.1);' + $n + '  padding: 10px 0;' + $n + '  font-size: 1rem;' + $n + '}'
 )
 
-# Increase acc-btn size
 $t = $t.Replace(
-    '  width: 30px;' + [char]13 + [char]10 + [char]13 + [char]10 + '  height: 26px;' + [char]13 + [char]10 + '  font-size: 0.78rem;',
-    '  width: 36px;' + [char]13 + [char]10 + [char]13 + [char]10 + '  height: 32px;' + [char]13 + [char]10 + '  font-size: 0.88rem;'
+    '.accesibilidad-bar .container {' + $n + '  display: flex;' + $n + '  justify-content: flex-end;' + $n + '  align-items: center;' + $n + '  gap: 6px;' + $n + '}',
+    '.accesibilidad-bar .container {' + $n + '  display: flex;' + $n + '  justify-content: flex-end;' + $n + '  align-items: center;' + $n + '  gap: 10px;' + $n + '}'
+)
+
+$t = $t.Replace(
+    '.accesibilidad-label {' + $n + '  color: rgba(255,255,255,0.6);' + $n + '  font-size: 0.72rem;' + $n + '  margin-right: 4px;' + $n + '  letter-spacing: 0.5px;' + $n + '  text-transform: uppercase;' + $n + '}',
+    '.accesibilidad-label {' + $n + '  color: rgba(255,255,255,0.9);' + $n + '  font-size: 0.95rem;' + $n + '  margin-right: 6px;' + $n + '  letter-spacing: 0.5px;' + $n + '  text-transform: uppercase;' + $n + '}'
+)
+
+$t = $t.Replace(
+    '  width: 30px;' + $n + '  height: 26px;' + $n + '  font-size: 0.78rem;',
+    '  width: 42px;' + $n + '  height: 38px;' + $n + '  font-size: 1rem;'
 )
 
 [IO.File]::WriteAllBytes($p, [Text.Encoding]::UTF8.GetBytes($t))

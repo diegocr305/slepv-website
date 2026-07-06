@@ -176,80 +176,101 @@
     </section>
 
     <!-- Actas CLEP -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-blue-gov">
       <div class="container">
-        <h2 class="text-center mb-5" data-aos="fade-down">Actas CLEP</h2>
-        <p class="text-center text-muted mb-4" data-aos="fade-down" data-aos-delay="50">Consejo Local de Educación Pública - Actas de Sesiones</p>
-        
+        <h2 class="text-center text-white mb-2" data-aos="fade-down">Actas CLEP</h2>
+        <p class="text-center mb-4" style="color:rgba(255,255,255,0.8);" data-aos="fade-down" data-aos-delay="50">Consejo Local de Educación Pública - Actas de Sesiones</p>
+
+        <!-- Chips de año -->
+        <div class="d-flex justify-content-center gap-2 mb-4" data-aos="fade-up">
+          <button class="chip-ano active" data-ano="2026">2026</button>
+          <button class="chip-ano" data-ano="2025">2025</button>
+        </div>
+
         <div class="row">
           <!-- Lista de Actas -->
-          <div class="col-md-4">
+          <div class="col-md-4 mb-4 mb-md-0">
             <div class="list-group" id="lista-actas">
-              <button type="button" class="list-group-item list-group-item-action active" data-acta="acta1">
+              <!-- 2026 -->
+              <button type="button" class="list-group-item list-group-item-action acta-item" data-acta="acta2026_1" data-ano="2026">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">1ª Sesión Ordinaria</h6>
+                  <small>2026</small>
+                </div>
+                <small>Consejo Local</small>
+              </button>
+              <button type="button" class="list-group-item list-group-item-action acta-item" data-acta="acta2026_2" data-ano="2026">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">2ª Sesión Ordinaria</h6>
+                  <small>2026</small>
+                </div>
+                <small>Consejo Local</small>
+              </button>
+              <button type="button" class="list-group-item list-group-item-action acta-item" data-acta="acta2026_3" data-ano="2026">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">3ª Sesión Ordinaria</h6>
+                  <small>2026</small>
+                </div>
+                <small>Consejo Local</small>
+              </button>
+              <!-- 2025 -->
+              <button type="button" class="list-group-item list-group-item-action acta-item d-none" data-acta="acta1" data-ano="2025">
                 <div class="d-flex w-100 justify-content-between">
                   <h6 class="mb-1">Acta N° 01</h6>
                   <small>2025</small>
                 </div>
-                <p class="mb-1">Consejo Local</p>
-                <small>Sesión Ordinaria</small>
+                <small>Consejo Local</small>
               </button>
-              <button type="button" class="list-group-item list-group-item-action" data-acta="acta2">
+              <button type="button" class="list-group-item list-group-item-action acta-item d-none" data-acta="acta2" data-ano="2025">
                 <div class="d-flex w-100 justify-content-between">
                   <h6 class="mb-1">Acta N° 02</h6>
                   <small>2025</small>
                 </div>
-                <p class="mb-1">Consejo Local</p>
-                <small>Sesión Ordinaria</small>
+                <small>Consejo Local</small>
               </button>
-              <button type="button" class="list-group-item list-group-item-action" data-acta="acta3">
+              <button type="button" class="list-group-item list-group-item-action acta-item d-none" data-acta="acta3" data-ano="2025">
                 <div class="d-flex w-100 justify-content-between">
                   <h6 class="mb-1">Acta N° 03</h6>
                   <small>2025</small>
                 </div>
-                <p class="mb-1">Consejo Local</p>
-                <small>Sesión Ordinaria</small>
+                <small>Consejo Local</small>
               </button>
-              <button type="button" class="list-group-item list-group-item-action" data-acta="acta4">
+              <button type="button" class="list-group-item list-group-item-action acta-item d-none" data-acta="acta4" data-ano="2025">
                 <div class="d-flex w-100 justify-content-between">
                   <h6 class="mb-1">Acta N° 04</h6>
                   <small>2025</small>
                 </div>
-                <p class="mb-1">Consejo Local</p>
-                <small>Sesión Ordinaria</small>
+                <small>Consejo Local</small>
               </button>
-              <button type="button" class="list-group-item list-group-item-action" data-acta="acta5">
+              <button type="button" class="list-group-item list-group-item-action acta-item d-none" data-acta="acta5" data-ano="2025">
                 <div class="d-flex w-100 justify-content-between">
                   <h6 class="mb-1">Acta N° 05</h6>
                   <small>2025</small>
                 </div>
-                <p class="mb-1">Consejo Local</p>
-                <small>Sesión Ordinaria</small>
+                <small>Consejo Local</small>
               </button>
-              <button type="button" class="list-group-item list-group-item-action" data-acta="acta6">
+              <button type="button" class="list-group-item list-group-item-action acta-item d-none" data-acta="acta6" data-ano="2025">
                 <div class="d-flex w-100 justify-content-between">
                   <h6 class="mb-1">Acta N° 06</h6>
                   <small>2025</small>
                 </div>
-                <p class="mb-1">Consejo Local</p>
-                <small>Sesión Ordinaria</small>
+                <small>Consejo Local</small>
               </button>
             </div>
           </div>
-          
+
           <!-- Previsualización -->
           <div class="col-md-8">
-            <div class="card">
-              <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0" id="titulo-acta">Acta Sesión N° 1 - Enero 2025</h5>
-                <a href="#" class="btn-kit-secondary btn-kit-small" id="descargar-acta" target="_blank">Descargar PDF</a>
+            <div class="card border-0 shadow">
+              <div class="card-header d-flex justify-content-between align-items-center" style="background:#1B365D;">
+                <h5 class="mb-0 text-white" id="titulo-acta">Selecciona un acta</h5>
+                <a href="#" class="btn-kit-secondary btn-kit-small" id="descargar-acta" target="_blank" style="display:none;">Descargar PDF</a>
               </div>
-              <div class="card-body">
-                <iframe id="pdf-viewer" src="" width="100%" height="600px" style="border: none; display: none;"></iframe>
-                <div id="contenido-acta">
-                  <div class="text-center py-5">
-                    <i class="fas fa-file-pdf fa-3x text-primary mb-3"></i>
-                    <p>Selecciona un acta para previsualizar</p>
-                  </div>
+              <div class="card-body p-0">
+                <iframe id="pdf-viewer" src="" width="100%" height="600px" style="border:none;display:none;"></iframe>
+                <div id="contenido-acta" class="text-center py-5">
+                  <i class="fas fa-file-pdf fa-3x mb-3" style="color:#1B365D;"></i>
+                  <p class="text-muted">Selecciona un acta para previsualizar</p>
                 </div>
               </div>
             </div>
@@ -303,64 +324,57 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 100 });
-    // Datos de las actas
     const actas = {
-      acta1: {
-        titulo: 'Acta N° 01 - 2025 Consejo Local',
-        pdf: 'documentos/COSOC ACTAS/ACTA N° 01 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
-      },
-      acta2: {
-        titulo: 'Acta N° 02 - 2025 Consejo Local',
-        pdf: 'documentos/COSOC ACTAS/ACTA N° 02 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
-      },
-      acta3: {
-        titulo: 'Acta N° 03 - 2025 Consejo Local',
-        pdf: 'documentos/COSOC ACTAS/ACTA N° 03 -2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
-      },
-      acta4: {
-        titulo: 'Acta N° 04 - 2025 Consejo Local',
-        pdf: 'documentos/COSOC ACTAS/ACTA N° 04 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
-      },
-      acta5: {
-        titulo: 'Acta N° 05 - 2025 Consejo Local',
-        pdf: 'documentos/COSOC ACTAS/ACTA N° 05 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
-      },
-      acta6: {
-        titulo: 'Acta N° 06 - 2025 Consejo Local',
-        pdf: 'documentos/COSOC ACTAS/ACTA N° 06 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf'
-      }
+      acta2026_1: { titulo: '1ª Sesión Ordinaria 2026 - Consejo Local', pdf: 'documentos/COSOC ACTAS/2026/Acta de la 1ra sesión ordinaria 2026 CLEPV.pdf' },
+      acta2026_2: { titulo: '2ª Sesión Ordinaria 2026 - Consejo Local', pdf: 'documentos/COSOC ACTAS/2026/Acta de la 2da sesión ordinaria 2026 CLEPV.pdf' },
+      acta2026_3: { titulo: '3ª Sesión Ordinaria 2026 - Consejo Local', pdf: 'documentos/COSOC ACTAS/2026/Acta de la 3ra sesión ordinaria 2026 CLEPV.pdf' },
+      acta1: { titulo: 'Acta N° 01 - 2025 Consejo Local', pdf: 'documentos/COSOC ACTAS/ACTA N° 01 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf' },
+      acta2: { titulo: 'Acta N° 02 - 2025 Consejo Local', pdf: 'documentos/COSOC ACTAS/ACTA N° 02 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf' },
+      acta3: { titulo: 'Acta N° 03 - 2025 Consejo Local', pdf: 'documentos/COSOC ACTAS/ACTA N° 03 -2025 CONSEJO LOCAL CENSURA FIRMA.pdf' },
+      acta4: { titulo: 'Acta N° 04 - 2025 Consejo Local', pdf: 'documentos/COSOC ACTAS/ACTA N° 04 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf' },
+      acta5: { titulo: 'Acta N° 05 - 2025 Consejo Local', pdf: 'documentos/COSOC ACTAS/ACTA N° 05 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf' },
+      acta6: { titulo: 'Acta N° 06 - 2025 Consejo Local', pdf: 'documentos/COSOC ACTAS/ACTA N° 06 - 2025 CONSEJO LOCAL CENSURA FIRMA.pdf' }
     };
 
-    // Manejar clics en la lista de actas
     document.addEventListener('DOMContentLoaded', function() {
-      const listaActas = document.getElementById('lista-actas');
       const tituloActa = document.getElementById('titulo-acta');
       const descargarActa = document.getElementById('descargar-acta');
       const pdfViewer = document.getElementById('pdf-viewer');
       const contenidoActa = document.getElementById('contenido-acta');
 
-      listaActas.addEventListener('click', function(e) {
-        if (e.target.closest('.list-group-item')) {
-          const button = e.target.closest('.list-group-item');
-          const actaId = button.dataset.acta;
-          
-          // Remover clase active de todos los botones
-          document.querySelectorAll('.list-group-item').forEach(item => {
+      // Chips de año
+      document.querySelectorAll('.chip-ano').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.chip-ano').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const ano = chip.dataset.ano;
+          document.querySelectorAll('.acta-item').forEach(item => {
+            item.classList.toggle('d-none', item.dataset.ano !== ano);
             item.classList.remove('active');
           });
-          
-          // Agregar clase active al botón seleccionado
-          button.classList.add('active');
-          
-          // Actualizar contenido
-          if (actas[actaId]) {
-            tituloActa.textContent = actas[actaId].titulo;
-            descargarActa.href = actas[actaId].pdf;
-            pdfViewer.src = actas[actaId].pdf;
-            pdfViewer.style.display = 'block';
-            contenidoActa.style.display = 'none';
-          }
-        }
+          // Limpiar preview al cambiar año
+          tituloActa.textContent = 'Selecciona un acta';
+          descargarActa.style.display = 'none';
+          pdfViewer.style.display = 'none';
+          pdfViewer.src = '';
+          contenidoActa.style.display = 'block';
+        });
+      });
+
+      // Clic en acta
+      document.getElementById('lista-actas').addEventListener('click', function(e) {
+        const btn = e.target.closest('.acta-item');
+        if (!btn) return;
+        document.querySelectorAll('.acta-item').forEach(i => i.classList.remove('active'));
+        btn.classList.add('active');
+        const data = actas[btn.dataset.acta];
+        if (!data) return;
+        tituloActa.textContent = data.titulo;
+        descargarActa.href = data.pdf;
+        descargarActa.style.display = 'inline-block';
+        pdfViewer.src = data.pdf;
+        pdfViewer.style.display = 'block';
+        contenidoActa.style.display = 'none';
       });
     });
     
