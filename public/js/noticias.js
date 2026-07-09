@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 12,
+        titulo: "Dirección de Educación Pública presentó a nuevo director ejecutivo suplente del SLEP Valparaíso",
+        resumen: "Miguel Solís Olivera fue designado por el Presidente de la República para conducir el Servicio Local, con foco en la mejora de los aprendizajes y el fortalecimiento de la gestión administrativa del SLEP.",
+        fecha: "2026-07-09",
+        fechaTexto: "9 de julio, 2026",
+        imagen: "img_news/nuevo_director_suplente/Autoridades presidenciales con el Director ejecutivo suplente del SLEP Valparaíso.jpeg",
+        enlace: "noticias/nuevo-director-suplente.html"
+    },
+    {
         id: 11,
         titulo: "Nuevos laboratorios de computación fortalecerán la educación digital en escuelas públicas de Valparaíso",
         resumen: "La iniciativa \"Comunidades Digitales\" renovó espacios tecnológicos en el Colegio Pablo Neruda y la Escuela Joaquín Edwards Bello, gracias al trabajo conjunto entre Fundación Kodea, American Tower Chile y el SLEP Valparaíso.",
