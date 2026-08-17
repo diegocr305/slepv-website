@@ -244,10 +244,34 @@
   </section>
 
   <!-- Información Destacada -->
-  <section class="py-5 bg-blue-gov">
+  <section class="info-destacada-section py-4 bg-blue-gov">
     <div class="container">
-      <h2 class="text-center mb-4 text-white" data-aos="fade-down">Información Destacada</h2>
-      <div id="informacionCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-aos="fade-up" data-aos-delay="100">
+      <!-- Título con subrayado rojo estilo Accesos Rápidos -->
+      <h2 class="text-center mb-2 text-white" data-aos="fade-down">
+        Información Destacada
+        <span class="d-block mx-auto mt-2" style="width:60px;height:4px;background:#dc3545;border-radius:2px;"></span>
+      </h2>
+      <p class="text-center mb-4" style="color:rgba(255,255,255,0.8);font-size:0.95rem;" data-aos="fade-down" data-aos-delay="50">Recursos, programas y servicios del SLEP Valparaíso</p>
+
+      <!-- Banners principales: Trabaja con nosotros + Repositorio Currículum -->
+      <div class="row g-3 mb-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="col-lg-6 col-md-6">
+          <a href="https://www.empleospublicos.cl/" target="_blank" class="info-banner-principal" aria-label="Trabaja con nosotros - SLEP Valparaíso">
+            <img src="img/banner-trabaja-con-nosotros-slep-valparaiso.svg" alt="Trabaja con nosotros - SLEP Valparaíso" class="info-banner-principal-img">
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <a href="https://sites.google.com/slepvalparaiso.cl/repositoriocurricular" target="_blank" class="info-banner-principal" aria-label="Repositorio Curricular SLEP Valparaíso">
+            <img src="img/banner-repositorio-curriculum-slep-valparaiso.svg" alt="Repositorio Curricular SLEP Valparaíso" class="info-banner-principal-img">
+          </a>
+        </div>
+      </div>
+
+      <!-- Separador sutil -->
+      <div class="info-destacada-divider mb-3" data-aos="fade-up" data-aos-delay="100"></div>
+
+      <!-- Carrusel con demás banners -->
+      <div id="informacionCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-aos="fade-up" data-aos-delay="120">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="0" class="active"></button>
           <button type="button" data-bs-target="#informacionCarousel" data-bs-slide-to="1"></button>

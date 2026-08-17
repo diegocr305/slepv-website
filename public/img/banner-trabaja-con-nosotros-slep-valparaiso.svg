@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="600" viewBox="0 0 1800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Trabaja con nosotros</title>
+  <desc id="desc">Banner del Servicio Local de Educación Pública de Valparaíso para enlazar al portal Empleos Públicos.</desc>
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071f55"/>
+      <stop offset="0.62" stop-color="#083b89"/>
+      <stop offset="1" stop-color="#006bb7"/>
+    </linearGradient>
+    <linearGradient id="ola" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#006bb7"/>
+      <stop offset="1" stop-color="#00a9c8"/>
+    </linearGradient>
+    <linearGradient id="distNavy" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#313e8d"/>
+      <stop offset="1" stop-color="#24377f"/>
+    </linearGradient>
+    <linearGradient id="distCyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#006bb7"/>
+      <stop offset="1" stop-color="#0077c8"/>
+    </linearGradient>
+    <linearGradient id="distRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fd1e3d"/>
+      <stop offset="1" stop-color="#ff163b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1800" height="600" fill="url(#fondo)"/>
+  <path d="M0 455C260 525 430 430 700 475S1180 580 1800 405V600H0Z" fill="#004da1" opacity=".82"/>
+  <path d="M0 520C330 455 555 605 865 532S1330 475 1800 505V600H0Z" fill="url(#ola)"/>
+
+  <!-- Distintivo institucional original, centrado y conservando proporción 182:39 -->
+  <g transform="translate(709 24) scale(2.1)">
+    <rect width="182" height="39" fill="url(#distNavy)"/>
+    <path d="M5 0H84V21H5Z" fill="url(#distCyan)"/>
+    <path d="M84 0H178V21H84Z" fill="url(#distRed)"/>
+    <path d="M5 21H178" fill="none" stroke="#1d347e" stroke-width="2"/>
+    <path d="M84 1.1 87.15 7.55 94.25 8.58 89.12 13.58 90.33 20.64 84 17.31 77.67 20.64 78.88 13.58 73.75 8.58 80.85 7.55Z"
+          fill="#fff" stroke="#fff" stroke-width="0.65" stroke-linejoin="round"/>
+    <text x="91" y="35.25" text-anchor="middle" fill="#fff"
+          font-family="Arial, Helvetica, sans-serif" font-size="12.4" font-weight="800" letter-spacing="-0.25">TRABAJANDO PARA USTED</text>
+  </g>
+
+  <rect x="92" y="158" width="10" height="222" rx="5" fill="#00a9c8"/>
+  <text x="145" y="255" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="800">TRABAJA</text>
+  <text x="145" y="362" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="800">CON <tspan fill="#11c0cf">NOSOTROS</tspan></text>
+
+  <text x="148" y="430" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing=".5">REVISA NUESTRAS CONVOCATORIAS EN EMPLEOS PÚBLICOS</text>
+
+  <g transform="translate(1300 460)">
+    <rect width="410" height="82" rx="41" fill="#fff"/>
+    <text x="170" y="52" text-anchor="middle" fill="#083b89" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800">VER OPORTUNIDADES</text>
+    <circle cx="369" cy="41" r="29" fill="#fd1e3d"/>
+    <path d="m360 27 14 14-14 14" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Referencia visual abstracta a los cerros de Valparaíso -->
+  <g opacity=".95">
+    <path d="M1330 345h390v105h-390z" fill="#072c70"/>
+    <path d="m1360 345 58-54 58 54zm115 0 65-70 65 70zm130 0 50-47 50 47z" fill="#00a9c8"/>
+    <path d="M1387 350h52v54h-52zm126 0h55v54h-55zm118 0h49v54h-49z" fill="#fff" opacity=".95"/>
+    <path d="M1404 369h12v18h-12zm128 0h12v18h-12zm116 0h12v18h-12z" fill="#fd1e3d"/>
+  </g>
+</svg>
