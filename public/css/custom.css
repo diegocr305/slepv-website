@@ -2030,3 +2030,311 @@ body.texto-pequeno h5 { font-size: 16px !important; }
     padding-bottom: 1.75rem;
   }
 }
+
+
+/* =============================================
+   Página Trámites y Servicios
+   ============================================= */
+
+/* Hero icon decorativo */
+.tramites-hero-icon {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 3px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Badges de tipo de trámite */
+.tramites-badge-cu {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,215,0,0.2);
+  border: 1.5px solid #ffd700;
+  color: #ffd700;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.tramites-badge-libre {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.5);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.tramites-badge-pronto {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(108,117,125,0.15);
+  border: 1.5px solid #adb5bd;
+  color: #6c757d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Filtros */
+.tramites-filtro {
+  background: white;
+  border: 2px solid #dee2e6;
+  color: #495057;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tramites-filtro:hover {
+  border-color: #1B365D;
+  color: #1B365D;
+  background: #f0f4f8;
+}
+
+.tramites-filtro.active {
+  background: #1B365D;
+  border-color: #1B365D;
+  color: #ffffff;
+}
+
+/* Grupos de trámites */
+.tramites-grupo-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tramites-grupo-icono {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.bg-primary-slep  { background: linear-gradient(135deg, #1B365D, #0055A4); }
+.bg-secondary-slep { background: linear-gradient(135deg, #495057, #343a40); }
+
+.tramites-grupo-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin-bottom: 0.2rem;
+}
+
+.tramites-grupo-desc {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.tramites-divisor {
+  border-color: #dee2e6;
+  opacity: 1;
+}
+
+/* Cards de trámites */
+.tramite-card-catalogo {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.tramite-card-catalogo:hover:not(.proximamente) {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,85,164,0.15);
+  border-color: #0055A4;
+}
+
+.tramite-card-catalogo.proximamente {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+  opacity: 0.8;
+}
+
+.tramite-card-top {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.tramite-card-icono {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1B365D, #0055A4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.tramite-card-catalogo.proximamente .tramite-card-icono {
+  background: linear-gradient(135deg, #6c757d, #495057);
+}
+
+/* Los badges dentro de la card usan colores sobre fondo blanco */
+.tramite-card-catalogo .tramites-badge-cu {
+  background: rgba(0,85,164,0.08);
+  border-color: #0055A4;
+  color: #0055A4;
+}
+
+.tramite-card-catalogo .tramites-badge-libre {
+  background: rgba(25,135,84,0.08);
+  border-color: #198754;
+  color: #198754;
+}
+
+.tramite-card-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.tramite-card-desc {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.tramite-card-info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+.tramite-card-info li {
+  font-size: 0.82rem;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
+.tramite-card-info li i {
+  color: #0055A4;
+  width: 14px;
+  text-align: center;
+}
+
+.tramite-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0055A4, #003d7a);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  margin-top: auto;
+  box-shadow: 0 3px 10px rgba(0,85,164,0.25);
+}
+
+.tramite-card-btn:hover {
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #1B365D;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(255,215,0,0.35);
+}
+
+.tramite-card-btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef;
+  color: #adb5bd;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-top: auto;
+  cursor: not-allowed;
+}
+
+/* Sección ayuda */
+.tramite-ayuda-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #1B365D;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.tramite-ayuda-btn:hover {
+  background: #0055A4;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.tramite-ayuda-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #1B365D;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 25px;
+  border: 2px solid #1B365D;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.tramite-ayuda-btn-outline:hover {
+  background: #1B365D;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .tramites-hero-icon { display: none; }
+  .tramites-grupo-header { flex-direction: row; }
+  .tramite-ayuda-btn,
+  .tramite-ayuda-btn-outline { width: 100%; justify-content: center; }
+}

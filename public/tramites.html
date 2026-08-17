@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de trámites y servicios del SLEP Valparaíso para ciudadanos y funcionarios.">
+  <title>Trámites y Servicios - SLEP Valparaíso</title>
+  <link rel="icon" type="image/png" href="img/vector v slep.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+<!-- BARRA ACCESIBILIDAD -->
+<div class="accesibilidad-bar">
+  <div class="container">
+    <i class="fas fa-universal-access acc-icon"></i>
+    <span class="accesibilidad-label">Accesibilidad</span>
+    <button class="acc-btn" id="acc-contraste" title="Alto contraste"><i class="fas fa-adjust"></i></button>
+    <button class="acc-btn" id="acc-reducir" title="Reducir texto">A-</button>
+    <button class="acc-btn" id="acc-aumentar" title="Aumentar texto">A+</button>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="top-bar-left">
+        <a href="/tramites" class="top-bar-link">
+          <i class="fas fa-file-alt"></i> Trámites Online
+        </a>
+        <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="top-bar-link">
+          <i class="fas fa-envelope"></i> Contacto
+        </a>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso - Servicio Local de Educación Pública">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="/conocenos">Conócenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/tramites">Trámites</a></li>
+          <li class="nav-item"><a class="nav-link" href="/participacion">Participación</a></li>
+          <li class="nav-item"><a class="nav-link" href="/establecimientos">Establecimientos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/documentacion">Documentación</a></li>
+        </ul>
+        <form class="d-flex ms-3" id="searchForm" role="search">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="form-control search-input-visible" id="searchInput" placeholder="Buscar...">
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="bg-light py-2">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Trámites y Servicios</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="py-5 bg-blue-gov">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8" data-aos="fade-right">
+          <span class="badge bg-warning text-dark mb-3 px-3 py-2" style="font-size:0.9rem;">
+            <i class="fas fa-laptop-house me-1"></i> Servicios digitales
+          </span>
+          <h1 class="fw-bold text-white mb-3">Trámites y Servicios</h1>
+          <p class="text-white opacity-90 mb-4" style="font-size:1.1rem;">
+            Accede al catálogo de trámites disponibles para la ciudadanía y funcionarios del SLEP Valparaíso. Algunos trámites requieren Clave Única, otros puedes realizarlos sin autenticación.
+          </p>
+          <div class="d-flex align-items-center gap-4 flex-wrap">
+            <div class="d-flex align-items-center text-white gap-2">
+              <span class="tramites-badge-cu"><i class="fas fa-key me-1"></i>Con Clave Única</span>
+              <span class="text-white opacity-75 small">Requiere autenticación gov.cl</span>
+            </div>
+            <div class="d-flex align-items-center text-white gap-2">
+              <span class="tramites-badge-libre"><i class="fas fa-user me-1"></i>Sin Clave Única</span>
+              <span class="text-white opacity-75 small">Acceso directo</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0 text-center d-none d-lg-flex align-items-center justify-content-center" data-aos="fade-left">
+          <div class="tramites-hero-icon">
+            <i class="fas fa-file-signature"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gov-stripe-header"></div>
+
+  <!-- Filtros -->
+  <section class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3 flex-wrap" data-aos="fade-up">
+        <span class="text-muted fw-600 me-1" style="font-weight:600;">Filtrar:</span>
+        <button class="tramites-filtro active" data-filtro="todos">
+          <i class="fas fa-th me-1"></i> Todos
+        </button>
+        <button class="tramites-filtro" data-filtro="ciudadania">
+          <i class="fas fa-users me-1"></i> Ciudadanía
+        </button>
+        <button class="tramites-filtro" data-filtro="funcionarios">
+          <i class="fas fa-id-badge me-1"></i> Funcionarios
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
+  <section class="py-5">
+    <div class="container">
+
+      <!-- ── CIUDADANÍA ── -->
+      <div class="tramites-grupo" id="grupo-ciudadania" data-aos="fade-up">
+        <div class="tramites-grupo-header mb-4">
+          <div class="tramites-grupo-icono bg-primary-slep">
+            <i class="fas fa-users"></i>
+          </div>
+          <div>
+            <h2 class="tramites-grupo-titulo">Ciudadanía</h2>
+            <p class="tramites-grupo-desc mb-0">Trámites disponibles para apoderados, estudiantes y comunidad en general.</p>
+          </div>
+        </div>
+
+        <div class="row g-4" data-grupo="ciudadania">
+
+          <!-- OIRS con Clave Única -->
+          <div class="col-lg-4 col-md-6" data-categoria="ciudadania">
+            <div class="tramite-card-catalogo">
+              <div class="tramite-card-top">
+                <div class="tramite-card-icono">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <span class="tramites-badge-cu ms-auto">
+                  <i class="fas fa-key me-1"></i>Clave Única
+                </span>
+              </div>
+              <h5 class="tramite-card-titulo">Información, Reclamos y Sugerencias</h5>
+              <p class="tramite-card-desc">Ingresa solicitudes, reclamos o sugerencias dirigidas al SLEP Valparaíso autenticándote con tu Clave Única.</p>
+              <ul class="tramite-card-info">
+                <li><i class="fas fa-clock"></i> Plazo de respuesta: 15 días hábiles</li>
+                <li><i class="fas fa-globe"></i> Disponible en línea</li>
+              </ul>
+              <a href="https://tramites.slepvalparaiso.gob.cl/tramites/iniciar/14" target="_blank" class="tramite-card-btn">
+                Iniciar trámite <i class="fas fa-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- OIRS sin Clave Única -->
+          <div class="col-lg-4 col-md-6" data-categoria="ciudadania">
+            <div class="tramite-card-catalogo">
+              <div class="tramite-card-top">
+                <div class="tramite-card-icono">
+                  <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <span class="tramites-badge-libre ms-auto">
+                  <i class="fas fa-user me-1"></i>Sin Clave Única
+                </span>
+              </div>
+              <h5 class="tramite-card-titulo">Información, Reclamos y Sugerencias</h5>
+              <p class="tramite-card-desc">Envía tu solicitud, reclamo o sugerencia al SLEP Valparaíso sin necesidad de autenticación.</p>
+              <ul class="tramite-card-info">
+                <li><i class="fas fa-clock"></i> Plazo de respuesta: 15 días hábiles</li>
+                <li><i class="fas fa-globe"></i> Disponible en línea</li>
+              </ul>
+              <a href="https://tramites.slepvalparaiso.gob.cl/tramites/iniciar/14" target="_blank" class="tramite-card-btn">
+                Iniciar trámite <i class="fas fa-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Certificado Alumno Regular — PRÓXIMAMENTE -->
+          <div class="col-lg-4 col-md-6" data-categoria="ciudadania">
+            <div class="tramite-card-catalogo proximamente">
+              <div class="tramite-card-top">
+                <div class="tramite-card-icono">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="tramites-badge-pronto ms-auto">
+                  <i class="fas fa-clock me-1"></i>Próximamente
+                </span>
+              </div>
+              <h5 class="tramite-card-titulo">Certificado de Alumno Regular</h5>
+              <p class="tramite-card-desc">Obtén el certificado que acredita la condición de alumno regular en establecimientos del SLEP Valparaíso.</p>
+              <ul class="tramite-card-info">
+                <li><i class="fas fa-info-circle"></i> Trámite en desarrollo</li>
+                <li><i class="fas fa-globe"></i> Próximamente en línea</li>
+              </ul>
+              <span class="tramite-card-btn-disabled">
+                <i class="fas fa-lock me-1"></i> No disponible aún
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <hr class="tramites-divisor my-5" data-aos="fade-up">
+
+      <!-- ── FUNCIONARIOS ── -->
+      <div class="tramites-grupo" id="grupo-funcionarios" data-aos="fade-up" data-aos-delay="100">
+        <div class="tramites-grupo-header mb-4">
+          <div class="tramites-grupo-icono bg-secondary-slep">
+            <i class="fas fa-id-badge"></i>
+          </div>
+          <div>
+            <h2 class="tramites-grupo-titulo">Funcionarios</h2>
+            <p class="tramites-grupo-desc mb-0">Trámites internos para funcionarios del SLEP Valparaíso. Actualmente en desarrollo.</p>
+          </div>
+        </div>
+
+        <div class="row g-4" data-grupo="funcionarios">
+
+          <!-- Feriado Legal -->
+          <div class="col-lg-4 col-md-6" data-categoria="funcionarios">
+            <div class="tramite-card-catalogo proximamente">
+              <div class="tramite-card-top">
+                <div class="tramite-card-icono">
+                  <i class="fas fa-umbrella-beach"></i>
+                </div>
+                <span class="tramites-badge-pronto ms-auto">
+                  <i class="fas fa-tools me-1"></i>En desarrollo
+                </span>
+              </div>
+              <h5 class="tramite-card-titulo">Solicitud de Feriado Legal</h5>
+              <p class="tramite-card-desc">Solicita tus días de feriado legal de manera digital a través del sistema de gestión RRHH.</p>
+              <ul class="tramite-card-info">
+                <li><i class="fas fa-user-tie"></i> Solo funcionarios</li>
+                <li><i class="fas fa-cog"></i> Sistema en fase demo</li>
+              </ul>
+              <span class="tramite-card-btn-disabled">
+                <i class="fas fa-lock me-1"></i> En desarrollo
+              </span>
+            </div>
+          </div>
+
+          <!-- Permiso Administrativo -->
+          <div class="col-lg-4 col-md-6" data-categoria="funcionarios">
+            <div class="tramite-card-catalogo proximamente">
+              <div class="tramite-card-top">
+                <div class="tramite-card-icono">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <span class="tramites-badge-pronto ms-auto">
+                  <i class="fas fa-tools me-1"></i>En desarrollo
+                </span>
+              </div>
+              <h5 class="tramite-card-titulo">Solicitud de Permiso Administrativo</h5>
+              <p class="tramite-card-desc">Gestiona tus permisos administrativos de forma digital, con seguimiento del estado de tu solicitud.</p>
+              <ul class="tramite-card-info">
+                <li><i class="fas fa-user-tie"></i> Solo funcionarios</li>
+                <li><i class="fas fa-cog"></i> Sistema en fase demo</li>
+              </ul>
+              <span class="tramite-card-btn-disabled">
+                <i class="fas fa-lock me-1"></i> En desarrollo
+              </span>
+            </div>
+          </div>
+
+          <!-- Cometido Funcionario -->
+          <div class="col-lg-4 col-md-6" data-categoria="funcionarios">
+            <div class="tramite-card-catalogo proximamente">
+              <div class="tramite-card-top">
+                <div class="tramite-card-icono">
+                  <i class="fas fa-route"></i>
+                </div>
+                <span class="tramites-badge-pronto ms-auto">
+                  <i class="fas fa-tools me-1"></i>En desarrollo
+                </span>
+              </div>
+              <h5 class="tramite-card-titulo">Solicitud de Cometido Funcionario</h5>
+              <p class="tramite-card-desc">Solicita autorización para cometidos funcionarios con detalle de destino, motivo y gastos asociados.</p>
+              <ul class="tramite-card-info">
+                <li><i class="fas fa-user-tie"></i> Solo funcionarios</li>
+                <li><i class="fas fa-cog"></i> Sistema en fase demo</li>
+              </ul>
+              <span class="tramite-card-btn-disabled">
+                <i class="fas fa-lock me-1"></i> En desarrollo
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="gov-stripe-header"></div>
+
+  <!-- Ayuda -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <i class="fas fa-headset fa-3x mb-3" style="color:#1B365D;"></i>
+          <h4 class="fw-bold mb-3">¿Necesitas ayuda con un trámite?</h4>
+          <p class="text-muted mb-4">Si tienes dudas sobre cómo realizar un trámite o no encuentras lo que buscas, contáctanos directamente por nuestra oficina de partes.</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="tramite-ayuda-btn">
+              <i class="fas fa-envelope me-2"></i>Escribir por correo
+            </a>
+            <a href="https://tramites.slepvalparaiso.gob.cl/tramites/iniciar/14" target="_blank" class="tramite-ayuda-btn-outline">
+              <i class="fas fa-comments me-2"></i>Ingresar solicitud OIRS
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FRANJA GUBERNAMENTAL -->
+<div class="gov-stripe-header"></div>
+
+<!-- FOOTER -->
+<footer class="footer-gov pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <img src="img/monocromo blanco_MinEducacion.png" alt="Logo SLEP" class="footer-logo mb-3">
+        <p class="footer-text" style="opacity:0.8;">Servicio Local de Educación Pública de Valparaíso. Fortaleciendo la educación pública con calidad y equidad.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">Navegación</h6>
+        <ul class="footer-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/conocenos">Conócenos</a></li>
+          <li><a href="/noticias">Noticias</a></li>
+          <li><a href="/tramites">Trámites</a></li>
+          <li><a href="/participacion">Participación</a></li>
+          <li><a href="/establecimientos">Establecimientos</a></li>
+          <li><a href="/documentacion">Documentación</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">Contacto</h6>
+        <ul class="footer-links">
+          <li><i class="fas fa-map-marker-alt me-2" style="color:#ffd700;"></i>Blanco 937, 2° piso, Valparaíso</li>
+          <li class="mt-2"><i class="fas fa-envelope me-2" style="color:#ffd700;"></i><a href="mailto:oficinadepartes@slepvalparaiso.cl">oficinadepartes@slepvalparaiso.cl</a></li>
+          <li class="mt-2"><i class="fas fa-clock me-2" style="color:#ffd700;"></i>Lun–Jue: 9:00–14:00 / 15:00–17:00</li>
+          <li class="mt-1" style="padding-left:1.4rem;">Vie: 9:00–14:00</li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-title">Transparencia</h6>
+        <ul class="footer-links">
+          <li><a href="https://www.mineduc.cl" target="_blank">Ministerio de Educación</a></li>
+          <li><a href="https://www.leylobby.gob.cl/instituciones/AJ029" target="_blank">Ley de Lobby</a></li>
+          <li><a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=AJ029" target="_blank">Transparencia Activa</a></li>
+          <li><a href="https://www.portaltransparencia.cl/PortalPdT/web/guest/directorio-de-organismos-regulados?p_p_id=pdtorganismos_WAR_pdtorganismosportlet&orgcode=ccf3d7755a9a13285b11d9ab3edbf59c" target="_blank">Transparencia Pasiva</a></li>
+          <li><a href="/tramites" target="_blank">Trámites Online</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="text-center">
+      <small class="footer-copyright">© 2026 SLEP Valparaíso. Todos los derechos reservados.</small>
+    </div>
+  </div>
+  <div class="gov-stripe-footer"></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 100 });
+
+  // Filtros
+  const filtros = document.querySelectorAll('.tramites-filtro');
+  filtros.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtros.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filtro = btn.dataset.filtro;
+      const grupoCiudadania = document.getElementById('grupo-ciudadania');
+      const grupoFuncionarios = document.getElementById('grupo-funcionarios');
+      const divisor = document.querySelector('.tramites-divisor');
+
+      if (filtro === 'todos') {
+        grupoCiudadania.style.display = '';
+        grupoFuncionarios.style.display = '';
+        divisor.style.display = '';
+      } else if (filtro === 'ciudadania') {
+        grupoCiudadania.style.display = '';
+        grupoFuncionarios.style.display = 'none';
+        divisor.style.display = 'none';
+      } else if (filtro === 'funcionarios') {
+        grupoCiudadania.style.display = 'none';
+        grupoFuncionarios.style.display = '';
+        divisor.style.display = 'none';
+      }
+    });
+  });
+
+  // Search
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('searchInput');
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) window.location.href = `noticias.html?q=${encodeURIComponent(query)}`;
+    });
+  }
+</script>
+</body>
+</html>
