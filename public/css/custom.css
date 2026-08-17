@@ -1270,7 +1270,8 @@ section[id] {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 520px;
+  /* Ratio 4.59:1 → la imagen llena todo el ancho sin espacios vacíos */
+  aspect-ratio: 4.59 / 1;
   object-fit: cover;
   object-position: center;
 }
@@ -1322,7 +1323,11 @@ section[id] {
 
 @media (max-width: 768px) {
   .hero-banner-img {
+    /* En móvil permitimos un mínimo de alto para que se lea bien */
+    aspect-ratio: auto;
+    min-height: 140px;
     max-height: 220px;
+    object-fit: cover;
   }
 
   .comunicado-img {
