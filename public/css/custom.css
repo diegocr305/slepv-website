@@ -2338,3 +2338,31 @@ body.texto-pequeno h5 { font-size: 16px !important; }
   .tramite-ayuda-btn,
   .tramite-ayuda-btn-outline { width: 100%; justify-content: center; }
 }
+
+
+/* Top bar — pill destacado para Trámites Online (Opción A) */
+.top-bar-link-pill {
+  background-color: #ffd700;
+  color: #1B365D !important;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-bar-link-pill:hover {
+  background-color: #ffe44d;
+  color: #1B365D !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .top-bar-link-pill {
+    padding: 3px 10px;
+    font-size: 0.78rem;
+  }
+}
