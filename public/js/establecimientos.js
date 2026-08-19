@@ -18,6 +18,7 @@ let busqueda = '';
 let vistaActual = 'cards'; // 'cards' | 'tabla'
 let mapa = null;
 let marcadores = [];
+let coordenadas = {}; // { id: { lat, lng } }
 
 // ============================================================
 // Clasificación por tipo
@@ -48,16 +49,6 @@ function inicializarMapa() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 18
   }).addTo(mapa);
-
-  // Marcador central SLEP
-  L.marker([-33.0472, -71.6127], {
-    icon: L.divIcon({
-      className: 'leaflet-marker-slep',
-      html: '<div style="background:#1B365D;color:#fff;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:600;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.3);">SLEP Valparaíso</div>',
-      iconSize: [0, 0],
-      iconAnchor: [50, 12]
-    })
-  }).addTo(mapa);
 }
 
 function getIconoMarcador(tipo) {
@@ -65,7 +56,7 @@ function getIconoMarcador(tipo) {
   const color = colores[tipo] || '#0055A4';
   return L.divIcon({
     className: 'marker-est',
-    html: `<div style="background:${color};width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.3);"></div>`,
+    html: `<div style="background:${color};width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>`,
     iconSize: [12, 12],
     iconAnchor: [6, 6]
   });
@@ -76,38 +67,50 @@ function actualizarMarcadoresMapa() {
   marcadores.forEach(m => mapa.removeLayer(m));
   marcadores = [];
 
-  // Solo mostrar si tenemos coordenadas (futuro) o usar posiciones aleatorias alrededor de Valparaíso
-  // Por ahora creamos un cluster visual centrado por zona
-  const centroValpo = [-33.046, -71.62];
-  const establecimientos = filtrados.slice(0, 100); // máx 100 marcadores
+  const bounds = [];
 
-  establecimientos.forEach((e, i) => {
-    // Generar posición pseudo-aleatoria basada en el nombre (consistente)
-    const hash = generarHash(e.nombre_establecimiento || '');
-    const lat = centroValpo[0] + (hash % 100 - 50) * 0.0004;
-    const lng = centroValpo[1] + ((hash >> 8) % 100 - 50) * 0.0005;
+  filtrados.forEach(e => {
+    const c = coordenadas[e.id];
+    if (!c || !c.lat || !c.lng) return;
+
+    // Excluir Robinson Crusoe del bounds (está en otra isla)
+    const esIsla = c.lat < -33.5;
+
     const tipo = getTipo(e.nivel_educativo);
-
-    const marker = L.marker([lat, lng], { icon: getIconoMarcador(tipo) })
+    const marker = L.marker([c.lat, c.lng], { icon: getIconoMarcador(tipo) })
       .bindPopup(`
         <strong style="font-size:0.85rem;">${e.nombre_establecimiento || '—'}</strong><br>
         <span style="font-size:0.78rem;color:#666;">${e.direccion || 'Sin dirección'}</span><br>
-        ${e.correo_director ? `<a href="mailto:${e.correo_director}" style="font-size:0.75rem;">📧 ${e.correo_director}</a>` : ''}
+        ${e.correo_director ? `<a href="mailto:${e.correo_director}" style="font-size:0.75rem;"><i class="fas fa-envelope"></i> ${e.correo_director}</a>` : ''}
       `, { maxWidth: 250 })
       .addTo(mapa);
 
     marcadores.push(marker);
+
+    if (!esIsla) {
+      bounds.push([c.lat, c.lng]);
+    }
   });
+
+  // Ajustar vista al área con marcadores
+  if (bounds.length > 1) {
+    mapa.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+  } else if (bounds.length === 1) {
+    mapa.setView(bounds[0], 15);
+  } else {
+    mapa.setView([-33.046, -71.62], 13);
+  }
 }
 
-function generarHash(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32bit integer
+async function cargarCoordenadas() {
+  try {
+    const resp = await fetch('js/coordenadas-establecimientos.json');
+    if (resp.ok) {
+      coordenadas = await resp.json();
+    }
+  } catch (err) {
+    console.warn('No se pudieron cargar coordenadas:', err);
   }
-  return Math.abs(hash);
 }
 
 // ============================================================
@@ -303,9 +306,10 @@ async function cargarEstablecimientos() {
 // ============================================================
 // Inicialización
 // ============================================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   inicializarMapa();
-  cargarEstablecimientos();
+  await cargarCoordenadas();
+  await cargarEstablecimientos();
 
   // Dashboard como filtros
   document.querySelectorAll('.stat-card').forEach(card => {
