@@ -94,9 +94,9 @@ function actualizarMarcadoresMapa() {
 
   // Ajustar vista centrada en el casco urbano de Valparaíso
   if (bounds.length > 1) {
-    mapa.fitBounds(bounds, { padding: [15, 15], maxZoom: 16 });
+    mapa.fitBounds(bounds, { padding: [10, 10], maxZoom: 17 });
   } else if (bounds.length === 1) {
-    mapa.setView(bounds[0], 16);
+    mapa.setView(bounds[0], 17);
   } else {
     mapa.setView([-33.048, -71.615], 15);
   }
