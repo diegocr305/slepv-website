@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Establecimientos - SLEP Valparaíso</title>
+  <title>Establecimientos - SLEP ValparaÃ­so</title>
   <link rel="icon" type="image/png" href="img/vector v slep.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,7 +68,7 @@
       font-weight: 600;
     }
 
-    /* -- Paginación Kit Digital -- */
+    /* -- PaginaciÃ³n Kit Digital -- */
     .kit-pagination {
       display: flex;
       align-items: center;
@@ -102,7 +102,7 @@
       color: #333;
     }
 
-    /* -- Cards móvil -- */
+    /* -- Cards mÃ³vil -- */
     .est-card {
       border: 1px solid #e5e5e5;
       border-radius: 10px;
@@ -130,7 +130,7 @@
     .search-kit input:focus { border-color: #0055A4; box-shadow: none; outline: none; }
     .search-kit i { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #999; font-size: 13px; }
 
-    /* -- Acción ver mapa -- */
+    /* -- AcciÃ³n ver mapa -- */
     .btn-mapa {
       background: none;
       border: none;
@@ -143,7 +143,7 @@
     }
     .btn-mapa:hover { background: #e8f0fe; }
 
-    /* Ocultar tabla en móvil y cards en desktop */
+    /* Ocultar tabla en mÃ³vil y cards en desktop */
     @media (max-width: 767px) { .vista-tabla { display: none !important; } }
     @media (min-width: 768px) { .vista-cards { display: none !important; } }
 
@@ -171,7 +171,7 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <div class="top-bar-left">
-        <a href="/tramites" class="top-bar-link top-bar-link-pill"><i class="fas fa-file-alt me-1"></i>Trámites Online</a>
+        <a href="/tramites" class="top-bar-link top-bar-link-pill"><i class="fas fa-file-alt me-1"></i>TrÃ¡mites Online</a>
         <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="top-bar-link">
           <i class="fas fa-envelope"></i> Contacto
         </a>
@@ -185,14 +185,12 @@
   </div>
 </div>
 
-</div>
-
 <!-- HEADER -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="img/Logotipo Valparaíso_bco.png" alt="Logo SLEP Valparaíso - Servicio Local de Educación Pública">
+        <img src="img/Logotipo ValparaÃ­so_bco.png" alt="Logo SLEP ValparaÃ­so - Servicio Local de EducaciÃ³n PÃºblica">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -200,11 +198,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/conocenos">Conócenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/conocenos">ConÃ³cenos</a></li>
           <li class="nav-item"><a class="nav-link" href="/noticias">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="/participacion">Participación</a></li>
+          <li class="nav-item"><a class="nav-link" href="/participacion">ParticipaciÃ³n</a></li>
           <li class="nav-item"><a class="nav-link active" href="/establecimientos">Establecimientos</a></li>
-          <li class="nav-item"><a class="nav-link" href="/documentacion">Documentación</a></li>
+          <li class="nav-item"><a class="nav-link" href="/documentacion">DocumentaciÃ³n</a></li>
         </ul>
         <form class="d-flex ms-3" id="searchForm" role="search">
           <div class="search-container">
@@ -230,7 +228,7 @@
             </ol>
           </nav>
           <h1 class="fw-bold text-white mb-3">Establecimientos Educacionales</h1>
-          <p class="text-white mb-0" style="font-size:1.1rem;opacity:0.9;">Encuentra colegios, escuelas y liceos administrados por SLEP Valparaíso con dirección y contacto.</p>
+          <p class="text-white mb-0" style="font-size:1.1rem;opacity:0.9;">Encuentra colegios, escuelas y liceos administrados por SLEP ValparaÃ­so con direcciÃ³n y contacto.</p>
         </div>
       </div>
     </div>
@@ -239,7 +237,7 @@
   <section class="py-5">
     <div class="container">
 
-      <!-- Título + buscador -->
+      <!-- TÃ­tulo + buscador -->
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3" data-aos="fade-up">
         <div>
           <h2 class="mb-1">Establecimientos Educacionales</h2>
@@ -268,9 +266,9 @@
                 <th>Establecimiento</th>
                 <th>Nivel</th>
                 <th>Director/a</th>
-                <th>Dirección</th>
+                <th>DirecciÃ³n</th>
                 <th style="width:60px; text-align:center;">Email</th>
-                <th style="width:80px; text-align:center;">Ubicación</th>
+                <th style="width:80px; text-align:center;">UbicaciÃ³n</th>
               </tr>
             </thead>
             <tbody id="tablaBody">
@@ -279,7 +277,7 @@
           </table>
         </div>
 
-        <!-- Paginación -->
+        <!-- PaginaciÃ³n -->
         <div class="d-flex flex-wrap align-items-center justify-content-between mt-3 gap-2">
           <div class="d-flex align-items-center gap-2">
             <span class="text-muted" style="font-size:0.85rem;">Mostrar</span>
@@ -293,7 +291,7 @@
         </div>
       </div>
 
-      <!-- -- VISTA CARDS (móvil) -- -->
+      <!-- -- VISTA CARDS (mÃ³vil) -- -->
       <div class="vista-cards">
         <div id="cardsContainer" class="d-flex flex-column gap-3">
           <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-primary me-2"></div>Cargando...</div>
@@ -310,10 +308,10 @@
   <div class="container">
     <div class="row g-4">
 
-      <!-- Col 1: Logo + descripción + redes -->
+      <!-- Col 1: Logo + descripciÃ³n + redes -->
       <div class="col-lg-3 col-md-6">
         <img src="img/monocromo blanco_MinEducacion.png" alt="Logo SLEP" class="footer-logo mb-3">
-        <p class="footer-text" style="opacity:0.8;">Servicio Local de Educación Pública de Valparaíso. Fortaleciendo la educación pública con calidad y equidad.</p>
+        <p class="footer-text" style="opacity:0.8;">Servicio Local de EducaciÃ³n PÃºblica de ValparaÃ­so. Fortaleciendo la educaciÃ³n pÃºblica con calidad y equidad.</p>
         <div class="d-flex gap-2 mt-3">
           <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -321,16 +319,16 @@
         </div>
       </div>
 
-      <!-- Col 2: Navegación -->
+      <!-- Col 2: NavegaciÃ³n -->
       <div class="col-lg-3 col-md-6">
-        <h6 class="footer-title">Navegación</h6>
+        <h6 class="footer-title">NavegaciÃ³n</h6>
         <ul class="footer-links">
           <li><a href="/">Inicio</a></li>
-          <li><a href="/conocenos">Conócenos</a></li>
+          <li><a href="/conocenos">ConÃ³cenos</a></li>
           <li><a href="/noticias">Noticias</a></li>
-          <li><a href="/participacion">Participación</a></li>
+          <li><a href="/participacion">ParticipaciÃ³n</a></li>
           <li><a href="/establecimientos">Establecimientos</a></li>
-          <li><a href="/documentacion">Documentación</a></li>
+          <li><a href="/documentacion">DocumentaciÃ³n</a></li>
         </ul>
       </div>
 
@@ -338,10 +336,10 @@
       <div class="col-lg-3 col-md-6">
         <h6 class="footer-title">Contacto</h6>
         <ul class="footer-links">
-          <li><i class="fas fa-map-marker-alt me-2" style="color:#ffd700;"></i>Blanco 937, 2° piso, Valparaíso</li>
+          <li><i class="fas fa-map-marker-alt me-2" style="color:#ffd700;"></i>Blanco 937, 2Â° piso, ValparaÃ­so</li>
           <li class="mt-2"><i class="fas fa-envelope me-2" style="color:#ffd700;"></i><a href="mailto:oficinadepartes@slepvalparaiso.cl">oficinadepartes@slepvalparaiso.cl</a></li>
-          <li class="mt-2"><i class="fas fa-clock me-2" style="color:#ffd700;"></i>Lun–Jue: 9:00–14:00 / 15:00–17:00</li>
-          <li class="mt-1" style="padding-left:1.4rem;">Vie: 9:00–14:00</li>
+          <li class="mt-2"><i class="fas fa-clock me-2" style="color:#ffd700;"></i>Lunâ€“Jue: 9:00â€“14:00 / 15:00â€“17:00</li>
+          <li class="mt-1" style="padding-left:1.4rem;">Vie: 9:00â€“14:00</li>
         </ul>
       </div>
 
@@ -349,18 +347,18 @@
       <div class="col-lg-3 col-md-6">
         <h6 class="footer-title">Transparencia</h6>
         <ul class="footer-links">
-          <li><a href="https://www.mineduc.cl" target="_blank">Ministerio de Educación</a></li>
+          <li><a href="https://www.mineduc.cl" target="_blank">Ministerio de EducaciÃ³n</a></li>
           <li><a href="https://www.leylobby.gob.cl/instituciones/AJ029" target="_blank">Ley de Lobby</a></li>
           <li><a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=AJ029" target="_blank">Transparencia Activa</a></li>
           <li><a href="https://www.portaltransparencia.cl/PortalPdT/web/guest/directorio-de-organismos-regulados?p_p_id=pdtorganismos_WAR_pdtorganismosportlet&orgcode=ccf3d7755a9a13285b11d9ab3edbf59c" target="_blank">Transparencia Pasiva</a></li>
-          <li><a href="https://tramites.dep.gob.cl/tramites/iniciar/173" target="_blank">Trámites Online</a></li>
+          <li><a href="https://tramites.dep.gob.cl/tramites/iniciar/173" target="_blank">TrÃ¡mites Online</a></li>
         </ul>
       </div>
 
     </div>
     <hr class="footer-divider">
     <div class="text-center">
-      <small class="footer-copyright">© 2026 SLEP Valparaíso. Todos los derechos reservados.</small>
+      <small class="footer-copyright">Â© 2026 SLEP ValparaÃ­so. Todos los derechos reservados.</small>
     </div>
   </div>
   <div class="gov-stripe-footer"></div>
