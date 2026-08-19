@@ -73,8 +73,8 @@ function actualizarMarcadoresMapa() {
     const c = coordenadas[e.id];
     if (!c || !c.lat || !c.lng) return;
 
-    // Excluir Robinson Crusoe del bounds (está en otra isla)
-    const esIsla = c.lat < -33.5;
+    // Excluir Robinson Crusoe y puntos muy lejanos del cálculo de bounds
+    const esOutlier = c.lat < -33.08 || c.lat > -33.00 || c.lng < -71.67 || c.lng > -71.55;
 
     const tipo = getTipo(e.nivel_educativo);
     const marker = L.marker([c.lat, c.lng], { icon: getIconoMarcador(tipo) })
@@ -87,18 +87,18 @@ function actualizarMarcadoresMapa() {
 
     marcadores.push(marker);
 
-    if (!esIsla) {
+    if (!esOutlier) {
       bounds.push([c.lat, c.lng]);
     }
   });
 
-  // Ajustar vista al área con marcadores
+  // Ajustar vista centrada en el casco urbano de Valparaíso
   if (bounds.length > 1) {
     mapa.fitBounds(bounds, { padding: [20, 20], maxZoom: 15 });
   } else if (bounds.length === 1) {
-    mapa.setView(bounds[0], 16);
+    mapa.setView(bounds[0], 15);
   } else {
-    mapa.setView([-33.046, -71.62], 14);
+    mapa.setView([-33.048, -71.615], 14);
   }
 }
 
