@@ -2276,6 +2276,29 @@ body.texto-pequeno h5 { font-size: 16px !important; }
   box-shadow: 0 5px 14px rgba(255,215,0,0.35);
 }
 
+.tramite-card-btn-alt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #0055A4;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: 25px;
+  border: 2px solid #0055A4;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.tramite-card-btn-alt:hover {
+  background: #0055A4;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0,85,164,0.2);
+}
+
 .tramite-card-btn-disabled {
   display: inline-flex;
   align-items: center;
