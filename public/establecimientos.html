@@ -242,7 +242,15 @@
   <!-- Mapa -->
   <section class="pb-4">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div id="mapa-establecimientos"></div>
+      <!-- Botón para mostrar mapa en móvil -->
+      <div class="d-md-none mb-2">
+        <button class="btn btn-sm btn-outline-primary w-100" id="btnToggleMapa" onclick="toggleMapa()">
+          <i class="fas fa-map-marked-alt me-1"></i> Ver mapa de establecimientos
+        </button>
+      </div>
+      <div id="mapaWrapper" class="d-none d-md-block">
+        <div id="mapa-establecimientos"></div>
+      </div>
     </div>
   </section>
 

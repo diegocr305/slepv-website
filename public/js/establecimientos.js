@@ -40,7 +40,20 @@ function getNivelLabel(tipo) {
 // ============================================================
 // Mapa Leaflet
 // ============================================================
+let mapaInicializado = false;
+
 function inicializarMapa() {
+  const wrapper = document.getElementById('mapaWrapper');
+  // En desktop se inicializa de inmediato; en móvil se espera al toggle
+  if (window.innerWidth >= 768) {
+    crearMapa();
+  }
+}
+
+function crearMapa() {
+  if (mapaInicializado) return;
+  mapaInicializado = true;
+
   mapa = L.map('mapa-establecimientos', {
     scrollWheelZoom: false
   }).setView([-33.048, -71.615], 14);
@@ -49,6 +62,33 @@ function inicializarMapa() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 18
   }).addTo(mapa);
+
+  // Si ya se cargaron los datos, pintar marcadores
+  if (filtrados.length > 0) {
+    actualizarMarcadoresMapa();
+  }
+}
+
+function toggleMapa() {
+  const wrapper = document.getElementById('mapaWrapper');
+  const btn = document.getElementById('btnToggleMapa');
+  const visible = wrapper.classList.contains('d-none');
+
+  if (visible) {
+    wrapper.classList.remove('d-none');
+    btn.innerHTML = '<i class="fas fa-times me-1"></i> Ocultar mapa';
+    // Inicializar si es la primera vez
+    if (!mapaInicializado) {
+      crearMapa();
+    } else {
+      mapa.invalidateSize();
+    }
+    // Ajustar zoom para móvil
+    mapa.setView([-33.045, -71.620], 13);
+  } else {
+    wrapper.classList.add('d-none');
+    btn.innerHTML = '<i class="fas fa-map-marked-alt me-1"></i> Ver mapa de establecimientos';
+  }
 }
 
 function getIconoMarcador(tipo) {
@@ -63,6 +103,8 @@ function getIconoMarcador(tipo) {
 }
 
 function actualizarMarcadoresMapa() {
+  if (!mapa || !mapaInicializado) return;
+
   // Limpiar marcadores previos
   marcadores.forEach(m => mapa.removeLayer(m));
   marcadores = [];
@@ -92,8 +134,9 @@ function actualizarMarcadoresMapa() {
     }
   });
 
-  // Vista centrada en Valparaíso con zoom fijo para ver los puntos bien
-  mapa.setView([-33.045, -71.620], 14);
+  // Vista centrada en Valparaíso — zoom adaptado al viewport
+  const esMobile = window.innerWidth < 768;
+  mapa.setView([-33.045, -71.620], esMobile ? 13 : 14);
 }
 
 async function cargarCoordenadas() {
