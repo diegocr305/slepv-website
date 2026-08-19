@@ -204,6 +204,7 @@ function renderizar() {
 
 function renderCards(pagina) {
   const container = document.getElementById('cardsContainer');
+  if (!container) return;
   if (pagina.length === 0) {
     container.innerHTML = `
       <div class="text-center py-5" style="grid-column: 1 / -1;">
@@ -239,6 +240,7 @@ function renderCards(pagina) {
 
 function renderTabla(pagina) {
   const tbody = document.getElementById('tablaBody');
+  if (!tbody) return;
   if (pagina.length === 0) {
     tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4 text-muted"><i class="fas fa-search me-2"></i>No se encontraron establecimientos</td></tr>';
     return;
@@ -267,6 +269,7 @@ function renderTabla(pagina) {
 
 function renderPaginacion(total, totalPaginas) {
   const container = document.getElementById('paginacion');
+  if (!container) return;
   if (totalPaginas <= 1) { container.innerHTML = ''; return; }
 
   const maxBotones = 5;
