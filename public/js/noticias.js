@@ -1,6 +1,15 @@
 // Base de datos de noticias (ordenadas por fecha más reciente)
 const noticias = [
     {
+        id: 13,
+        titulo: "Más de 50 establecimientos participaron en la Segunda Feria de Educación Pública de Valparaíso",
+        resumen: "Las autoridades y comunidades educativas destacaron la masiva convocatoria de la feria, valorándola como una oportunidad para mostrar sus proyectos y acercar la educación pública a las familias de Valparaíso.",
+        fecha: "2026-08-12",
+        fechaTexto: "12 de agosto, 2026",
+        imagen: "img_news/feria_Educacion_Publica_Web/IMG_5551.JPG",
+        enlace: "noticias/feria-educacion-publica.html"
+    },
+    {
         id: 12,
         titulo: "Dirección de Educación Pública presentó a nuevo director ejecutivo suplente del SLEP Valparaíso",
         resumen: "Miguel Solís Olivera fue designado por el Presidente de la República para conducir el Servicio Local, con foco en la mejora de los aprendizajes y el fortalecimiento de la gestión administrativa del SLEP.",
