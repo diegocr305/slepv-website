@@ -43,7 +43,7 @@ function getNivelLabel(tipo) {
 function inicializarMapa() {
   mapa = L.map('mapa-establecimientos', {
     scrollWheelZoom: false
-  }).setView([-33.046, -71.62], 13);
+  }).setView([-33.048, -71.615], 14);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -94,11 +94,11 @@ function actualizarMarcadoresMapa() {
 
   // Ajustar vista al área con marcadores
   if (bounds.length > 1) {
-    mapa.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+    mapa.fitBounds(bounds, { padding: [20, 20], maxZoom: 15 });
   } else if (bounds.length === 1) {
-    mapa.setView(bounds[0], 15);
+    mapa.setView(bounds[0], 16);
   } else {
-    mapa.setView([-33.046, -71.62], 13);
+    mapa.setView([-33.046, -71.62], 14);
   }
 }
 
