@@ -35,5 +35,16 @@ sudo cp -R ~/slepv-website/public/* /opt/bitnami/nginx/html/
 sudo /opt/bitnami/ctlscript.sh restart nginx
 ```
 
+## Infraestructura del servidor (NGINX / Lightsail)
+Documentación completa de server blocks, certificados SSL, redirecciones de
+dominio (`.cl` → `.gob.cl`), Cloudflare y comandos de diagnóstico en:
+`docs/infraestructura-nginx-lightsail.md`
+
+Puntos clave:
+- Server blocks en `/opt/bitnami/nginx/conf/server_blocks/*.conf` (los `.disabled` no cargan)
+- Cloudflare hace proxy en modo HTTPS → las redirecciones deben estar en `listen 443 ssl`
+- Certificado SAN `slepvalparaiso.cl-0001` cubre `.cl` y `.gob.cl`
+- Validar siempre con `sudo /opt/bitnami/nginx/sbin/nginx -t` antes de recargar
+
 ## No Build Step
 There is no bundler, transpiler, or build process. Files are served as-is.
