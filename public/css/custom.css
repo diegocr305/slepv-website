@@ -552,6 +552,37 @@ footer ul li a:hover {
   transform: translateY(-2px);
 }
 
+/* Accesibilidad integrada en Top Bar */
+.top-bar-right {
+  align-items: center;
+}
+
+.top-bar-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.25);
+  margin: 0 4px;
+}
+
+.acc-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.acc-group .acc-icon {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Botones de accesibilidad compactos dentro del top-bar */
+.top-bar .acc-btn {
+  width: 30px;
+  height: 26px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .top-bar .container > div {
     flex-wrap: wrap;
@@ -568,10 +599,13 @@ footer ul li a:hover {
 
   .top-bar-right {
     flex-direction: row;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
   }
+
+  .acc-group .acc-icon { display: none; }
 }
 
 /* Franja en footer */

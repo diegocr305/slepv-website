@@ -16,17 +16,7 @@
 <div class="gov-stripe-header"></div>
 
 <!-- BARRA ACCESIBILIDAD -->
-<div class="accesibilidad-bar">
-  <div class="container">
-    <i class="fas fa-universal-access acc-icon"></i>
-    <span class="accesibilidad-label">Accesibilidad</span>
-    <button class="acc-btn" id="acc-contraste" title="Alto contraste"><i class="fas fa-adjust"></i></button>
-    <button class="acc-btn" id="acc-reducir" title="Reducir texto">A-</button>
-    <button class="acc-btn" id="acc-aumentar" title="Aumentar texto">A+</button>
-  </div>
-</div>
-
-<!-- TOP BAR -->
+<!-- TOP BAR (con accesibilidad integrada) -->
 <div class="top-bar">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
@@ -40,6 +30,13 @@
         <a href="https://www.instagram.com/slep_valparaiso/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/slepvalparaiso" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/@comunicacionesslepvalpo2021" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <span class="top-bar-divider"></span>
+        <div class="acc-group" aria-label="Herramientas de accesibilidad">
+          <i class="fas fa-universal-access acc-icon" title="Accesibilidad"></i>
+          <button class="acc-btn" id="acc-contraste" title="Alto contraste" aria-label="Alto contraste"><i class="fas fa-adjust"></i></button>
+          <button class="acc-btn" id="acc-reducir" title="Reducir texto" aria-label="Reducir tamaño de texto">A-</button>
+          <button class="acc-btn" id="acc-aumentar" title="Aumentar texto" aria-label="Aumentar tamaño de texto">A+</button>
+        </div>
       </div>
     </div>
   </div>
