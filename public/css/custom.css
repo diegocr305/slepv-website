@@ -552,35 +552,45 @@ footer ul li a:hover {
   transform: translateY(-2px);
 }
 
-/* Accesibilidad integrada en Top Bar */
+/* ============================================
+   Accesibilidad integrada en Top Bar
+   ============================================ */
 .top-bar-right {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 12px;
 }
 
 .top-bar-divider {
   width: 1px;
   height: 22px;
   background: rgba(255,255,255,0.25);
-  margin: 0 4px;
+  margin: 0 2px;
+  flex-shrink: 0;
 }
 
 .acc-group {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .acc-group .acc-icon {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.85);
+  margin: 0;
 }
 
 /* Botones de accesibilidad compactos dentro del top-bar */
 .top-bar .acc-btn {
   width: 30px;
   height: 26px;
+  min-width: 30px;
   font-size: 0.8rem;
   border-radius: 4px;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -599,10 +609,10 @@ footer ul li a:hover {
 
   .top-bar-right {
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 10px;
     justify-content: center;
     width: 100%;
-    flex-wrap: wrap;
   }
 
   .acc-group .acc-icon { display: none; }
@@ -1919,16 +1929,6 @@ body.texto-pequeno h1 { font-size: 38px !important; }
 body.texto-pequeno h2 { font-size: 28px !important; }
 body.texto-pequeno h3 { font-size: 24px !important; }
 body.texto-pequeno h5 { font-size: 16px !important; }
-
-@media (max-width: 768px) {
-  .acc-icon {
-  font-size: 1.6rem;
-  color: rgba(255,255,255,0.9);
-}
-
-.accesibilidad-label { display: none; }
-  .accesibilidad-bar .container { justify-content: center; }
-}
 
 /* Chips de año - Actas CLEP */
 .chip-ano {
