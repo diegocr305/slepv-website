@@ -22,8 +22,11 @@
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <div class="top-bar-left">
-        <a href="/tramites" class="top-bar-link top-bar-link-pill">
-          <i class="fas fa-file-alt me-1"></i>Trámites Online
+        <a href="/tramites#grupo-ciudadania" class="top-bar-link top-bar-link-pill">
+          <i class="fas fa-users me-1"></i>Trámites Ciudadanía
+        </a>
+        <a href="/tramites#grupo-funcionarios" class="top-bar-link top-bar-link-pill">
+          <i class="fas fa-id-badge me-1"></i>Trámites Funcionarios
         </a>
         <a href="mailto:oficinadepartes@slepvalparaiso.cl" class="top-bar-link">
           <i class="fas fa-envelope"></i> Contacto
@@ -273,78 +276,78 @@
           </div>
           <div>
             <h2 class="tramites-grupo-titulo">Funcionarios</h2>
-            <p class="tramites-grupo-desc mb-0">Trámites internos para funcionarios del SLEP Valparaíso. Actualmente en desarrollo.</p>
+            <p class="tramites-grupo-desc mb-0">Trámites internos para funcionarios del SLEP Valparaíso. Requieren autenticación con Clave Única.</p>
           </div>
         </div>
 
         <div class="row g-4" data-grupo="funcionarios">
 
-          <!-- Feriado Legal -->
+          <!-- Devolución de gastos de movilización -->
           <div class="col-lg-4 col-md-6" data-categoria="funcionarios">
-            <div class="tramite-card-catalogo proximamente">
+            <div class="tramite-card-catalogo">
               <div class="tramite-card-top">
                 <div class="tramite-card-icono">
-                  <i class="fas fa-umbrella-beach"></i>
+                  <i class="fas fa-money-bill-wave"></i>
                 </div>
-                <span class="tramites-badge-pronto ms-auto">
-                  <i class="fas fa-tools me-1"></i>En desarrollo
+                <span class="tramites-badge-cu ms-auto">
+                  <i class="fas fa-key me-1"></i>Con Clave Única
                 </span>
               </div>
-              <h5 class="tramite-card-titulo">Solicitud de Feriado Legal</h5>
-              <p class="tramite-card-desc">Solicita tus días de feriado legal de manera digital a través del sistema de gestión RRHH.</p>
+              <h5 class="tramite-card-titulo">Devolución de Gastos de Movilización</h5>
+              <p class="tramite-card-desc">Permite solicitar la devolución de gastos de movilización asociados a un cometido funcionario. Gestión de Personas revisará los antecedentes antes de incorporarlos al proceso administrativo mensual.</p>
               <ul class="tramite-card-info">
                 <li><i class="fas fa-user-tie"></i> Solo funcionarios</li>
-                <li><i class="fas fa-cog"></i> Sistema en fase demo</li>
+                <li><i class="fas fa-users-cog"></i> Revisa Gestión de Personas</li>
               </ul>
-              <span class="tramite-card-btn-disabled">
-                <i class="fas fa-lock me-1"></i> En desarrollo
-              </span>
+              <a href="https://tramites.slepvalparaiso.gob.cl/login/claveunica?redirect=https://tramites.slepvalparaiso.gob.cl/tramites/iniciar/49" target="_blank" class="tramite-card-btn">
+                Iniciar trámite <i class="fas fa-arrow-right ms-1"></i>
+              </a>
             </div>
           </div>
 
-          <!-- Permiso Administrativo -->
+          <!-- Cometido con Viático -->
           <div class="col-lg-4 col-md-6" data-categoria="funcionarios">
-            <div class="tramite-card-catalogo proximamente">
+            <div class="tramite-card-catalogo">
               <div class="tramite-card-top">
                 <div class="tramite-card-icono">
-                  <i class="fas fa-calendar-check"></i>
+                  <i class="fas fa-suitcase-rolling"></i>
                 </div>
-                <span class="tramites-badge-pronto ms-auto">
-                  <i class="fas fa-tools me-1"></i>En desarrollo
+                <span class="tramites-badge-cu ms-auto">
+                  <i class="fas fa-key me-1"></i>Con Clave Única
                 </span>
               </div>
-              <h5 class="tramite-card-titulo">Solicitud de Permiso Administrativo</h5>
-              <p class="tramite-card-desc">Gestiona tus permisos administrativos de forma digital, con seguimiento del estado de tu solicitud.</p>
+              <h5 class="tramite-card-titulo">Cometido con Viático para Funcionarios SLEP</h5>
+              <p class="tramite-card-desc">Solicitud de cometido con viático para funcionarios habilitados. La jefatura directa revisa la solicitud antes de su valorización por Gestión de Personas.</p>
               <ul class="tramite-card-info">
                 <li><i class="fas fa-user-tie"></i> Solo funcionarios</li>
-                <li><i class="fas fa-cog"></i> Sistema en fase demo</li>
+                <li><i class="fas fa-user-check"></i> Aprueba jefatura directa</li>
               </ul>
-              <span class="tramite-card-btn-disabled">
-                <i class="fas fa-lock me-1"></i> En desarrollo
-              </span>
+              <a href="https://tramites.slepvalparaiso.gob.cl/login/claveunica?redirect=https://tramites.slepvalparaiso.gob.cl/tramites/iniciar/48" target="_blank" class="tramite-card-btn">
+                Iniciar trámite <i class="fas fa-arrow-right ms-1"></i>
+              </a>
             </div>
           </div>
 
-          <!-- Cometido Funcionario -->
+          <!-- Cometido sin Viático -->
           <div class="col-lg-4 col-md-6" data-categoria="funcionarios">
-            <div class="tramite-card-catalogo proximamente">
+            <div class="tramite-card-catalogo">
               <div class="tramite-card-top">
                 <div class="tramite-card-icono">
                   <i class="fas fa-route"></i>
                 </div>
-                <span class="tramites-badge-pronto ms-auto">
-                  <i class="fas fa-tools me-1"></i>En desarrollo
+                <span class="tramites-badge-cu ms-auto">
+                  <i class="fas fa-key me-1"></i>Con Clave Única
                 </span>
               </div>
-              <h5 class="tramite-card-titulo">Solicitud de Cometido Funcionario</h5>
-              <p class="tramite-card-desc">Solicita autorización para cometidos funcionarios con detalle de destino, motivo y gastos asociados.</p>
+              <h5 class="tramite-card-titulo">Solicitud de Cometido Funcionario sin Viático</h5>
+              <p class="tramite-card-desc">Solicitud de cometido funcionario integrado para detectar datos laborales y ruta de aprobación por RUT.</p>
               <ul class="tramite-card-info">
                 <li><i class="fas fa-user-tie"></i> Solo funcionarios</li>
-                <li><i class="fas fa-cog"></i> Sistema en fase demo</li>
+                <li><i class="fas fa-sitemap"></i> Ruta de aprobación por RUT</li>
               </ul>
-              <span class="tramite-card-btn-disabled">
-                <i class="fas fa-lock me-1"></i> En desarrollo
-              </span>
+              <a href="https://tramites.slepvalparaiso.gob.cl/login/claveunica?redirect=https://tramites.slepvalparaiso.gob.cl/tramites/iniciar/47" target="_blank" class="tramite-card-btn">
+                Iniciar trámite <i class="fas fa-arrow-right ms-1"></i>
+              </a>
             </div>
           </div>
 
@@ -468,6 +471,23 @@
       }
     });
   });
+
+  // Activar filtro según el ancla de la URL (#grupo-funcionarios / #grupo-ciudadania)
+  function aplicarFiltroDesdeHash() {
+    const hash = window.location.hash;
+    let filtroObjetivo = null;
+    if (hash === '#grupo-funcionarios') filtroObjetivo = 'funcionarios';
+    else if (hash === '#grupo-ciudadania') filtroObjetivo = 'ciudadania';
+
+    if (filtroObjetivo) {
+      const btn = document.querySelector(`.tramites-filtro[data-filtro="${filtroObjetivo}"]`);
+      if (btn) btn.click();
+      const destino = document.getElementById(hash.substring(1));
+      if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  aplicarFiltroDesdeHash();
+  window.addEventListener('hashchange', aplicarFiltroDesdeHash);
 
   // Search
   const searchForm = document.getElementById('searchForm');
